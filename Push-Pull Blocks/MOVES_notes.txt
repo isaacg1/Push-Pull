@@ -1,0 +1,5 @@
+This paper proves that push-pull block puzzles in 3D are PSpace-Complete to solve and push-pull block puzzles in 2D with thin walls are NP-Hard to solve. The 2D push-pull block puzzle shows up in a number of video games implying further results.
+
+
+
+Jayson Lynch is a graduate student at the MIT Computer Science and Artificial Intelligence Lab where he works on computational geometry, energy efficient algorithms, and the mathematics of games and puzzles under Professor Erik Demaine

@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm, amsfonts,cite,alltt}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[list=true,listformat=simple]{subcaption}
+\renewcommand{\tt}{\texttt}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+% Complex \xxx for making notes of things to do.  Use \xxx{...} for general
+% notes, and \xxx[who]{...} if you want to blame someone in particular.
+% Puts text in brackets and in bold font, and normally adds a marginpar
+% with the text ``xxx'' so that it is easy to find.  On the other hand, if
+% the comment is in a minipage, figure, or caption, the xxx goes in the text,
+% because marginpars are not possible in these situations.
+{\makeatletter
+ \gdef\xxxmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{xxx}% not in a caption or minipage, can use marginpar
+     \else
+       xxx % notice trailing space
+     \fi
+   \else
+     xxx % notice trailing space
+   \fi}
+ \gdef\xxx{\@ifnextchar[\xxx@lab\xxx@nolab}
+ \long\gdef\xxx@lab[#1]#2{\textbf{[\xxxmark #2 ---{\sc #1}]}}
+ \long\gdef\xxx@nolab#1{\textbf{[\xxxmark #1]}}
+ % This turns them off:
+ % \long\gdef\xxx@lab[#1]#2{}\long\gdef\xxx@nolab#1{}%
+}
+
+
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+
+\title{Push-Pull Block Puzzles \xxx{title}}
+\author{Erik Demaine\thanks{MIT Computer Science and Artificial Intelligence Laboratory, 32 Vassar Street,
+Cambridge, MA 02139, USA} \and Isaac Grosof\footnotemark[1]  \and Jayson Lynch\footnotemark[1]}
+\date{\today}
+\maketitle
+
+%%Upgrade Trees might be hard, also some sort of inventory thing might be interested. Then we should hit Cookie Clicker and other simulation games (Sim City).
+
+
+\section{Introduction} 
+
+This work builds on a long line of work on the mathematics of games and puzzles, primarily, the recent work in the computational complexity of video games.  We also give a new result showing that block pushing puzzles, like Sokaban, which also include the ability to pull blocks are NP-Hard. This result also proves a number of other games, which have embedded push-pull block puzzles, are NP-Hard.
+
+Games have and continue to be a source of interesting problems for mathematics and computer science. Game playing continues to be a benchmark in the field of AI. The study of economic games has become a large field with applications in online auctions\cite{auctions}, network analysis\cite{Internet}, and voting\cite{colman2013game}. Combinatorial games have lead to algebraic insights such as Conway's Surreal Numbers\cite{Surreal01} and the Sprague-Grundy Theorem\cite{Sprague35}\cite{Grundy39}. More recently, games have been studied from an algorithmic perspective and can be seen as models of computation in examples like Constraint Logic \cite{GPCBook09} and Conway's Game of Life\cite{LifeTuring01}. For a survey of algorithmic combinatorial game theory see Demaine and Hearn's paper\cite{AlgGameTheory_GONC3}. Understanding the computational and algorithmic aspects of games may lead to better understanding of algorithms and problems that share similar properties. For example, certain asymmetries or algebraic properties may be more intuitively obvious in games, such as the relationship between two-player games and quantified boolean formulas\cite{}. In this vein, we are particularly interested in the push-pull block model because it is fully reversible, meaning any sequence of moves in the puzzle can be undone. Reversibility is fundamentally linked to quantum computation and the thermodynamics of computation; thus understanding the difference between reversible and irreversible computation is very relevant. 
+
+Finally, many games and puzzles can also be seen as simplified models of problems in the real world. Thus, solving these problems gives us partial understanding and tools to attack more difficult questions. For example, push-pull block puzzles can be seen as a simplified model of robotic forklifts operating in a warehouse. Complexity results in these very simplified models help us understand what aspects of problems makes them hard and allows us to start differentiating between the complexity that arises from the combinatorics vs the geometry of path planning problems. Similarly, path-planning in dynamic graphs is a complicated problem which occurs every day from traffic to packet routing.
+
+
+
+
+\subsection{Sliding Blocks Related Work}
+
+A significant amount of research has gone into characterizing the complexity of sliding block puzzles. This includes PSpace-Completeness for well known puzzles like Sokaban \cite{Sokoban98} and Rush Hour \cite{RushHour02}. We are specifically interested in block pushing puzzles, which involve a 'robot' that is able to move on a grid and is able to move blocks adjacent to it, typically by 'pushing' or 'pulling' the block. Further, we only address the path planning problem, in which the robot wants to get from a given location $A$ to a target location $B$, rather than the storage problem in which the movable blocks must reach some final configuration. Figure~\ref{BlocksTable} gives a summary of results on block pushing puzzles. 
+
+The problem of motion planning in an environment where blocks may be pushed and pulled is modeled in a very general form in Gordon Wilfong's Motion Planning in the Presence of Movable Obstacles, where he shows a polynomial time algorithm for motion planning with one movable object, NP-Hardness for the general planning problem, and PSpace-Hardness for the storage problem. \cite{PushPull91} His problem, however, deals with continuous motion and polygonal walls and blocks; making the model significantly different from the 1x1 blocks on a grid that is considered for most block pushing puzzles. Marcus Ritt paper \cite{Pull10} addresses the model in which blocks can only be pulled. We primarily build off of Dor and Zwick's work which generalizes Sokoban to include block pulling. They show the block storage problem which includes 2x1 blocks which can be pushed or pulled is PSpace-Complete, and the unit-size block storage where the robot can push at five or more blocks at a time and pull one is NP-Hard\cite{DZ96}. We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problemsn 2D with thin wall or in 3Ds, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-Hard. As with many of these problems, closing the gap between NP and PSpace remains open.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+\emph{Name} & \emph{Push} & \emph{Pull} & \emph{Block Size} & \emph{Fixed?} & \emph{Path?} & \emph{Sliding} & \emph{Complexity} \\ \hline
+\hline
+Push-k & k & 0 & Unit & No & Path & min & NP-Hard\cite{Push100} \\ \hline
+Push-* & * & 0 & Unit & No & Path  & min & NP-Hard\cite{Push*00} \\ \hline
+PushPush-k & k & 0 & Unit & No & Path  & Max & PSpace-Comp.\cite{PushPushk04} \\ \hline
+PushPush-* & * & 0 & Unit & No & Path  & Max & NP-Hard\cite{Push*00} \\ \hline
+Push-kX & k & 0 & Unit & No & No-Cross  & min & NP-Comp.\cite{non-crossing01} \\ \hline
+Push-*X & * & 0 & Unit & No & No-Cross  & min & NP-Comp.\cite{non-crossing01} \\ \hline
+Push-1F & 1 & 0 & Unit & Yes & Path  & min &  NP-Hard \cite{DO92} \\ \hline
+Push-kF & k$\geq 2$ & 0 & Unit & Yes & Path  & min & PSpace-Comp.\cite{Push2F02} \\ \hline
+Push-*F & * & 0 & Unit & Yes & Path  & min & PSpace-Comp.\cite{Push2F02} \\ \hline
+Sokoban & 1 & 0 & Unit & Yes & Storage  & min & PSpace-Comp.\cite{Sokoban98} \\ \hline
+Sokoban$^+$ & k$\geq 2$ & 1 & 2x1 & Yes & Storage  & min & PSpace-Comp.\cite{DZ96} \\ \hline
+ & k\footnote{doesn't really fit in model, use this to explain} & 1  & Polygon & Yes & Storage  & min & NP-Hard\cite{PushPull91}\\ \hline
+Sokoban(k,1) & k$\geq 5$ & 1 & Unit & Yes & Storage  & min & NP-Hard\cite{DZ96} \\ \hline
+Pull-1 & 0 & 1 & Unit & No & Storage  & min & NP-Hard\cite{Pull10} \\ \hline
+Pull-kF & 0 & k & Unit & Yes & Storage  & min &  NP-Hard\cite{Pull10} \\ \hline
+PullPull-kF & 0 & k & Unit & Yes & Storage  & Max  & NP-Hard\cite{Pull10} \\ \hline
+Push-1G\footnote{Blocks are subject to gravity} & 1 & 0 & Unit &  Path  & min & Yes & NP-Hard\cite{Gravity} \\ \hline
+PushPull-kW & k & l & Unit & Wall & Path  & min & \textbf{NP-Hard?} \\ \hline
+3DPushPull-k & k & l & Unit & Yes & Path & min &  \textbf{NP-Hard?} \\ \hline
+
+\end{tabular}
+\caption{Summary of Block Pushing Puzzle Results}
+\label{BlocksTable}
+\end{table}
+
+\xxx{might be more updating, check 6.890}
+
+
+\section{Push-Pull Block Results  [rough draft - real diagrams and better arguments for gadget safety pending]}
+In this section we prove that Push-1 Pull-1 with fixed blocks is NP-Hard in 3D or if we include \emph{thin walls}. Thin walls are a new, but natural, notion for pushing block puzzles, which prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. These were needed because many of the gadgets depended greatly on having very tight corridors to ensure limited behavior. We also note that being able to push or pull more blocks does not impact the gadgets, thus proving hardness for Push-k Pull-l for all k and l. \\
+We will prove hardness by a reduction to Planar 3SAT. Clauses can be formed by splitting hallways, each with a check that the corresponding variable was set true. Our literals are composed of the Set-Verify gadget listed below. A variable is a split hallway with one side going to all the true literals and the other going to all of the false literals. Program flow, and the fact that going backwards removes the pass-ability from the Set-Verify gadgets ensures variables are only set to be true or false.
+
+\subsection{Reversible One-Way Gadget}
+When in the initial configuration $A$ the gadget only permits a traversal from $s_0$ to $s$ leaving the gadget in configuration $B$. Configuration $B$ only permits traversals in the opposite direction, from $s$ to $s_0$. Note, when the robot leave this gadget, the only possible configurations are $A$ and $B$. These gadgets or similar structures will be used several times within more complicated structures.
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[width=0.8\textwidth]{one_way}
+    \caption{Reversible one-way gadget.}
+    \label{ldeScreenshotsMap}
+\end{figure}
+
+\subsection{Set-Verify Gadgets}
+For the Set-Verify gadget, the S entrance is the only one which allows the robot to move any blocks. From the $S$ entrance they can traverse to $S_0$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V$ to $V_0$. If the robot every travels back from $S_0$ to $S$, they must push the middle block back, ensuring the $V$ to $V_0$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V$ and $S$ entrances. \\
+
+The 3D Set-Verify is essentially the same design. All of the labeled entrances, $S, S_0, V, V_0$ now come into the gadget from above. All of these vertical hallways can continue straight up or in whatever desired direction except for $S$ which must go up one square and right one square before continuing. This is to prevent any blocks from being pushed or pulled into the $S$ hallway from the 3D Set-Verify gadget. It can easily be seen that non of these are adjacent, so there is no longer a need for thin walls. 
+\begin{figure}[!ht]
+  \centering
+  \caption{Set-Verify Gadgets}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{set_verify}
+    \caption{3D Set-Verify gadget.}
+    \label{ldeCoeffs}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{set_verify}
+    \caption{2D Set-Verify with walls.}
+    \label{ldeDiagrams}
+  \end{subfigure}
+\end{figure}
+
+\subsection{One-way Destructive Crossover}
+Initially this gadget allows either a traversal from A to A' or B to B'. Once a traversal has occurred, that path may be traversed freely, but the other is impassable unless the gadget is reset.
+\xxx{include an initial and crossed gadget}
+
+
+\begin{figure}[!ht]
+  \centering
+  \caption{Two types of crossover gadgets}
+  \begin{subfigure}[b]{0.55\textwidth}
+    \includegraphics[width=\textwidth]{one_time_crossover}
+    \caption{The one-way destructive crossover}
+    \label{ldeCoeffs}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.35\textwidth}
+    \includegraphics[width=\textwidth]{destructive_crossover}
+    \caption{The in-order one-way crossover}
+    \label{ldeDiagrams}
+  \end{subfigure}
+\end{figure}
+
+\subsection{In-order One-way Crossover}
+This gadget allows a traversal from 1 to 1' and then 2 to 2'. Note, the 2 to 2' traversal cannot be made unless the 1 to 1' traversal has already occurred; since it is necessary for the top block and the block closest to 1 to be pulled out. Likewise, a traversal back from 1' to 1 will push these back in, preventing subsequent 2 to 2' traversals. A successful 2 to 2' traversal will also prevent 1 to 1' from being passable.
+
+\subsection{Directed Crossover}
+Using the One-way Destructive Crossover and the In-order One-way Crossover, we can construct a Directed Crossover which allows Arbitrary traversals from A to A' and B to B'. Notice, that in either path, one will activate one destructive crossover, but in doing so will toggle the in-order crossover, always ensuring that there is a path in the other direction, no matter which one is crossed first. This allows us to cross each way once, in either order, which is sufficient for our hardness proof.
+
+\subsection{Crossover}
+Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction.
+
+\subsection{3-SAT Construction}
+We plan to reduce from Planar 3-SAT and will be making use of the Set-Verify gadget to produce our literals. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3-SAT instance. The directional properties of the Reversible One-Way and the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
+
+Our literals will be represented by Set-Verify gadgets. They are considered true when the $V$ to $V_0$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S$ to $S_0$ passage of the gadget. This implies a very simple clause gadget, consisting of splitting the path into three hallways each with the corresponding verify side of our literal. We can then pass through if any of the literals is set true and cannot be passed otherwise.
+
+The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set. We begin each hall with a Reversible One-Way gadget, primarily to handle the case of having no literals of that type to set. Once 
+
+Variables split into two hallways. We have to show that when you enter or exit a side of a hallway, all the literals are set true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
+
+
+\section{PSpace}
+
+\begin{itemize}
+\item 4 Togle also do -k
+\item Lock Chain
+\item Clause
+\item Binary Counter
+\item Existential and Universal setting (augmenting the counter)
+\item Initial setup
+
+\end{itemize}
+
+\subsection{Toggles}
+We define an $n$-toggle to be a gadget which has $n$ internal pathways and can be in one of two internal states, $A$ or $B$. Each pathway has a side labled $A$ and another labled $B$. When the toggle is in the $A$ state, the pathways can only be traversed from $A$ to $B$ and similarly in the $B$ state they can only be traversed from $B$ to $A$. Whenever a pathway is traversed the state of the Toggle flips.
+
+Figure \ref{2toggle} acts as a 2-Toggle. Notice that there is a single block missing from the ring of eight blocks. When the missing block is on top, as diagrammed, it will represent state $A$, and when it is on the opposite side, we call it state $B$. Notice that in state $A$, it is impossible to enter through entries $1b$ or $2b$. When we enter in the $1a$ or $2a$ sides, we can follow the moves in the searies of diagrams to exit the corresponding $1b$ or $2b$ side and leaving the gadget in the $B$ state. One can easily check that the gadget can only be left in either state $A$, $B$, or a broken state as seen in Figure \ref{brokenToggle}. Notice, in the broken state, every pathway except the one just exited is blocked. If we enter through that path, it is in exactly the same state as if it had been in an allowed state and entered through the corresponding pathway normally. For example, in the diagram one can only enter through $1b$ and after doing so it is the same as entering in path $1b$ on a 2-Toggle in state $B$. Thus the broken state is never useful for solving the puzzle and can be safely ignored.
+
+To construct a 4-Toggle we essentially take two copies of the two toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis. See Figure \ref{4Toggle}. We still interpret the lack of blocks in the same positions as the 2-Toggle as states $A$ or $B$. Now we have four different paths which function the same as the ones described above. Similar arguments show the broken states of the 4-Toggle also don't matter.
+
+%% A lock chain needs to have associated pathways that are passable under either internal state,
+%% e.g. A lock and B lock, to make SAT system work. Change this.
+\subsection{Locks}
+
+A lock is a gadget consisting of a 2-toggle and a separate pathway. The 2-toggle functions exactly
+as described above. The pathway is each passable in either direction if the toggle is in state $A$,
+and impassable if the toggle is in state $B$. This gadget can be implemented using a 4-toggle, by
+connecting the $3B$ and $4B$ entrances of the 4-toggle with an additional corridor, as shown in \ref{lock}.
+Traversing the resultant full pathway, from $3A$ to $3B$ to $4B$ to $4A$, is possible only if the initial
+state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addition, a partial traversal,
+such as from $3A$ to $3B$ and back to $3A$, does not change the internal state. The two unaffected
+pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
+
+A lock chain is a gadget consisting of a 2-toggle and any number of separate pathways. As in the
+lock, the 2-toggle functions as described above, and each pathway is passable in either direction
+if the toggle is in state $A$, or impassable in either direction if the toggle is in state $B$. This is
+implemented using one lock per non-toggling pathway needed. As shown in \ref{lockChain}, each lock’s $1A$
+entrance is connected to the next lock’s $1B$ entrance, and likewise between $2A$ and $2B$. Thus, the
+entire string of $1$ pathways form the lock chain’s $1$ pathway, and the string of $2$ pathways for the
+lock chain’s $2$ pathway. Due to this connection system, the internal states of every underlying lock
+will be the same whenever the robot is outside the lock chain. This state is the lock chain’s internal
+state, and appropriately determines the passability or impassability of the separate pathways.
+
+\subsection{Binary Counter}
+We now define a binary counter. The binary counter has a fixed number of internal bits.
+Whenever the binary counter is traversed in the forwards direction, the binary number
+formed by the internal bits increases by one and the robot leaves via one of the exits.
+If the binary counter is traversed in the reverse direction, the internal value is reduced by
+one. If the binary counter is partial traversed, the internal value does not change.
+
+The binary counter is implemented as a series of 2-toggles, as shown in \ref{binaryCounter}.
+The entrance pathway is connected to the 2-toggle's $1A$ and $2B$ entrances. The $1B$ exit from the 2-toggle
+will exit from the entire binary counter. The $2A$ exit will continue on to the next 2-toggle,
+attaching to that toggle's $1A$ and $2B$ entrances. This will continue for every toggle down the line, except
+that the last toggle's $2A$ exit signals an overflow, and exits from the counter.
+
+To see that this produces the desired effect, identify a toggle in state $A$ as a $0$ bit, and a toggle in state
+$B$ as a $1$ bit. Let the entrance toggle's bit be the least significant bit, and the final toggle be the
+most significant. When the robot enters the binary counter in the forwards direction, it will flip
+the state of every toggle it passes through. When it enters a toggle that is initially in state $B$, and thus whose
+bit is $1$, it will flip the state/bit and proceed to the next toggle, via the $2B - 2A$ pathway. When it
+encounters a toggle that is initial in state $A$ / bit $0$, it will flip the state/bit and exit, via the $1A - 1B$
+pathway. Thus, the overall effect on the bits of the binary counter is to change a sequence of bits ending at the
+least significant bit from $01..11$ to $10..00$. This has the effect of increasing the value of the binary counter
+by one.
+
+In the reverse direction, first note that a reverse entrance (a $1B$ entrance) is only enterable 
+if the toggle is in the state $B$ / bit $1$, because it is a $B$ entrance. Once the $1$ pathway is traversed,
+the only possible means of continued passage will be the $2A - 2B$ transition of the next less significant
+bit, since the toggle just traversed will be in state $A$, rendering its $2B - 2A$ transition unpassable.
+Moreover, that transition will only be possible if the next most significant toggle is in state $A$ / bit $0$.
+
+After this transition, the robot will be in an analogous position, again with the only possibility for
+continued progress being that the next bit is $A$ / $0$. This will continue until the robot dead-ends at
+a $B$ / $1$ toggle, or exits out the forward entrance.
+
+Thus, entering in the reverse direction must either result in a dead-end followed by a reversal of all changes,
+or in exiting out the front entrance and swapping $10..00$ to $01..11$. This results in a decrement.
+
+\subsection{Existential Quantifier Gadget}
+An existential gadget consists of one special pathway, the set pathway, and many other pathways, the
+lock pathways. It also has an internal state, $A$ or $B$. Much like in a lock chain, the lock pathways are
+passable in either direction if the internal state is $A$, and impassable in either direction in state $B$.
+Traversing a lock pathway does not affect the state. The special pathway is traversable in either direction
+in either state, and upon traversal, the state may be flipped or left the same.
+
+An existential gadget is implemented using a lock chain, as shown in \ref{existential}. When traversing
+the special pathway, the robot may optionally enter the lock chain's toggle and traver it any number of times
+in either direction. This allows the lock chain to be left in either internal state. The other pathways are
+unchanged from the lock chain.
+
+%% A lock chain needs to have associated pathways that are passable under either internal state,
+%% e.g. A lock and B lock, to make SAT system work. Change this above.
+\subsection{Quantifier Setting Gadget}
+The quantifier setting gadget has two types of internal bits: existential and universal. If the QSG is traversed
+in the forward direction, the universal bits will increment, as the bits in the binary counter did.
+Only the existential bits associated with each changed universal bit may be changed, and the robot may
+choose whether to set them to 0 or 1 regardless of their prior positions. The quantifier setting gadget
+also has any number of separate pathways that are passable based on the each of its bits being true or false.
+Upon a reverse transition, the same guarantees hold: the only possible reverse transition is the one which
+decrements the number formed by the universal bits, and only the existentials associated with those
+universal bits may be flipped. Additionally, even on dead-end attempted transition, no other existential
+bits may be flipped.
+
+The quantifier setting gadget is implemented as shown in \ref{quantifer}. The overall structure is broadly
+similar to the binary counter shown above. The universal quantifier gadgets are identical to the bits of the
+binary counter, except with the 2-toggles replaced by the 2-toggle portion of a lock chain. The existential
+quantifier gadgets are added just outside of the $1B$ exit of the previous universal quantifier.
+
+To ensure that the existential bits more significant than the carry bit cannot be altered on a partial
+reverse traversal, 
+\section{Conclusion}
+
+\section{Open Questions}
+
+\subsection{Block Pushing}
+\begin{itemize}
+\item Close NP, PSpace gap.
+\item No thin walls
+\item All movable blocks
+\item Push-Push Pull (seen in Catherin-not quite since you can get on them, also Zelda?)
+%%\item 1x1 Rush Hour
+\end{itemize}
+
+\section{Acknowledgments}
+Erik, Isaac, Joshua Lockhart, Parents
+
+%Melissa and Gi?
+%Video game company?
+
+%%JIP Recriational Discrete Math. July 31.
+
+% bibliography
+\bibliographystyle{plain}
+\bibliography{PortalBib}{}
+\end{document}
+

@@ -1,0 +1,564 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.15)  15 APR 2015 14:41
+entering extended mode
+**C:/Users/alice_alice/Dropbox*(MIT)/Research/Push-Pull*Blocks/Push-Pull_paper.
+tex
+
+("C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/Push-Pull_paper.
+tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count99
+\U@D=\dimen112
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks25
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen115
+\captionmargin@=\dimen116
+\captionwidth=\dimen117
+\caption@tempdima=\dimen118
+\caption@indent=\dimen119
+\caption@parindent=\dimen120
+\caption@hangindent=\dimen121
+)
+\c@ContinuedFloat=\count101
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count102
+\c@subtable=\count103
+)
+\c@theorem=\count104
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count105
+\Gm@cntv=\count106
+\c@Gm@tempcnt=\count107
+\Gm@bindingoffset=\dimen122
+\Gm@wd@mp=\dimen123
+\Gm@odd@mp=\dimen124
+\Gm@even@mp=\dimen125
+\Gm@layoutwidth=\dimen126
+\Gm@layoutheight=\dimen127
+\Gm@layouthoffset=\dimen128
+\Gm@layoutvoffset=\dimen129
+\Gm@dimlist=\toks26
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Users\alice_alice\Dropbox (MIT)\Research\Push-Pull Blocks\Push-Pull_paper.
+aux"
+
+LaTeX Warning: Label `ldeDiagrams' multiply defined.
+
+
+LaTeX Warning: Label `sub@ldeDiagrams' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen130
+\scratchbox=\box28
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen131
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks28
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 78.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 78.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (2.15213pt too wide) in paragraph at lines 86--113
+ [][] 
+ []
+
+[2] <one_way.pdf, id=16, 142.26149pt x 142.26149pt>
+File: one_way.pdf Graphic file (type pdf)
+ <use one_way.pdf>
+Package pdftex.def Info: one_way.pdf used on input line 129.
+(pdftex.def)             Requested size: 375.80544pt x 375.8341pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+<SetVerify.pdf, id=17, 142.26149pt x 189.3474pt>
+File: SetVerify.pdf Graphic file (type pdf)
+ <use SetVerify.pdf>
+Package pdftex.def Info: SetVerify.pdf used on input line 142.
+(pdftex.def)             Requested size: 211.38832pt x 281.37387pt.
+ [3]
+<DestructiveCrossover.pdf, id=21, 845.04686pt x 597.50786pt>
+File: DestructiveCrossover.pdf Graphic file (type pdf)
+
+<use DestructiveCrossover.pdf>
+Package pdftex.def Info: DestructiveCrossover.pdf used on input line 164.
+(pdftex.def)             Requested size: 211.38832pt x 149.46776pt.
+
+Underfull \hbox (badness 2359) in paragraph at lines 165--165
+[]\OT1/cmr/m/n/10 (a) |The one-way de-struc-tive crossover con-
+ []
+
+<InOrderCrossover.pdf, id=22, 845.04686pt x 597.50786pt>
+File: InOrderCrossover.pdf Graphic file (type pdf)
+
+<use InOrderCrossover.pdf>
+Package pdftex.def Info: InOrderCrossover.pdf used on input line 170.
+(pdftex.def)             Requested size: 211.38832pt x 149.46776pt.
+ [4 <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/one_way.pdf>]
+ [5 <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/SetVerify.pdf
+> <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/DestructiveCros
+sover.pdf> <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/InOrde
+rCrossover.pdf
+
+pdfTeX warning: pdflatex.EXE (file C:/Users/alice_alice/Dropbox (MIT)/Research/
+Push-Pull Blocks/InOrderCrossover.pdf): PDF inclusion: multiple pdfs with page 
+group included in a single page
+>] [6] <2-toggleA.pdf, id=59, 142.26149pt x 110.87422pt>
+File: 2-toggleA.pdf Graphic file (type pdf)
+ <use 2-toggleA.pdf>
+Package pdftex.def Info: 2-toggleA.pdf used on input line 215.
+(pdftex.def)             Requested size: 169.1113pt x 131.80997pt.
+
+<broken2Toggle.pdf, id=60, 142.26149pt x 116.35469pt>
+File: broken2Toggle.pdf Graphic file (type pdf)
+ <use broken2Toggle.pdf>
+Package pdftex.def Info: broken2Toggle.pdf used on input line 222.
+(pdftex.def)             Requested size: 169.1113pt x 138.3253pt.
+
+<2ToggleK.pdf, id=61, 142.26149pt x 120.33958pt>
+File: 2ToggleK.pdf Graphic file (type pdf)
+ <use 2ToggleK.pdf>
+Package pdftex.def Info: 2ToggleK.pdf used on input line 230.
+(pdftex.def)             Requested size: 375.80544pt x 317.91963pt.
+
+
+LaTeX Warning: Reference `brokenToggle' on page 7 undefined on input line 235.
+
+
+! LaTeX Error: File `4Toggle3D' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...ludegraphics[width=\textwidth]{4Toggle3D}
+                                                  
+? 
+<4Toggle.pdf, id=62, 845.04686pt x 597.50786pt>
+File: 4Toggle.pdf Graphic file (type pdf)
+ <use 4Toggle.pdf>
+Package pdftex.def Info: 4Toggle.pdf used on input line 246.
+(pdftex.def)             Requested size: 211.38832pt x 149.46776pt.
+
+
+LaTeX Warning: Reference `4Toggle' on page 7 undefined on input line 252.
+
+[7 <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/2-toggleA.pdf>
+ <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/broken2Toggle.pd
+f>] [8 <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/2ToggleK.p
+df> <C:/Users/alice_alice/Dropbox (MIT)/Research/Push-Pull Blocks/4Toggle.pdf>]
+
+LaTeX Warning: Reference `lock' on page 9 undefined on input line 260.
+
+
+LaTeX Warning: Reference `lockChain' on page 9 undefined on input line 271.
+
+
+LaTeX Warning: Reference `binaryCounter' on page 9 undefined on input line 292.
+
+
+[9]
+
+LaTeX Warning: Reference `Existential' on page 10 undefined on input line 332.
+
+
+LaTeX Warning: Reference `Quantifier' on page 10 undefined on input line 339.
+
+[10]
+
+LaTeX Warning: Reference `Quantifier2' on page 11 undefined on input line 362.
+
+
+LaTeX Warning: Reference `QuantifierLockChains' on page 11 undefined on input l
+ine 373.
+
+
+LaTeX Warning: Reference `Clause' on page 11 undefined on input line 382.
+
+
+LaTeX Warning: Reference `Formula' on page 11 undefined on input line 386.
+
+[11]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 421.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 421.
+
+("C:\Users\alice_alice\Dropbox (MIT)\Research\Push-Pull Blocks\Push-Pull_paper.
+bbl" [12]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ü in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no æ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ª in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no Ω in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no æ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no µ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∏ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∑ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ª in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no æ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∂ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no µ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no Ω in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∏ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no µ in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Ä in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∞ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ± in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no æ in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Ç in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no ã in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no Ω in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∞ in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Ö in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no æ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ¥ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∏ in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Ç in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Å in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no è in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no Ω in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∞ in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Å in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no ∞ in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no π in font cmti10!
+Missing character: There is no — in font cmti10!
+Missing character: There is no Ç in font cmti10!
+Missing character: There is no – in font cmti10!
+Missing character: There is no µ in font cmti10!
+ [13]) [14]
+("C:\Users\alice_alice\Dropbox (MIT)\Research\Push-Pull Blocks\Push-Pull_paper.
+aux")
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4253 strings out of 493921
+ 60863 string characters out of 3144858
+ 134900 words of memory out of 3000000
+ 7476 multiletter control sequences out of 15000+200000
+ 13704 words of font info for 53 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 36i,15n,38p,1632b,478s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Push-Pull_paper.pdf (14 pages, 509843 bytes).
+PDF statistics:
+ 144 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+
