@@ -134,7 +134,12 @@ When in the initial configuration $A$ the gadget only permits a traversal from $
 \subsection{Set-Verify Gadgets}
 For the Set-Verify gadget, the S entrance is the only one which allows the robot to move any blocks. From the $S$ entrance they can traverse to $S_0$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V$ to $V_0$. To traverse back from $S_0$ to $S$, the robot must first traverse back from $V_0$ to $V$. Then, when the robot travels back from $S_0$ to $S$, they must push the middle block back, ensuring the $V$ to $V_0$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V$ and $S$ entrances. \\
 
-There are three possible states of the Set-Verify: Unset, Set, and Verified. In the Unset state, the $S \rightarrow S_0$ transition is the only possibility, changing the state to Set. In the Set state, the $S_0 \rightarrow S$ transition is possible, changing the state back to Unset, as well as the $V \rightarrow V_0$ transition, which changes the state to Verified. Finally, from the Verified state, the only transitions possible are $V_0 \rightarrow V$, changing the state back to Set, and $V \rightarrow V_0$, leaving the state as Verify.
+There are four possible states of the Set-Verify: Broken, Unset, Set, and Verified. In the Broken state, the only possible transition is $S_0 \rightarrow S$, changing the state to Unset. This state can only be reached from Unset, and allows strictly less future transtions than Set, which can also be reached from Unset, so we will disregard it. In the Unset state, the $S \rightarrow S_0$ transition is the only possibility, changing the state to Set. In the Set state, the $S_0 \rightarrow S$ transition is possible, changing the state back to Unset, as well as the $V \rightarrow V_0$ transition, which changes the state to Verified. Finally, from the Verified state, the only transitions possible are $V_0 \rightarrow V$, changing the state back to Set, and $V \rightarrow V_0$, leaving the state as Verify.
+
+Since the Set-Verify gadget has no hallways with length greater than 3, any capabilities the robot may have of
+pushing or pulling more than one block at a time are irrelevant. Thus, the following proof will apply
+for all values of j and k in Push-j Pull-k.
+
 \begin{figure}[!ht]
   \centering
   \caption{Set-Verify Gadget}
