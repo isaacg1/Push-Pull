@@ -123,13 +123,13 @@ We will prove hardness by a reduction to 3SAT. Clauses can be formed by splittin
 
 \subsection{Reversible One-Way Gadget}
 When in the initial configuration $A$ the gadget only permits a traversal from $s_0$ to $s$ leaving the gadget in configuration $B$. Configuration $B$ only permits traversals in the opposite direction, from $s$ to $s_0$. Note, when the robot leave this gadget, the only possible configurations are $A$ and $B$. These gadgets or similar structures will be used several times within more complicated structures.
-
-\begin{figure}[!ht]
-  \centering
-    \includegraphics[width=0.8\textwidth]{one_way.pdf}
-    \caption{Reversible one-way gadget.}
-    \label{ldeScreenshotsMap}
-\end{figure}
+%
+%\begin{figure}[!ht]
+%  \centering
+%    \includegraphics[width=0.8\textwidth]{one_way.pdf}
+%    \caption{Reversible one-way gadget.}
+%    \label{ldeScreenshotsMap}
+%\end{figure}
 
 \subsection{Set-Verify Gadgets}
 For the Set-Verify gadget, the S entrance is the only one which allows the robot to move any blocks. From the $S$ entrance they can traverse to $S_0$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V$ to $V_0$. To traverse back from $S_0$ to $S$, the robot must first traverse back from $V_0$ to $V$. Then, when the robot travels back from $S_0$ to $S$, they must push the middle block back, ensuring the $V$ to $V_0$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V$ and $S$ entrances. \\
@@ -144,7 +144,7 @@ for all values of j and k in Push-j Pull-k.
   \centering
   \caption{Set-Verify Gadget}
   \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{SetVerify}
+    \includegraphics[width=\textwidth]{SetVerifySet}
     \caption{2D Set-Verify with walls.}
     \label{ldeDiagrams}
   \end{subfigure}
@@ -168,18 +168,29 @@ is to undo the transition just made, from a' back to a, restoring the original s
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{DestructiveCrossover}
     \caption{The one-way destructive crossover constructed from two connected Set-Verify gadgets initialized in the set position.}
-    \label{ldeCoeffs}
+    \label{DestructiveCrossover}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{InOrderCrossover}
     \caption{The in-order one-way crossover constructed from two connected Set-Verify gadgets initialized in the verified and unset positions.}
-    \label{ldeDiagrams}
+    \label{InOrderCrossover}
   \end{subfigure}
 \end{figure}
 
+\begin{figure}[!ht]
+  \centering
+  \caption{Two types of crossover gadgets}
+  \begin{subfigure}[b]{0.9\textwidth}
+    \includegraphics[width=\textwidth]{np_crossover}
+    \caption{The one-use one-way crossover is constructed from a one-way destructive crossover and two in-order one-way crossovers}
+    \label{OneUseCrossover}
+  \end{subfigure}
+
+\end{figure}
+
 \subsection{In-order Directed Crossover}
-This gadget allows a traversal from a to a', folowed by a traversal from b to b'.
+This gadget allows a traversal from a to a', followed by a traversal from b to b'.
 
 Initially, no entrance is passable except for a, since $V_0$ is passable only in state Verifed, and $S_0$ is
 passable only in state Set. Once the left $V_0 \rightarrow V$ transition is made, the robot has 2 options.
@@ -188,14 +199,14 @@ entrance on that toggle is impassable, since a $S$ entrance may only be traverse
 only transition possible on the right crossover is $S \rightarrow S_0$, changing the state from Unset to Set.
 This completes the first crossing.
 
-Now, there are at most 2 transitions possible: from a' back to a, undoing the whole process, or entering at b. Note that entering at b is only possible if the left Set-Verify is in the Set state, so let us assume that state change occured. In that case, the left $S_0 \rightarrow S$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to b, or through the right Set-Verify's
+Now, there are at most 2 transitions possible: from a' back to a, undoing the whole process, or entering at b. Note that entering at b is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_0 \rightarrow S$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to b, or through the right Set-Verify's
 $V \rightarrow V_0$ transition, completing the second crossover.
 
 
 \subsection{Directed Crossover}
 This is the gadget needed for our proof. It allows a traversal from a to a' followed by a traversal from b to b', or a traversal from b to b'.
 
-It is constructed out of an In-order Directed Crossover gadget and a Destructive Directed Crossover, as shown in Figure \ref{DirectedCrossover}. The a to a' traversal is initially passable, and goes through both gadgets,
+It is constructed out of an In-order Directed Crossover gadget and a Destructive Directed Crossover, as shown in Figure \ref{OneUseCrossover}. The a to a' traversal is initially passable, and goes through both gadgets,
 blocking the destructive crossover but leaving the in-order crossover open for the b to b' traversal. If the a to a' traversal does not occur, the b to b' traversal is possible via the destructive crossover.
 
 \subsection{Crossover}

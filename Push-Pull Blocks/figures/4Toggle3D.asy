@@ -49,8 +49,8 @@ void drawCubes(
 				curr = (i,j,k);
 				makeCube(
 				con, curr - cubeOffset, curr + cubeOffset,
-				gray + opacity(0.25),
-				scoreCount = 3, scoreColor = black + opacity(0.5)
+				gray + opacity(0.025),
+				scoreCount = 3, scoreColor = black + opacity(0.05)
 			);
 			}
 		}
@@ -70,7 +70,7 @@ void drawBlocks(){
 		for (real j = 5; j < 8; ++j){
 			for (real k = 5; k < 8; ++k){
 				//curr = (i,j,k);
-				draw(shift(.5*i,.5*j,.5*k)*scale(.5,.5,.5)unitsphere,red);
+				draw(shift(.5*i,.5*j,.5*k)*scale(.5,.5,.5)*unitsphere,red);
 				//sphere(
 				//con, curr - cubeOffset, curr + cubeOffset,
 				//gray + opacity(0.25),
