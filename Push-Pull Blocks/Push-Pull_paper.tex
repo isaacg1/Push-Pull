@@ -118,7 +118,7 @@ PushPull-kW & j & k & Unit & Wall & Path  & min & \textbf{NP-Hard} \\ \hline
 
 
 \section{Push-Pull Block Results  [rough draft - real diagrams and better arguments for gadget safety pending]}
-In this section we prove that Push-1 Pull-1 with fixed blocks is NP-Hard if we include \emph{thin walls}. Thin walls are a new, but natural, notion for pushing block puzzles, which prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. These were needed because many of the gadgets depended greatly on having very tight corridors to ensure limited behavior. We also note that being able to push or pull more blocks does not impact the gadgets, thus proving hardness for Push-k Pull-l for all k and l. \\
+In this section we prove that Push-1 Pull-1 with fixed blocks is NP-Hard if we include \emph{thin walls}. Thin walls are a new, but natural, notion for pushing block puzzles, which prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. These were needed because many of the gadgets depended greatly on having very tight corridors to ensure limited behavior. We also note that being able to push or pull more blocks does not impact the gadgets, thus proving hardness for Push-$k$ Pull-$l$ for all $k$ and $l$. \\
 We will prove hardness by a reduction to 3SAT. Clauses can be formed by splitting hallways, each with a check that the corresponding variable was set true. Our literals are composed of the Set-Verify gadget listed below. A variable is a split hallway with one side going to all the true literals and the other going to all of the false literals. Program flow, and the fact that going backwards removes the pass-ability from the Set-Verify gadgets ensures variables are only set to be true or false.
 
 \subsection{Reversible One-Way Gadget}
@@ -138,7 +138,7 @@ There are four possible states of the Set-Verify: Broken, Unset, Set, and Verifi
 
 Since the Set-Verify gadget has no hallways with length greater than 3, any capabilities the robot may have of
 pushing or pulling more than one block at a time are irrelevant. Thus, the following proof will apply
-for all values of j and k in Push-j Pull-k.
+for all values of $j$ and $k$ in Push-$j$ Pull-$k$.
 
 \begin{figure}[!ht]
   \centering
@@ -151,16 +151,16 @@ for all values of j and k in Push-j Pull-k.
 \end{figure}
 
 \subsection{Directed Destructive Crossover}
-Initially this gadget allows either a traversal from a to a' or b to b'. Once a traversal has occurred, that path may be traversed freely, but the other is impassable unless the original traversal is undone.
+Initially this gadget allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 
-First, observe that transitions are initially only possible via the a and b entrances, since the transitions
+First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions
 possible through a Set-Verify in state Set can be entered through $V$ and $S_0$, not $S$.
 
-Assume without loss of generality that the gadget is entered at a. This changes the state of the left Set-Verify
+Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify
 to Unset. At this point, the right $V$ transition is passable, as well as the left $S$ transition, 
 and no others. Taking the $S$ transition reverts all changes to the original state. Taking the $V$ transition
 changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition
-is to undo the transition just made, from a' back to a, restoring the original state.
+is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
 
 \begin{figure}[!ht]
   \centering
@@ -190,24 +190,24 @@ is to undo the transition just made, from a' back to a, restoring the original s
 \end{figure}
 
 \subsection{In-order Directed Crossover}
-This gadget allows a traversal from a to a', followed by a traversal from b to b'.
+This gadget allows a traversal from $a$ to $a'$, followed by a traversal from $b$ to $b'$.
 
-Initially, no entrance is passable except for a, since $V_0$ is passable only in state Verifed, and $S_0$ is
+Initially, no entrance is passable except for $a$, since $V_0$ is passable only in state Verifed, and $S_0$ is
 passable only in state Set. Once the left $V_0 \rightarrow V$ transition is made, the robot has 2 options.
 It can either change the left Set-Verify's state to Set, or leave it as Verified. In either case, the $S$
 entrance on that toggle is impassable, since a $S$ entrance may only be traversed in state Unset. The
 only transition possible on the right crossover is $S \rightarrow S_0$, changing the state from Unset to Set.
 This completes the first crossing.
 
-Now, there are at most 2 transitions possible: from a' back to a, undoing the whole process, or entering at b. Note that entering at b is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_0 \rightarrow S$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to b, or through the right Set-Verify's
+Now, there are at most 2 transitions possible: from $a'$ back to $a$, undoing the whole process, or entering at $b$. Note that entering at $b$ is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_0 \rightarrow S$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to $b$, or through the right Set-Verify's
 $V \rightarrow V_0$ transition, completing the second crossover.
 
 
 \subsection{Directed Crossover}
-This is the gadget needed for our proof. It allows a traversal from a to a' followed by a traversal from b to b', or a traversal from b to b'.
+This is the gadget needed for our proof. It allows a traversal from $a$ to $a'$ followed by a traversal from $b$ to $b'$, or a traversal from $b$ to $b'$.
 
-It is constructed out of an In-order Directed Crossover gadget and a Destructive Directed Crossover, as shown in Figure \ref{OneUseCrossover}. The a to a' traversal is initially passable, and goes through both gadgets,
-blocking the destructive crossover but leaving the in-order crossover open for the b to b' traversal. If the a to a' traversal does not occur, the b to b' traversal is possible via the destructive crossover.
+It is constructed out of an In-order Directed Crossover gadget and a Destructive Directed Crossover, as shown in Figure \ref{OneUseCrossover}. The $a$ to $a'$ traversal is initially passable, and goes through both gadgets,
+blocking the destructive crossover but leaving the in-order crossover open for the $b$ to $b'$ traversal. If the $a$ to $a'$ traversal does not occur, the $b$ to $b'$ traversal is possible via the destructive crossover.
 
 \subsection{Crossover}
 Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction.
