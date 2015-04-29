@@ -122,7 +122,7 @@ In this section we prove that Push-1 Pull-1 with fixed blocks is NP-Hard if we i
 We will prove hardness by a reduction to 3SAT. Clauses can be formed by splitting hallways, each with a check that the corresponding variable was set true. Our literals are composed of the Set-Verify gadget listed below. A variable is a split hallway with one side going to all the true literals and the other going to all of the false literals. Program flow, and the fact that going backwards removes the pass-ability from the Set-Verify gadgets ensures variables are only set to be true or false.
 
 \subsection{Reversible One-Way Gadget}
-When in the initial configuration $A$ the gadget only permits a traversal from $s_0$ to $s$ leaving the gadget in configuration $B$. Configuration $B$ only permits traversals in the opposite direction, from $s$ to $s_0$. Note, when the robot leave this gadget, the only possible configurations are $A$ and $B$. These gadgets or similar structures will be used several times within more complicated structures.
+When in the initial configuration $A$ the gadget only permits a traversal from $S_o$ to $S_i$ leaving the gadget in configuration $B$. Configuration $B$ only permits traversals in the opposite direction, from $S_i$ to $S_o$. Note, when the robot leave this gadget, the only possible configurations are $A$ and $B$. These gadgets or similar structures will be used several times within more complicated structures.
 %
 %\begin{figure}[!ht]
 %  \centering
@@ -132,9 +132,9 @@ When in the initial configuration $A$ the gadget only permits a traversal from $
 %\end{figure}
 
 \subsection{Set-Verify Gadgets}
-For the Set-Verify gadget, the S entrance is the only one which allows the robot to move any blocks. From the $S$ entrance they can traverse to $S_0$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V$ to $V_0$. To traverse back from $S_0$ to $S$, the robot must first traverse back from $V_0$ to $V$. Then, when the robot travels back from $S_0$ to $S$, they must push the middle block back, ensuring the $V$ to $V_0$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V$ and $S$ entrances. \\
+For the Set-Verify gadget, the S entrance is the only one which allows the robot to move any blocks. From the $S_i$ entrance they can traverse to $S_o$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V_i$ to $V_o$. To traverse back from $S_o$ to $S_i$, the robot must first traverse back from $V_o$ to $V_i$. Then, when the robot travels back from $S_o$ to $S_i$, they must push the middle block back, ensuring the $V_i$ to $V_o$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V_i$ and $S_i$ entrances. \\
 
-There are four possible states of the Set-Verify: Broken, Unset, Set, and Verified. In the Broken state, the only possible transition is $S_0 \rightarrow S$, changing the state to Unset. This state can only be reached from Unset, and allows strictly less future transtions than Set, which can also be reached from Unset, so we will disregard it. In the Unset state, the $S \rightarrow S_0$ transition is the only possibility, changing the state to Set. In the Set state, the $S_0 \rightarrow S$ transition is possible, changing the state back to Unset, as well as the $V \rightarrow V_0$ transition, which changes the state to Verified. Finally, from the Verified state, the only transitions possible are $V_0 \rightarrow V$, changing the state back to Set, and $V \rightarrow V_0$, leaving the state as Verify.
+There are four possible states of the Set-Verify: Broken, Unset, Set, and Verified. In the Broken state, the only possible transition is $S_o \rightarrow S_i$, changing the state to Unset. This state can only be reached from Unset, and allows strictly less future transtions than Set, which can also be reached from Unset, so we will disregard it. In the Unset state, the $S_i \rightarrow S_o$ transition is the only possibility, changing the state to Set. In the Set state, the $S_o \rightarrow S_i$ transition is possible, changing the state back to Unset, as well as the $V_i \rightarrow V_o$ transition, which changes the state to Verified. Finally, from the Verified state, the only transitions possible are $V_o \rightarrow V_i$, changing the state back to Set, and $V_i \rightarrow V_o$, leaving the state as Verify.
 
 Since the Set-Verify gadget has no hallways with length greater than 3, any capabilities the robot may have of
 pushing or pulling more than one block at a time are irrelevant. Thus, the following proof will apply
@@ -154,11 +154,11 @@ for all values of $j$ and $k$ in Push-$j$ Pull-$k$.
 Initially this gadget allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 
 First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions
-possible through a Set-Verify in state Set can be entered through $V$ and $S_0$, not $S$.
+possible through a Set-Verify in state Set can be entered through $V_i$ and $S_o$, not $S_i$.
 
 Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify
-to Unset. At this point, the right $V$ transition is passable, as well as the left $S$ transition, 
-and no others. Taking the $S$ transition reverts all changes to the original state. Taking the $V$ transition
+to Unset. At this point, the right $V_i$ transition is passable, as well as the left $S_i$ transition, 
+and no others. Taking the $S_i$ transition reverts all changes to the original state. Taking the $V_i$ transition
 changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition
 is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
 
@@ -192,15 +192,15 @@ is to undo the transition just made, from $a'$ back to $a$, restoring the origin
 \subsection{In-order Directed Crossover}
 This gadget allows a traversal from $a$ to $a'$, followed by a traversal from $b$ to $b'$.
 
-Initially, no entrance is passable except for $a$, since $V_0$ is passable only in state Verifed, and $S_0$ is
-passable only in state Set. Once the left $V_0 \rightarrow V$ transition is made, the robot has 2 options.
-It can either change the left Set-Verify's state to Set, or leave it as Verified. In either case, the $S$
-entrance on that toggle is impassable, since a $S$ entrance may only be traversed in state Unset. The
-only transition possible on the right crossover is $S \rightarrow S_0$, changing the state from Unset to Set.
+Initially, no entrance is passable except for $a$, since $V_o$ is passable only in state Verifed, and $S_o$ is
+passable only in state Set. Once the left $V_o \rightarrow V_i$ transition is made, the robot has 2 options.
+It can either change the left Set-Verify's state to Set, or leave it as Verified. In either case, the $S_i$
+entrance on that toggle is impassable, since a $S_i$ entrance may only be traversed in state Unset. The
+only transition possible on the right crossover is $S_i \rightarrow S_o$, changing the state from Unset to Set.
 This completes the first crossing.
 
-Now, there are at most 2 transitions possible: from $a'$ back to $a$, undoing the whole process, or entering at $b$. Note that entering at $b$ is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_0 \rightarrow S$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to $b$, or through the right Set-Verify's
-$V \rightarrow V_0$ transition, completing the second crossover.
+Now, there are at most 2 transitions possible: from $a'$ back to $a$, undoing the whole process, or entering at $b$. Note that entering at $b$ is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_o \rightarrow S_i$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to $b$, or through the right Set-Verify's
+$V_i \rightarrow V_o$ transition, completing the second crossover.
 
 
 \subsection{Directed Crossover}
@@ -216,7 +216,7 @@ Four Directed Crossovers can be combined, as shown below, to create a crossover 
 \xxx{add variable and clause gadget diagrams}
 We plan to reduce from 3-SAT and will be making use of the Set-Verify gadget to produce our literals. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3-SAT instance. The directional properties of the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
 
-Our literals will be represented by Set-Verify gadgets. They are considered true when the $V$ to $V_0$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S$ to $S_0$ passage of the gadget. This implies a very simple clause gadget, consisting of splitting the path into three hallways each with the corresponding verify side of our literal. We can then pass through if any of the literals is set true and cannot be passed otherwise.
+Our literals will be represented by Set-Verify gadgets. They are considered true when the $V_i$ to $V_o$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S_i$ to $S_o$ passage of the gadget. This implies a very simple clause gadget, consisting of splitting the path into three hallways each with the corresponding verify side of our literal. We can then pass through if any of the literals is set true and cannot be passed otherwise.
 
 The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set. Once variables split into two hallways, we have to show that when you enter or exit a side of a hallway, all the literals are set true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
 
