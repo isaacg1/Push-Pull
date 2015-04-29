@@ -145,7 +145,7 @@ for all values of j and k in Push-j Pull-k.
   \caption{Set-Verify Gadget}
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{SetVerifySet}
-    \caption{2D Set-Verify with walls.}
+    \caption{2D Set-Verify in the set state.}
     \label{ldeDiagrams}
   \end{subfigure}
 \end{figure}
@@ -213,13 +213,12 @@ blocking the destructive crossover but leaving the in-order crossover open for t
 Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction.
 
 \subsection{3-SAT Construction}
-We plan to reduce from 3-SAT and will be making use of the Set-Verify gadget to produce our literals. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3-SAT instance. The directional properties of the Reversible One-Way and the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
+\xxx{add variable and clause gadget diagrams}
+We plan to reduce from 3-SAT and will be making use of the Set-Verify gadget to produce our literals. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3-SAT instance. The directional properties of the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
 
 Our literals will be represented by Set-Verify gadgets. They are considered true when the $V$ to $V_0$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S$ to $S_0$ passage of the gadget. This implies a very simple clause gadget, consisting of splitting the path into three hallways each with the corresponding verify side of our literal. We can then pass through if any of the literals is set true and cannot be passed otherwise.
 
-The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set. We begin each hall with a Reversible One-Way gadget, primarily to handle the case of having no literals of that type to set. Once 
-
-Variables split into two hallways. We have to show that when you enter or exit a side of a hallway, all the literals are set true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
+The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set. Once variables split into two hallways, we have to show that when you enter or exit a side of a hallway, all the literals are set true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
 
 
 \section{PSpace}
