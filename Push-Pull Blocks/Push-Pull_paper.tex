@@ -59,7 +59,7 @@
 %%Upgrade Trees might be hard, also some sort of inventory thing might be interested. Then we should hit Cookie Clicker and other simulation games (Sim City).
 
 \begin{abstract}
-This paper proves that push-pull block puzzles in 3D are PSpace-Complete to solve and push-pull block puzzles in 2D with thin walls are NP-Hard to solve. Push-pull block puzzles are a game, and motion planning problem, similar to Sokoban, that involves moving a `robot' on a grid with obstacles. The obstacles cannot be traversed by the robot, but some can be pushed or pulled by the robot into adjacent squares. Thin wall prevent movement between two adjacent squares. This work follows in a long line of algorithms and complexity work on similar problems \cite{PushPull91}\cite{Push100}\cite{Push*00}\cite{PushPushk04}\cite{non-crossing01}\cite{DO92}\cite{Push2F02}\cite{Sokoban98}\cite{DZ96}\cite{Pull10}. The 2D push-pull block puzzle shows up in a number of video games, including The Legend of Zelda, thus implying a number of other results. This variant of block pushing puzzles is of particular interest to the authors because it is fully reversible, meaning the inverse of any action that has been taken is valid.
+This paper proves that push-pull block puzzles in 3D are PSpace-Complete to solve and push-pull block puzzles in 2D with thin walls are NP-Hard to solve. Push-pull block puzzles are a game, and motion planning problem, similar to Sokoban, that involves moving a `robot' on a grid with obstacles. The obstacles cannot be traversed by the robot, but some can be pushed or pulled by the robot into adjacent squares. Thin walls prevent movement between two adjacent squares. This work follows in a long line of algorithms and complexity work on similar problems \cite{PushPull91}\cite{Push100}\cite{Push*00}\cite{PushPushk04}\cite{non-crossing01}\cite{DO92}\cite{Push2F02}\cite{Sokoban98}\cite{DZ96}\cite{Pull10}. The 2D push-pull block puzzle shows up in a number of video games, including The Legend of Zelda, thus implying a number of other results. This variant of block pushing puzzles is of particular interest to the authors because it is fully reversible, meaning the inverse of any action that has been taken is valid.
 \end{abstract}
 
 \section{Introduction} 
@@ -77,7 +77,7 @@ Finally, many games and puzzles can also be seen as simplified models of problem
 
 A significant amount of research has gone into characterizing the complexity of sliding block puzzles. This includes PSpace-Completeness for well known puzzles like Sokaban \cite{Sokoban98} and Rush Hour \cite{RushHour02}. We are specifically interested in block pushing puzzles, which involve a 'robot' that is able to move on a grid and is able to move blocks adjacent to it, typically by 'pushing' or 'pulling' the block. Further, we only address the path planning problem, in which the robot wants to get from a given location $A$ to a target location $B$, rather than the storage problem in which the movable blocks must reach some final configuration. Figure~\ref{BlocksTable} gives a summary of results on block pushing puzzles. 
 
-The problem of motion planning in an environment where blocks may be pushed and pulled is modeled in a very general form in Gordon Wilfong's Motion Planning in the Presence of Movable Obstacles, where he shows a polynomial time algorithm for motion planning with one movable object, NP-Hardness for the general planning problem, and PSpace-Hardness for the storage problem. \cite{PushPull91} His problem, however, deals with continuous motion and polygonal walls and blocks; making the model significantly different from the 1x1 blocks on a grid that is considered for most block pushing puzzles. Marcus Ritt paper \cite{Pull10} addresses the model in which blocks can only be pulled. We primarily build off of Dor and Zwick's work which generalizes Sokoban to include block pulling. They show the block storage problem which includes 2x1 blocks which can be pushed or pulled is PSpace-Complete, and the unit-size block storage where the robot can push at five or more blocks at a time and pull one is NP-Hard\cite{DZ96}. We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problemsn 2D with thin wall or in 3Ds, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-Hard. As with many of these problems, closing the gap between NP and PSpace remains open.
+The problem of motion planning in an environment where blocks may be pushed and pulled is modeled in a very general form in Gordon Wilfong's Motion Planning in the Presence of Movable Obstacles, where he shows a polynomial time algorithm for motion planning with one movable object, NP-Hardness for the general planning problem, and PSpace-Hardness for the storage problem. \cite{PushPull91} His problem, however, deals with continuous motion and polygonal walls and blocks; making the model significantly different from the 1x1 blocks on a grid that is considered for most block pushing puzzles. Marcus Ritt paper \cite{Pull10} addresses the model in which blocks can only be pulled. We primarily build off of Dor and Zwick's work which generalizes Sokoban to include block pulling. They show the block storage problem which includes 2x1 blocks which can be pushed or pulled is PSpace-Complete, and the unit-size block storage where the robot can push at five or more blocks at a time and pull one is NP-Hard\cite{DZ96}. We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problems in 2D with thin walls, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-Hard. As with many of these problems, closing the gap between NP and PSpace remains open. In addition, we prove that all path planning problems in 3D in which the robot can push $k$ blocks and pull $l$ plocks for all $k,l \in \mathbb{Z}^+$ is PSPACE-Complete.
 
 \xxx{check against Erik's notes for completeness}
 
@@ -132,13 +132,11 @@ When in the initial configuration $A$ the gadget only permits a traversal from $
 %\end{figure}
 
 \subsection{Set-Verify Gadgets}
-For the Set-Verify gadget, the S entrance is the only one which allows the robot to move any blocks. From the $S_i$ entrance they can traverse to $S_o$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V_i$ to $V_o$. To traverse back from $S_o$ to $S_i$, the robot must first traverse back from $V_o$ to $V_i$. Then, when the robot travels back from $S_o$ to $S_i$, they must push the middle block back, ensuring the $V_i$ to $V_o$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V_i$ and $S_i$ entrances. \\
+For the Set-Verify gadget, the $S_i$ entrance is the only one which allows the robot to move any blocks. From the $S_i$ entrance they can traverse to $S_o$, and they can also pull the middle block down behind them. Doing so will allow a traversal from $V_i$ to $V_o$. To traverse back from $S_o$ to $S_i$, the robot must first traverse back from $V_o$ to $V_i$. Then, when the robot travels back from $S_o$ to $S_i$, they must push the middle block back, ensuring the $V_i$ to $V_o$ traversal is impossible. Further, access to any sequence of entrances will not allow the robot to alter the system to allow traversals between the $V_i$ and $S_i$ entrances. \\
 
 There are four possible states of the Set-Verify: Broken, Unset, Set, and Verified. In the Broken state, the only possible transition is $S_o \rightarrow S_i$, changing the state to Unset. This state can only be reached from Unset, and allows strictly less future transtions than Set, which can also be reached from Unset, so we will disregard it. In the Unset state, the $S_i \rightarrow S_o$ transition is the only possibility, changing the state to Set. In the Set state, the $S_o \rightarrow S_i$ transition is possible, changing the state back to Unset, as well as the $V_i \rightarrow V_o$ transition, which changes the state to Verified. Finally, from the Verified state, the only transitions possible are $V_o \rightarrow V_i$, changing the state back to Set, and $V_i \rightarrow V_o$, leaving the state as Verify.
 
-Since the Set-Verify gadget has no hallways with length greater than 3, any capabilities the robot may have of
-pushing or pulling more than one block at a time are irrelevant. Thus, the following proof will apply
-for all values of $j$ and $k$ in Push-$j$ Pull-$k$.
+Since the Set-Verify gadget has no hallways with length greater than 3, any capabilities the robot may have of pushing or pulling more than one block at a time are irrelevant. Thus, the following proof will apply for all values of $j$ and $k$ in Push-$j$ Pull-$k$.
 
 \begin{figure}[!ht]
   \centering
@@ -163,14 +161,9 @@ for all values of $j$ and $k$ in Push-$j$ Pull-$k$.
 \subsection{Directed Destructive Crossover}
 Initially this gadget allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 
-First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions
-possible through a Set-Verify in state Set can be entered through $V_i$ and $S_o$, not $S_i$.
+First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions possible through a Set-Verify in state Set can be entered through $V_i$ and $S_o$, not $S_i$.
 
-Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify
-to Unset. At this point, the right $V_i$ transition is passable, as well as the left $S_i$ transition, 
-and no others. Taking the $S_i$ transition reverts all changes to the original state. Taking the $V_i$ transition
-changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition
-is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
+Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify to Unset. At this point, the right $V_i$ transition is passable, as well as the left $S_i$ transition, and no others. Taking the $S_i$ transition reverts all changes to the original state. Taking the $V_i$ transition changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
 
 \begin{figure}[!ht]
   \centering
@@ -247,6 +240,7 @@ Our literals will be represented by Set-Verify gadgets. They are considered true
 
 The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set. Once variables split into two hallways, we have to show that when you enter or exit a side of a hallway, all the literals are set true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
 
+Therefore, in order to traverse all of the clause and reach the goal location, the robot must traverse a set of veriable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to this problem.
 
 \section{PSpace}
 
