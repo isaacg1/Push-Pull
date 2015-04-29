@@ -142,8 +142,8 @@ Since the Set-Verify gadget has no hallways with length greater than 3, any capa
   \centering
   \caption{Set-Verify Gadget}
   \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{SetVerifySet}
-    \caption{2D Set-Verify in the set state.}
+    \includegraphics[width=\textwidth]{SetVerifyUnset}
+    \caption{2D Set-Verify in the unset state.}
     \label{ldeDiagrams}
   \end{subfigure}
 \end{figure}
@@ -179,7 +179,6 @@ Assume without loss of generality that the gadget is entered at $a$. This change
     \caption{The one-use one-way crossover is constructed from a one-way destructive crossover and two in-order one-way crossovers}
     \label{OneUseCrossover}
   \end{subfigure}
-
 \end{figure}
 
 \subsection{In-order Directed Crossover}
@@ -206,7 +205,25 @@ blocking the destructive crossover but leaving the in-order crossover open for t
 Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction.
 
 \subsection{3-SAT Construction}
-\xxx{add variable and clause gadget diagrams}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{subfigure}[b]{0.9\textwidth}
+    \includegraphics[width=\textwidth]{NPVariableGadget}
+    \caption{variable}
+    \label{NPVariableGadget}
+  \end{subfigure}
+\end{figure}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{subfigure}[b]{0.9\textwidth}
+    \includegraphics[width=\textwidth]{NPClauseGadget}
+    \caption{Clause}
+    \label{NPClauseGadget}
+  \end{subfigure}
+\end{figure}
+
 We plan to reduce from 3-SAT and will be making use of the Set-Verify gadget to produce our literals. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3-SAT instance. The directional properties of the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
 
 Our literals will be represented by Set-Verify gadgets. They are considered true when the $V_i$ to $V_o$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S_i$ to $S_o$ passage of the gadget. This implies a very simple clause gadget, consisting of splitting the path into three hallways each with the corresponding verify side of our literal. We can then pass through if any of the literals is set true and cannot be passed otherwise.
