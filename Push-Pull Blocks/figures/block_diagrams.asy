@@ -36,64 +36,54 @@ for (int i = 0; i < numColumns; ++i){
 }
 
 void draw2ToggleSquares(){
-drawGrid(9,7,1,0,0);
-for(int i=-1; i<8;++i){
+drawGrid(5,5,1,0,0);
+for(int i=-1; i<6;++i){
 	drawSquare(-1,i,black);
-	drawSquare(9,i,black);
+	drawSquare(5,i,black);
 }
-for(int i=-1; i<10;++i){
+for(int i=-1; i<6;++i){
 	drawSquare(i,-1,black);
-	drawSquare(i,7,black);
+	drawSquare(i,5,black);
 }
-drawSquare(1,1,black);
-drawSquare(1,2,black);
-drawSquare(1,3,black);
-drawSquare(1,4,black);
-drawSquare(1,5,black);
-drawSquare(2,1,black);
-drawSquare(2,3,black);
+drawSquare(2,2,black);
+drawSquare(2,4,black);
 drawSquare(2,5,black);
+drawSquare(4,2,black);
+drawSquare(4,4,black);
+drawSquare(0,0,black);
+drawSquare(0,4,black);
 drawSquare(4,0,black);
-drawSquare(4,1,black);
-drawSquare(4,3,black);
-drawSquare(4,5,black);
-drawSquare(4,6,black);
-drawSquare(6,1,black);
-drawSquare(6,3,black);
-drawSquare(6,5,black);
-drawSquare(7,1,black);
-drawSquare(7,2,black);
-drawSquare(7,3,black);
-drawSquare(7,4,black);
-drawSquare(7,5,black);
+drawSquare(0,2,black);
+drawSquare(2,0,black);
 }
 
+
 void draw2ToggleBlocks(){
+drawBlock(1.5,1.5,red);
+drawBlock(2.5,1.5,red);
+drawBlock(3.5,1.5,red);
+drawBlock(1.5,2.5,red);
+drawBlock(1.5,3.5,red);
 drawBlock(3.5,2.5,red);
-drawBlock(4.5,2.5,red);
-drawBlock(5.5,2.5,red);
 drawBlock(3.5,3.5,red);
-drawBlock(3.5,4.5,red);
-drawBlock(5.5,3.5,red);
-drawBlock(5.5,4.5,red);
 }
 
 void drawBroken2ToggleBlocks(){
-drawBlock(4.5,4.5,red);
-drawBlock(4.5,2.5,red);
-drawBlock(5.5,2.5,red);
-drawBlock(3.5,3.5,red);
+drawBlock(2.5,3.5,red);
+drawBlock(2.5,1.5,red);
+drawBlock(3.5,1.5,red);
+drawBlock(1.5,2.5,red);
+drawBlock(1.5,1.5,red);
 drawBlock(3.5,2.5,red);
-drawBlock(5.5,3.5,red);
-drawBlock(5.5,4.5,red);
+drawBlock(3.5,3.5,red);
 }
 
 
 void draw2ToggleLabels(){
-label("1b",(2.5,2.5), blue+fontsize(7pt));
-label("1a",(2.5,4.5), blue+fontsize(7pt));
-label("2b",(6.5,2.5), blue+fontsize(7pt));
-label("2a",(6.5,4.5), blue+fontsize(7pt));
+label("1b",(0.5,1.5), blue+fontsize(7pt));
+label("1a",(0.5,3.5), blue+fontsize(7pt));
+label("2b",(4.5,1.5), blue+fontsize(7pt));
+label("2a",(4.5,3.5), blue+fontsize(7pt));
 }
 
 void draw2TogglePathA(){
@@ -120,96 +110,75 @@ draw2ToggleLabels();
 
 
 void draw2ToggleSquaresK(){
-drawGrid(11,9,1,0,0);
-for(int i=-1; i<10;++i){
+drawGrid(7,7,1,0,0);
+for(int i=-1; i<8;++i){
 	drawSquare(-1,i,black);
-	drawSquare(11,i,black);
+	drawSquare(7,i,black);
 }
-for(int i=-1; i<12;++i){
+for(int i=-1; i<8;++i){
 	drawSquare(i,-1,black);
-	drawSquare(i,9,black);
+	drawSquare(i,7,black);
 }
-for(int i=4; i<7;++i){
-	for(int j=3; j<6;++j){
+for(int i=2; i<5;++i){
+	for(int j=2; j<5;++j){
 		drawSquare(i,j,black);
 		drawSquare(i,j,black);
 	}
 }
 
-drawSquare(1,1,black);
-drawSquare(1,2,black);
-drawSquare(1,3,black);
-drawSquare(1,4,black);
-drawSquare(1,5,black);
-drawSquare(1,6,black);
-drawSquare(1,7,black);
-drawSquare(2,1,black);
-drawSquare(2,3,black);
+drawSquare(0,2,black);
+drawSquare(0,3,black);
+drawSquare(0,4,black);
+drawSquare(0,6,black);
+drawSquare(2,2,black);
 drawSquare(2,4,black);
-drawSquare(2,5,black);
-drawSquare(2,7,black);
-drawSquare(4,0,black);
-drawSquare(4,1,black);
-drawSquare(4,3,black);
-drawSquare(4,5,black);
-drawSquare(4,7,black);
-drawSquare(4,8,black);
-drawSquare(5,0,black);
-drawSquare(5,1,black);
-drawSquare(5,7,black);
-drawSquare(5,8,black);
-drawSquare(6,0,black);
-drawSquare(6,1,black);
-drawSquare(6,3,black);
-drawSquare(6,5,black);
-drawSquare(6,7,black);
-drawSquare(6,8,black);
-drawSquare(8,1,black);
-drawSquare(8,3,black);
-drawSquare(8,4,black);
-drawSquare(8,5,black);
-//drawSquare(8,6,black);
-drawSquare(8,7,black);
-drawSquare(9,1,black);
-drawSquare(9,2,black);
-drawSquare(9,3,black);
-drawSquare(9,4,black);
-drawSquare(9,5,black);
-drawSquare(9,6,black);
-drawSquare(9,7,black);
+drawSquare(2,6,black);
+drawSquare(3,6,black);
+drawSquare(4,2,black);
+drawSquare(4,4,black);
+drawSquare(4,6,black);
+drawSquare(0,0,black);
+drawSquare(0,2,black);
+drawSquare(0,3,black);
+drawSquare(0,4,black);
+drawSquare(0,6,black);
+drawSquare(2,6,black);
+drawSquare(3,6,black);
+drawSquare(4,6,black);
+drawSquare(6,6,black);
 }
 
 
 
 void draw2ToggleBlocksK(){
 
-	drawBlock(3.5,2.5,red);
-	drawBlock(3.5,3.5,red);
-	drawBlock(3.5,5.5,red);
-	drawBlock(3.5,6.5,red);
-	drawBlock(4.5,6.5,red);
-	drawBlock(7.5,2.5,red);
-	drawBlock(7.5,3.5,red);
-	drawBlock(7.5,5.5,red);
-	drawBlock(7.5,6.5,red);
-	drawBlock(6.5,2.5,red);
-	drawBlock(4.5,2.5,red);
-	drawBlock(3.5,5.5,red);
-	drawBlock(6.5,6.5,red);
+	drawBlock(1.5,1.5,red);
+	drawBlock(1.5,2.5,red);
+	drawBlock(1.5,4.5,red);
+	drawBlock(1.5,5.5,red);
+	drawBlock(2.5,5.5,red);
+	drawBlock(5.5,1.5,red);
+	drawBlock(5.5,2.5,red);
+	drawBlock(5.5,4.5,red);
+	drawBlock(5.5,5.5,red);
+	drawBlock(4.5,1.5,red);
+	drawBlock(2.5,1.5,red);
+	drawBlock(1.5,4.5,red);
+	drawBlock(4.5,5.5,red);
 
 
-	drawElipsis(3.5,4.5,black);
-	drawElipsis(7.5,4.5,black);
-	drawElipsis(5.5,2.5,black);
-	drawElipsis(5.5,6.5,black);	
+	drawElipsis(1.5,3.5,black);
+	drawElipsis(5.5,3.5,black);
+	drawElipsis(3.5,1.5,black);
+	drawElipsis(3.5,5.5,black);	
 }
 
 
 void draw2ToggleLabelsK(){
-label("1b",(2.5,2.5), blue+fontsize(7pt));
-label("1a",(2.5,6.5), blue+fontsize(7pt));
-label("2b",(8.5,2.5), blue+fontsize(7pt));
-label("2a",(8.5,6.5), blue+fontsize(7pt));
+label("1b",(0.5,1.5), blue+fontsize(7pt));
+label("1a",(0.5,5.5), blue+fontsize(7pt));
+label("2b",(6.5,1.5), blue+fontsize(7pt));
+label("2a",(6.5,5.5), blue+fontsize(7pt));
 }
 
 void draw2TogglePathAK(){

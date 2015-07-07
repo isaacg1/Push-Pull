@@ -240,7 +240,7 @@ Our literals will be represented by Set-Verify gadgets. They are considered true
 
 The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set. Once variables split into two hallways, we have to show that when you enter or exit a side of a hallway, all the literals are set true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
 
-Therefore, in order to traverse all of the clause and reach the goal location, the robot must traverse a set of veriable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to this problem.
+Therefore, in order to traverse all of the clause and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to this problem.
 
 \section{PSpace}
 
