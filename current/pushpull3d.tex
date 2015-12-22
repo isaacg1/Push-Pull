@@ -1,0 +1,269 @@
+\subsection{PSPACE}
+\label{3DPSPACE}
+In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We introduce a gadget called the 4-toggle and use it to simulate Quantified Boolean Formulas\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
+
+%\xxx{we can actually get something like all values where pull < 2push using the hypercube construction, but it's hard to describe and doesn't cover everything.}
+
+\subsubsection{Toggles}
+We define an $n$-toggle to be a gadget which has $n$ internal pathways and can be in one of two internal states, $A$ or $B$. Each pathway has a side labeled $A$ and another labeled $B$. When the toggle is in the $A$ state, the pathways can only be traversed from $A$ to $B$ and similarly in the $B$ state they can only be traversed from $B$ to $A$. Whenever a pathway is traversed, the state of the toggle flips.
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[t]{0.3\textwidth}
+  \centering
+    \includegraphics[width=0.8\textwidth]{Abstract4ToggleA}
+    \caption{4-Toggle in state $A$. Here we can only follow the paths from left to right.}
+    \label{fig:Abstract4ToggleA}
+\end{subfigure}
+\hspace{25mm}
+\begin{subfigure}[t]{0.3\textwidth}
+  \centering
+    \includegraphics[width=0.8\textwidth]{Abstract4ToggleB}
+    \caption{4-Toggle in state $B$. The direction of the paths through the toggle are flipped.}
+    \label{fig:Abstract4ToggleB}
+\end{subfigure}
+\caption{}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\begin{subfigure}[t]{0.45\textwidth}
+  \centering
+    \includegraphics[width=0.8\textwidth]{2toggle}
+    \caption{2-Toggle in state $A$. The arrows indicate the transition to state $B$.}
+    \label{fig:2toggleA}
+\end{subfigure}
+\begin{subfigure}[t]{0.45\textwidth}
+  \centering
+    \includegraphics[width=0.8\textwidth]{2toggleB}
+    \caption{2-Toggle in state $B$.}
+    \label{fig:2toggleB}
+\end{subfigure}
+    \begin{subfigure}[t]{0.45\textwidth}
+  \centering
+    \includegraphics[width=0.8\textwidth]{broken2Toggle}
+    \caption{2-Toggle in one of four broken states.}
+    \label{fig:broken2toggle}
+    \end{subfigure}
+  \begin{subfigure}[t]{.45\textwidth}
+  \centering
+    \includegraphics[width=.8\textwidth]{2ToggleK}
+    \caption{Construction of a 2-toggle when the robot can push or pull multiple blocks.}
+    \label{fig:2ToggleK}
+    \end{subfigure}
+    \caption{2-Toggles constructed in a push-pull block puzzle.}
+\end{figure}
+
+Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, and $2d$, are all entrances and exits to the 2-toggle, while $1b$ connects directly to $1c$, and $2b$ connects directly to $2c$. Notice that there is a single block missing from the ring of eight blocks. When the missing block is on top, as diagrammed, it will represent state $A$, and when it is on the opposite side, we call it state $B$. Notice that in state $A$, it is impossible to enter through entries $1d$ or $2d$. When we enter in the $1a$ or $2a$ sides, we can follow the moves in the series of diagrams to exit the corresponding $1b$ or $2b$ side, leaving the gadget in the $B$ state. One can easily check that the gadget can only be left in either state $A$, $B$, or a broken state as seen in Figure~\ref{fig:broken2toggle}. Notice that in the broken state, every pathway except the one just exited is blocked. If we enter through that path, it is in exactly the same state as if it had been in an allowed state and entered through the corresponding pathway normally. For example, in the diagram one can only enter through $1b$ and after doing so it is the same as entering in path $1b$ on a 2-toggle in state $B$. Thus the broken state is never more useful for solving the puzzle and can be safely ignored.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{4ToggleNoConnections}
+    \caption{Diagram of a 4-toggle showing impassible surfaces.}
+    \label{fig:4Toggle3D}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{4ToggleBasic}
+    \caption{Diagram of the internals of a 4-toggle.}
+    \label{fig:4Toggle3DBasic}
+  \end{subfigure}
+  \caption{}
+\end{figure}
+
+To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. Now we have four different paths which function the same as the ones described above. Similar arguments show the broken states of the 4-toggle also don't matter.
+
+\subsection{Locks}
+
+\begin{figure}[!ht]
+  \centering
+  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Abstract4ToggleA}
+    \caption{Representation of a 4-toggle in state $A$. }
+    \label{fig:4Toggle3D}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{LockA}
+    \caption{Diagram of a lock. The $1a$ to $2a$ traversal is only possible in state $A$ and returns the toggle to state $A$.}
+    \label{fig:LockA}
+  \end{subfigure}
+  \caption{}
+\end{figure}
+
+A lock is a gadget consisting of a 2-toggle and a separate pathway. Traversing the separate pathway can only be done in a single direction, which is dependent on whether the 2-toggle is in state A or B, and the traversal does not change the internal state of the 2-toggle. The 2-toggle functions exactly
+as described above. This gadget can be implemented using a 4-toggle by
+connecting the $3B$ and $4B$ entrances of the 4-toggle with an additional corridor, as shown in \ref{fig:LockA}.
+Traversing the resultant full pathway, from $3A$ to $3B$ to $4B$ to $4A$, is possible only if the initial
+state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addition, a partial traversal,
+such as from $3A$ to $3B$ and back to $3A$, does not change the internal state. The two unaffected
+pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
+
+A synchronized lock block is a gadget consisting of a 2-toggle and any number of separate pathways. As in the
+lock, the 2-toggle functions as described above. Each pathway may be set up to be passable in either direction
+if the toggle is in state $A$ and impassable in either direction if the toggle is in state $B$ (type A), or
+passable in either direction if the toggle is in state $B$ and impassable in either direction if the
+toggle is in state $A$ (type B). This is
+implemented using one lock per non-toggling pathway needed. As shown in Figure~\ref{fig:LockBlock}, there are 2
+pathways of the entire synchronized lock block system: the 1 pathway, and the 2 pathway. A lock whose pathway will create
+a type A synchronized lock pathway is placed so that its pathways are in the same direction as the synchronized lock block's
+pathways, $A$ entrance in the $A$ direction and $B$ entrance in the $B$ direction. Its state matches the 
+synchronized lock block's
+state.
+A type $B$ lock is placed in the opposite direction, with its $B$ entrance in the synchronized lock block's $A$ direction and
+A entrance in the B direction. Its state is also opposite the synchronized lock block's state.
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.9\textwidth]{LockBlock}
+    \caption{A synchronized lock block chain.}
+    \label{fig:LockBlock}
+\end{figure}
+
+When the synchronized lock block is traversed, all of the internal locks' states flip, rendering the synchronized lock block passable in the opposite direction, and switching the passability and impassibility of all of the external pathways.
+
+\subsubsection{Binary Counter}
+
+Universal quantifiers must iterate through all possible combinations of values that they can take. In this section we construct a gadget that runs though all the states of its subcomponents as the robot progresses through the gadget. This construction will serve as the base for our universal quantifiers.
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.9\textwidth]{BinaryCounter}
+    \caption{The central portion of a three bit binary counter made from 2-toggles.}
+    \label{fig:BinaryCounter}
+\end{figure}
+  
+We now define a binary counter. The binary counter has a fixed number of internal bits.
+Whenever the binary counter is traversed in the forwards direction, the binary number
+formed by the internal bits increases by one and the robot leaves via one of the exits.
+If the binary counter is traversed in the reverse direction, the internal value is reduced by
+one. If the binary counter is partial traversed, but then the robot leaves via its initial entrance,
+the internal value does not change.
+
+The binary counter is implemented as a series of 2-toggles, as shown in Figure~\ref{fig:BinaryCounter}.
+The entrance pathway is connected to the 2-toggle's $1A$ and $2B$ entrances. The $1B$ exit from the 2-toggle
+will exit from the entire binary counter. The $2A$ exit will continue on to the next 2-toggle,
+attaching to that toggle's $1A$ and $2B$ entrances. This will continue for every toggle down the line, except
+that the last toggle's $2A$ exit signals an overflow and exits from the counter.
+
+To see that this produces the desired effect, identify a toggle in state $A$ as a $0$ bit, and a toggle in state
+$B$ as a $1$ bit. Let the entrance toggle's bit be the least significant bit, and the final toggle be the
+most significant. When the robot enters the binary counter in the forwards direction, it will flip
+the state of every toggle it passes through. When it enters a toggle that is initially in state $B$, and thus whose
+bit is $1$, it will flip the state/bit and proceed to the next toggle, via the $2B - 2A$ pathway. When it
+encounters a toggle that is initial in state $A$ / bit $0$, it will flip the state/bit and exit via the $1A - 1B$
+pathway. Thus, the overall effect on the bits of the binary counter is to change a sequence of bits ending at the
+least significant bit from $01..11$ to $10..00$. This has the effect of increasing the value of the binary counter
+by one.
+
+If the robot approaches this apparatus from the exit side, there are three possibilities. If the robot attempts
+to enter via a $1B$ pathway whose toggle is in state $A$ / $0$, the toggle is impassable and the robot makes
+no progress. If the robot enters via a $1B$ pathway whose toggle is in state $B$ / $1$, after traversal the
+robot will have 2 options: To return in the direction it came, or to continue through the next toggle's
+$2A -2B$ pathway. The latter is only possible if the next toggle
+(the one just less significant than the entrance) is
+in state $A$ / $0$. Upon traversing that toggle, the robot will again be able to return from where it came, or
+progress in the same fashion if the next toggle is in state $A$ / $0$. This will continue until the robot
+either turns back, or exits out the main entrance.
+
+Thus, if and only if the robot enters via the least significant toggle which is set to 1, the robot will be
+able to leave out the main entrance. If the robot enters any other way, it will be forced to return via the
+path it entered by, and undo all changes it has made.
+
+The transformation on the bits caused by the only possible successful reverse traversal is to change $10 .. 00$
+to $01 .. 11$, resulting in a decrement operation, as desired.
+
+\subsection{Existential Quantifiers}
+We now define an existential gadget. An existential gadget is like a synchronized lock block, except that instead of a
+2-toggle, it has a single pathway which is always passable in both directions, and upon traversing the pathway
+the robot may or may not change the internal state of the synchronized lock block, as it chooses. The variable is considered true if the 4-toggles in the lock block are in state $A$ and false if they are in state $B$.
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.9\textwidth]{ExistentialGadget}
+    \caption{An existential gadget is simply a lock block with a number of copies equal to the number of times the corresponding variable occurs in the formula.}
+    \label{fig:Existential}
+\end{figure}
+
+As shown in Figure~\ref{fig:Existential}, an existential gadget consists of a synchronized lock block and a pathway with access to all
+four pathways of the 2-toggle component of the synchronized lock block. Upon traversing the main pathway, the robot may
+choose to traverse the 2-toggle any number of times, leaving it in either state, as desired.
+
+\subsubsection{Quantifier Chain}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.9\textwidth]{QuantifierChain}
+    \caption{A segment of the quantifier chain. Each lock is actually a synchronized lock chain with length equal to the number of times the corresponding variable appears in the formula.}
+    \label{fig:QuantifierChain}
+\end{figure}
+
+We now define a quantifier chain, as shown in Figure~\ref{fig:QuantifierChain}. A quantifier chain implements a series of
+alternating existential and universal variables, as well as external literal pathways, which may be traversed
+if and only if their corresponding variables are set to a pre-specified value.
+
+Traversing the quantifier chain
+repeatedly in the primary direction will cycle the universal variables through all $2^n$ possible settings.
+Upon each traversal, an initial sequence of the universal variables will have their values flipped.
+During the traversal, the robot will have the option to set a series of corresponding existential variables to whatever value they wish. These comprise the existentials nested within the universal variables whose values were flipped.
+
+Traversing  the quantifier chain in the reverse direction is only possible if the robot enters
+via the lowest order universal toggle whose setting is $1$. The traversal will go back one setting in the
+sequence of possible settings of the universal variables, and allow the robot to set all existential variables
+corresponding to altered universal variables arbitrarily. No other existential variables can be changed.
+
+There is also a special exit, the overflow exit, which can only be
+reached after all of the universal variable settings have been traversed. This is the target location for the robot.
+
+A quantifier chain is implemented much like a binary counter, with some additions. Every universal variable will be represented by a synchronized lock block, where each individual lock will serve as a literal. The 2-toggles which are governing the progression through the synchronized lock blocks are hooked up in the same manner as the 2-toggles in a binary counter gadget. This forces the synchronized lock blocks to be set to the corresponding values in the simulated binary counter.
+
+The next addition is the existential variables, which consist of existential gadgets placed just after the $2A$
+exits of each universal variable,
+and just before the $1A$ and $2B$ entrances of the the next universal variable, as shown
+in Figure~\ref{fig:QuantifierChain}.
+
+One potential flaw in the apparatus as described so far is that a robot could enter via an exit corresponding
+to a highly significant universal variable set to $1$, alter its paired existential variable,
+and then leave via the original entrance.
+This must not happen for the existential counter to work properly, so a series of lock-chain pathways are added
+to each of the exits from the quantifier. Recall from the description of the binary counter that the only
+possible reverse traversal of the counter should be via entering at the lowest significance variable set to $1$.
+To prevent
+entry at higher-significance variables set to $1$, we will add a series of locks to
+that exit which are only passable if
+all lower-significance universal variables are set to $0$.
+
+This prevents the undesired high-significance existential alteration problem mentioned above, as
+it is now impossible to enter the gadget via the higher-significance universal variables which are set to $1$,
+since that entryway will have at least 1 closed lock on it and thus be impassable. However, this addition does
+not affect the desired forward or backward transition, because the entrance/exit in question will have
+all of its synchronized lock block external pathways in the passable state.
+
+\subsubsection{Clause Gadget}
+We construct a clause gadget by putting the lock pathways of the three 4-toggles in the lock chains representing the corresponding variables in parallel, as we did with Set-Verify gadgets in Figure~\ref{fig:NPClauseGadget}. Each of these paths can be traversed only if the corresponding variable has been set. Since they are in parallel, only one needs to be passable for the robot to be able to continue on to the next clause.
+
+\subsubsection{Beginning and End Conditions}
+The overall progression of the robot through the puzzle starts with the quantifier chain.
+The robot increments the universal variables and sets the appropriate existential variables arbitrarily, then traverses the formula gadget to verify that the formula is true under that setting. The process then repeats.
+
+At the beginning of this procedure, the robot must be allowed to set all of the existential variables arbitrarily.
+To ensure this, we will set up the quantifier gadget in the state $01 .. 11$, with all variables set to $1$
+except the highest order one.  The highest order variable will be special, and will not be used in the $3CNF$
+formula. The initial position of the robot will be at the entrance to the quantifier gadget. This will allow
+the robot to flip every universal in the quantifier gadget, from $01 .. 11$ to $10 .. 00$, and accordingly
+set every existential variable arbitrarily. To force the robot to go forward through the quantifier gadget
+instead of going backwards through the clause chain, we will add a literal onto the end of the formula gadget
+which is passable if and only if the highest order variable is set to $1$.
+
+After this set up, the robot will progress through the loop consisting of the quantifier gadget and the
+formula gadget, demonstrating the appropriate existential settings for each assignment of the universal
+quantifiers.
+
+After progressing through every possible state of the universal quantifiers, the universals will be in the
+state $11 .. 11$. At this point, the robot may progress through the quantifier gadget and exit via its special
+pathway,
+the carry pathway of the highest order bit. This special pathway will lead to the goal location of the puzzle.
+Thus, only by traversing the quantifier - formula loop repeatedly, and demonstrating the solution to the TQBF
+problem,
+will the robot be able to reach the goal. The robot may reach the goal if and only if the corresponding quantified
+boolean formula is true.

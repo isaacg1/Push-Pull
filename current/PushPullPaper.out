@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Push-Pull Block Puzzles}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{2D Push-Pull with Thin Walls}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{3SAT Construction}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Set-Verify Gadgets}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Crossover Gadgets}{subsection.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.3}{3D Push-Pull is NP-hard}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.4}{PSPACE}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Toggles}{subsection.2.4}% 9
+\BOOKMARK [2][-]{subsection.2.5}{Locks}{section.2}% 10
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Binary Counter}{subsection.2.5}% 11
+\BOOKMARK [2][-]{subsection.2.6}{Existential Quantifiers}{section.2}% 12
+\BOOKMARK [3][-]{subsubsection.2.6.1}{Quantifier Chain}{subsection.2.6}% 13
+\BOOKMARK [3][-]{subsubsection.2.6.2}{Clause Gadget}{subsection.2.6}% 14
+\BOOKMARK [3][-]{subsubsection.2.6.3}{Beginning and End Conditions}{subsection.2.6}% 15
+\BOOKMARK [2][-]{subsection.2.7}{Implied Hardness Results}{section.2}% 16
+\BOOKMARK [1][-]{section.3}{Conclusion}{}% 17
+\BOOKMARK [1][-]{section.4}{Open Questions}{}% 18

@@ -1,0 +1,13 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: PushPullPaper.aux
+The style file: alpha.bst
+Database file #1: PushPullBib.bib
+You're missing a field name---line 78 of file PushPullBib.bib
+ :   
+ :   %crossref  = {DBLP:conf/fun/2010},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in DBLP:journals/corr/abs-1203-1633
+Warning--empty journal in Pull10
+Warning--empty journal in HardGames12
+Warning--empty journal in DBLP:journals/corr/Walsh14
+(There was 1 error message)

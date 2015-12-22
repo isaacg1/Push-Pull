@@ -1,0 +1,104 @@
+\documentclass[11pt,twoside]{article}
+\usepackage{amsmath, amssymb, amsthm, amsfonts,cite,alltt,clrscode}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[list=true,listformat=simple]{subcaption}
+\renewcommand{\tt}{\texttt}
+
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\graphicspath{{./figuresPushPull/},{./figuresPortal/},{./screenshots/}}
+
+
+
+% Complex \xxx for making notes of things to do.  Use \xxx{...} for general
+% notes, and \xxx[who]{...} if you want to blame someone in particular.
+% Puts text in brackets and in bold font, and normally adds a marginpar
+% with the text ``xxx'' so that it is easy to find.  On the other hand, if
+% the comment is in a minipage, figure, or caption, the xxx goes in the text,
+% because marginpars are not possible in these situations.
+{\makeatletter
+ \gdef\xxxmark{%
+   \expandafter\ifx\csname @mpargs\endcsname\relax % in minipage?
+     \expandafter\ifx\csname @captype\endcsname\relax % in figure/caption?
+       \marginpar{xxx}% not in a caption or minipage, can use marginpar
+     \else
+       xxx % notice trailing space
+     \fi
+   \else
+     xxx % notice trailing space
+   \fi}
+ \gdef\xxx{\@ifnextchar[\xxx@lab\xxx@nolab}
+ \long\gdef\xxx@lab[#1]#2{\textbf{[\xxxmark #2 ---{\sc #1}]}}
+ \long\gdef\xxx@nolab#1{\textbf{[\xxxmark #1]}}
+ % This turns them off:
+% \long\gdef\xxx@lab[#1]#2{}\long\gdef\xxx@nolab#1{}%
+}
+
+
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+
+\title{On the Computational Complexity of Portal and Other Games}
+\author{Erik Demaine\thanks{MIT Computer Science and Artificial Intelligence Laboratory, 32 Vas-
+sar Street, Cambridge, MA 02139, USA}, Isaac Grosof\footnotemark[1]  \and Jayson Lynch\footnotemark[1]}
+\date{\today}
+\maketitle
+
+%%Upgrade Trees might be hard, also some sort of inventory thing might be interested. Then we should hit Cookie Clicker and other simulation games (Sim City).
+
+%\xxx{Find Title Page format.}
+
+\input{abstract}
+%
+%\tableofcontents 
+%\pagebreak
+%
+%\listoffigures 
+%\pagebreak
+%
+%\listoftables
+%\pagebreak
+
+%\setcounter{page}{0}
+%
+%\thispagestyle{empty}
+%
+\input{introduction}
+%
+\input{pushpull2d}
+%
+\input{pushpull3d}
+
+\input{conclusion}
+
+
+
+
+
+%% bibliography
+\bibliographystyle{alpha}
+\bibliography{PushPullBib}{}
+\end{document}
