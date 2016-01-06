@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.25)  6 JAN 2016 00:14
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.25)  6 JAN 2016 15:13
 entering extended mode
 **C:/Users/Jayson/Dropbox*(MIT)/Research/pushPullBlocks/Push-Pull/current/PushP
 ullPaper.tex
@@ -470,8 +470,8 @@ duction.tex" [1
 
 {C:/Users/Jayson/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
 ("C:\Users\Jayson\Dropbox (MIT)\Research\pushPullBlocks\Push-Pull\current\pushp
-ull2d.tex" [2] [3]
-<./figuresPushPull/NPVariableGadget.pdf, id=226, 2845.27542pt x 1593.35437pt>
+ull2d.tex" [2]
+<./figuresPushPull/NPVariableGadget.pdf, id=176, 2845.27542pt x 1593.35437pt>
 File: ./figuresPushPull/NPVariableGadget.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/NPVariableGadget.pdf>
@@ -479,7 +479,7 @@ Package pdftex.def Info: ./figuresPushPull/NPVariableGadget.pdf used on input l
 ine 20.
 (pdftex.def)             Requested size: 211.38832pt x 118.35373pt.
 
-<./figuresPushPull/NPClauseGadget.pdf, id=227, 2276.22049pt x 1707.1653pt>
+<./figuresPushPull/NPClauseGadget.pdf, id=177, 2276.22049pt x 1707.1653pt>
 File: ./figuresPushPull/NPClauseGadget.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/NPClauseGadget.pdf>
@@ -488,7 +488,7 @@ e 25.
 (pdftex.def)             Requested size: 211.38832pt x 158.53549pt.
 Package hyperref Info: bookmark level for unknown subfigure defaults to 0 on in
 put line 29.
- [4 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
+ [3 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
 guresPushPull/NPVariableGadget.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pus
 hPullBlocks/Push-Pull/current/figuresPushPull/NPClauseGadget.pdf
 
@@ -496,7 +496,7 @@ pdfTeX warning: pdflatex.EXE (file C:/Users/Jayson/Dropbox (MIT)/Research/pushP
 ullBlocks/Push-Pull/current/figuresPushPull/NPClauseGadget.pdf): PDF inclusion:
  multiple pdfs with page group included in a single page
 >]
-<./figuresPushPull/AbstractSetVerifyUnset.pdf, id=256, 284.52296pt x 227.82114p
+<./figuresPushPull/AbstractSetVerifyUnset.pdf, id=207, 284.52296pt x 227.82114p
 t>
 File: ./figuresPushPull/AbstractSetVerifyUnset.pdf Graphic file (type pdf)
  <use ./figuresPushPull/AbstractSetVerifyUnset.pdf>
@@ -504,14 +504,14 @@ Package pdftex.def Info: ./figuresPushPull/AbstractSetVerifyUnset.pdf used on i
 nput line 85.
 (pdftex.def)             Requested size: 140.92793pt x 112.84306pt.
 
-<./figuresPushPull/AbstractSetVerifySet.pdf, id=257, 284.52296pt x 227.82114pt>
+<./figuresPushPull/AbstractSetVerifySet.pdf, id=208, 284.52296pt x 227.82114pt>
 File: ./figuresPushPull/AbstractSetVerifySet.pdf Graphic file (type pdf)
 <use ./figuresPushPull/AbstractSetVerifySet.pdf>
 Package pdftex.def Info: ./figuresPushPull/AbstractSetVerifySet.pdf used on inp
 ut line 90.
 (pdftex.def)             Requested size: 140.92793pt x 112.84306pt.
 
-<./figuresPushPull/AbstractSetVerifyVerified.pdf, id=258, 284.52296pt x 227.821
+<./figuresPushPull/AbstractSetVerifyVerified.pdf, id=209, 284.52296pt x 227.821
 14pt>
 File: ./figuresPushPull/AbstractSetVerifyVerified.pdf Graphic file (type pdf)
  <use ./figuresPushPull/AbstractSetVerifyVerified.pdf>
@@ -519,7 +519,7 @@ Package pdftex.def Info: ./figuresPushPull/AbstractSetVerifyVerified.pdf used o
 n input line 95.
 (pdftex.def)             Requested size: 140.92793pt x 112.84306pt.
 
-<./figuresPushPull/SetVerifyUnset.pdf, id=259, 142.26149pt x 166.05035pt>
+<./figuresPushPull/SetVerifyUnset.pdf, id=210, 142.26149pt x 166.05035pt>
 File: ./figuresPushPull/SetVerifyUnset.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerifyUnset.pdf>
@@ -527,7 +527,7 @@ Package pdftex.def Info: ./figuresPushPull/SetVerifyUnset.pdf used on input lin
 e 100.
 (pdftex.def)             Requested size: 140.92793pt x 164.50435pt.
 
-<./figuresPushPull/SetVerifySet.pdf, id=260, 142.26149pt x 166.05035pt>
+<./figuresPushPull/SetVerifySet.pdf, id=211, 142.26149pt x 166.05035pt>
 File: ./figuresPushPull/SetVerifySet.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerifySet.pdf>
@@ -535,15 +535,15 @@ Package pdftex.def Info: ./figuresPushPull/SetVerifySet.pdf used on input line
 106.
 (pdftex.def)             Requested size: 140.92793pt x 164.50435pt.
 
-<./figuresPushPull/SetVerifyVerified.pdf, id=261, 142.26149pt x 166.05035pt>
+<./figuresPushPull/SetVerifyVerified.pdf, id=212, 142.26149pt x 166.05035pt>
 File: ./figuresPushPull/SetVerifyVerified.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerifyVerified.pdf>
 Package pdftex.def Info: ./figuresPushPull/SetVerifyVerified.pdf used on input 
 line 112.
 (pdftex.def)             Requested size: 140.92793pt x 164.50435pt.
-
-<./figuresPushPull/OneWayDestructiveCrossover.pdf, id=263, 324.67699pt x 100.80
+ [4]
+<./figuresPushPull/OneWayDestructiveCrossover.pdf, id=221, 324.67699pt x 100.80
 862pt>
 File: ./figuresPushPull/OneWayDestructiveCrossover.pdf Graphic file (type pdf)
  <use ./figuresPushPull/OneWayDestructiveCrossover.pdf>
@@ -555,7 +555,7 @@ Underfull \hbox (badness 2376) in paragraph at lines 133--133
 []\T1/cmr/m/n/10 (a) |The one-way de-struc-tive crossover con-
  []
 
-<./figuresPushPull/InOrderCrossover.pdf, id=264, 324.67699pt x 100.80862pt>
+<./figuresPushPull/InOrderCrossover.pdf, id=222, 324.67699pt x 100.80862pt>
 File: ./figuresPushPull/InOrderCrossover.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/InOrderCrossover.pdf>
@@ -563,7 +563,7 @@ Package pdftex.def Info: ./figuresPushPull/InOrderCrossover.pdf used on input l
 ine 138.
 (pdftex.def)             Requested size: 211.38832pt x 65.63403pt.
 
-<./figuresPushPull/np_crossover.pdf, id=265, 845.04686pt x 597.50786pt>
+<./figuresPushPull/np_crossover.pdf, id=223, 845.04686pt x 597.50786pt>
 File: ./figuresPushPull/np_crossover.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/np_crossover.pdf>
@@ -571,41 +571,40 @@ Package pdftex.def Info: ./figuresPushPull/np_crossover.pdf used on input line
 148.
 (pdftex.def)             Requested size: 211.38832pt x 149.46776pt.
 
-<./figuresPushPull/full_one_use_crossover.pdf, id=266, 853.58266pt x 853.58266p
+<./figuresPushPull/full_one_use_crossover.pdf, id=224, 853.58266pt x 853.58266p
 t>
 File: ./figuresPushPull/full_one_use_crossover.pdf Graphic file (type pdf)
  <use ./figuresPushPull/full_one_use_crossover.pdf>
 Package pdftex.def Info: ./figuresPushPull/full_one_use_crossover.pdf used on i
 nput line 153.
 (pdftex.def)             Requested size: 211.38832pt x 211.37633pt.
-
-Underfull \vbox (badness 1360) has occurred while \output is active []
-
- [5]
-[6 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fig
-uresPushPull/AbstractSetVerifyUnset.pdf> <C:/Users/Jayson/Dropbox (MIT)/Researc
-h/pushPullBlocks/Push-Pull/current/figuresPushPull/AbstractSetVerifySet.pdf> <C
-:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figuresP
-ushPull/AbstractSetVerifyVerified.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/
-pushPullBlocks/Push-Pull/current/figuresPushPull/SetVerifyUnset.pdf> <C:/Users/
-Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull/
-SetVerifySet.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-P
-ull/current/figuresPushPull/SetVerifyVerified.pdf> <C:/Users/Jayson/Dropbox (MI
-T)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull/OneWayDestructiveC
-rossover.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/
-current/figuresPushPull/InOrderCrossover.pdf
+ [5 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
+guresPushPull/AbstractSetVerifyUnset.pdf> <C:/Users/Jayson/Dropbox (MIT)/Resear
+ch/pushPullBlocks/Push-Pull/current/figuresPushPull/AbstractSetVerifySet.pdf> <
+C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figures
+PushPull/AbstractSetVerifyVerified.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research
+/pushPullBlocks/Push-Pull/current/figuresPushPull/SetVerifyUnset.pdf> <C:/Users
+/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull
+/SetVerifySet.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-
+Pull/current/figuresPushPull/SetVerifyVerified.pdf> <C:/Users/Jayson/Dropbox (M
+IT)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull/OneWayDestructive
+Crossover.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull
+/current/figuresPushPull/InOrderCrossover.pdf
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Jayson/Dropbox (MIT)/Research/pushP
 ullBlocks/Push-Pull/current/figuresPushPull/InOrderCrossover.pdf): PDF inclusio
 n: multiple pdfs with page group included in a single page
->] [7 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/
-figuresPushPull/np_crossover.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushP
-ullBlocks/Push-Pull/current/figuresPushPull/full_one_use_crossover.pdf
+>]
+Underfull \vbox (badness 3250) has occurred while \output is active []
+
+ [6 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
+guresPushPull/np_crossover.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPul
+lBlocks/Push-Pull/current/figuresPushPull/full_one_use_crossover.pdf
 
 pdfTeX warning: pdflatex.EXE (file C:/Users/Jayson/Dropbox (MIT)/Research/pushP
 ullBlocks/Push-Pull/current/figuresPushPull/full_one_use_crossover.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
->] <./figuresPushPull/SetVerify3D.pdf, id=365, 142.26149pt x 189.3474pt>
+>] <./figuresPushPull/SetVerify3D.pdf, id=315, 142.26149pt x 189.3474pt>
 File: ./figuresPushPull/SetVerify3D.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerify3D.pdf>
@@ -614,12 +613,9 @@ Package pdftex.def Info: ./figuresPushPull/SetVerify3D.pdf used on input line 1
 (pdftex.def)             Requested size: 211.38832pt x 281.37387pt.
 )
 ("C:\Users\Jayson\Dropbox (MIT)\Research\pushPullBlocks\Push-Pull\current\pushp
-ull3d.tex"
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
-guresPushPull/SetVerify3D.pdf>]
-<./figuresPushPull/Abstract4ToggleA.pdf, id=382, 284.52296pt x 227.82114pt>
+ull3d.tex" [7 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/
+current/figuresPushPull/SetVerify3D.pdf>]
+<./figuresPushPull/Abstract4ToggleA.pdf, id=333, 284.52296pt x 227.82114pt>
 File: ./figuresPushPull/Abstract4ToggleA.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/Abstract4ToggleA.pdf>
@@ -627,7 +623,7 @@ Package pdftex.def Info: ./figuresPushPull/Abstract4ToggleA.pdf used on input l
 ine 14.
 (pdftex.def)             Requested size: 112.74277pt x 90.27515pt.
 
-<./figuresPushPull/Abstract4ToggleB.pdf, id=383, 284.52296pt x 227.82114pt>
+<./figuresPushPull/Abstract4ToggleB.pdf, id=334, 284.52296pt x 227.82114pt>
 File: ./figuresPushPull/Abstract4ToggleB.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/Abstract4ToggleB.pdf>
@@ -635,21 +631,21 @@ Package pdftex.def Info: ./figuresPushPull/Abstract4ToggleB.pdf used on input l
 ine 21.
 (pdftex.def)             Requested size: 112.74277pt x 90.27515pt.
 
-<./figuresPushPull/2toggle.pdf, id=384, 142.26149pt x 142.26149pt>
+<./figuresPushPull/2toggle.pdf, id=335, 142.26149pt x 142.26149pt>
 File: ./figuresPushPull/2toggle.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/2toggle.pdf>
 Package pdftex.def Info: ./figuresPushPull/2toggle.pdf used on input line 32.
 (pdftex.def)             Requested size: 169.1113pt x 169.12393pt.
 
-<./figuresPushPull/2toggleB.pdf, id=385, 142.26149pt x 142.26149pt>
+<./figuresPushPull/2toggleB.pdf, id=336, 142.26149pt x 142.26149pt>
 File: ./figuresPushPull/2toggleB.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/2toggleB.pdf>
 Package pdftex.def Info: ./figuresPushPull/2toggleB.pdf used on input line 38.
 (pdftex.def)             Requested size: 169.1113pt x 169.12393pt.
 
-<./figuresPushPull/broken2Toggle.pdf, id=386, 142.26149pt x 142.26149pt>
+<./figuresPushPull/broken2Toggle.pdf, id=337, 142.26149pt x 142.26149pt>
 File: ./figuresPushPull/broken2Toggle.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/broken2Toggle.pdf>
@@ -657,14 +653,14 @@ Package pdftex.def Info: ./figuresPushPull/broken2Toggle.pdf used on input line
  44.
 (pdftex.def)             Requested size: 169.1113pt x 169.12393pt.
 
-<./figuresPushPull/2ToggleK.pdf, id=387, 142.26149pt x 142.26149pt>
+<./figuresPushPull/2ToggleK.pdf, id=338, 142.26149pt x 142.26149pt>
 File: ./figuresPushPull/2ToggleK.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/2ToggleK.pdf>
 Package pdftex.def Info: ./figuresPushPull/2ToggleK.pdf used on input line 50.
 (pdftex.def)             Requested size: 169.1113pt x 169.12393pt.
 
-<./figuresPushPull/4ToggleNoConnections.pdf, id=390, 48.16997pt x 47.14613pt>
+<./figuresPushPull/4ToggleNoConnections.pdf, id=341, 48.16997pt x 47.14613pt>
 File: ./figuresPushPull/4ToggleNoConnections.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/4ToggleNoConnections.pdf>
@@ -672,7 +668,7 @@ Package pdftex.def Info: ./figuresPushPull/4ToggleNoConnections.pdf used on inp
 ut line 62.
 (pdftex.def)             Requested size: 211.38832pt x 206.95369pt.
 
-<./figuresPushPull/4ToggleBasic.pdf, id=391, 48.14989pt x 48.16997pt>
+<./figuresPushPull/4ToggleBasic.pdf, id=342, 48.14989pt x 48.16997pt>
 File: ./figuresPushPull/4ToggleBasic.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/4ToggleBasic.pdf>
@@ -686,24 +682,24 @@ Package pdftex.def Info: ./figuresPushPull/Abstract4ToggleA.pdf used on input l
 ine 82.
 (pdftex.def)             Requested size: 211.38832pt x 169.26286pt.
 
-<./figuresPushPull/LockA.pdf, id=393, 284.52296pt x 227.82114pt>
+<./figuresPushPull/LockA.pdf, id=344, 284.52296pt x 227.82114pt>
 File: ./figuresPushPull/LockA.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/LockA.pdf>
 Package pdftex.def Info: ./figuresPushPull/LockA.pdf used on input line 88.
 (pdftex.def)             Requested size: 211.38832pt x 169.26286pt.
- [9 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
+ [8 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
 guresPushPull/Abstract4ToggleA.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pus
 hPullBlocks/Push-Pull/current/figuresPushPull/Abstract4ToggleB.pdf>]
 Underfull \vbox (badness 6526) has occurred while \output is active []
 
- [10 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
-iguresPushPull/2toggle.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlo
-cks/Push-Pull/current/figuresPushPull/2toggleB.pdf> <C:/Users/Jayson/Dropbox (M
-IT)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull/broken2Toggle.pdf
-> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figu
-resPushPull/2ToggleK.pdf>]
-<./figuresPushPull/LockBlock.pdf, id=434, 284.52296pt x 63.16599pt>
+ [9 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
+guresPushPull/2toggle.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBloc
+ks/Push-Pull/current/figuresPushPull/2toggleB.pdf> <C:/Users/Jayson/Dropbox (MI
+T)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull/broken2Toggle.pdf>
+ <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figur
+esPushPull/2ToggleK.pdf>]
+<./figuresPushPull/LockBlock.pdf, id=385, 284.52296pt x 63.16599pt>
 File: ./figuresPushPull/LockBlock.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/LockBlock.pdf>
@@ -713,49 +709,49 @@ Package pdftex.def Info: ./figuresPushPull/LockBlock.pdf used on input line 119
 
 Underfull \vbox (badness 2865) has occurred while \output is active []
 
- [11 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
+ [10 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
 iguresPushPull/4ToggleNoConnections.pdf> <C:/Users/Jayson/Dropbox (MIT)/Researc
 h/pushPullBlocks/Push-Pull/current/figuresPushPull/4ToggleBasic.pdf> <C:/Users/
 Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/figuresPushPull/
 LockA.pdf>]
-<./figuresPushPull/BinaryCounter.pdf, id=453, 284.52296pt x 38.80498pt>
+<./figuresPushPull/BinaryCounter.pdf, id=404, 284.52296pt x 38.80498pt>
 File: ./figuresPushPull/BinaryCounter.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/BinaryCounter.pdf>
 Package pdftex.def Info: ./figuresPushPull/BinaryCounter.pdf used on input line
  132.
 (pdftex.def)             Requested size: 422.77664pt x 57.66492pt.
- [12 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
+ [11 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
 iguresPushPull/LockBlock.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullB
 locks/Push-Pull/current/figuresPushPull/BinaryCounter.pdf>]
-<./figuresPushPull/ExistentialGadget.pdf, id=468, 284.52296pt x 133.34819pt>
+<./figuresPushPull/ExistentialGadget.pdf, id=419, 284.52296pt x 133.34819pt>
 File: ./figuresPushPull/ExistentialGadget.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/ExistentialGadget.pdf>
 Package pdftex.def Info: ./figuresPushPull/ExistentialGadget.pdf used on input 
 line 184.
 (pdftex.def)             Requested size: 422.77664pt x 198.15796pt.
- [13 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
+ [12 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
 iguresPushPull/ExistentialGadget.pdf>] <./figuresPushPull/QuantifierChain.pdf, 
-id=482, 284.52296pt x 86.55336pt>
+id=432, 284.52296pt x 86.55336pt>
 File: ./figuresPushPull/QuantifierChain.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/QuantifierChain.pdf>
 Package pdftex.def Info: ./figuresPushPull/QuantifierChain.pdf used on input li
 ne 196.
 (pdftex.def)             Requested size: 422.77664pt x 128.61993pt.
- [14 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
+ [13 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/f
 iguresPushPull/QuantifierChain.pdf>])
 ("C:\Users\Jayson\Dropbox (MIT)\Research\pushPullBlocks\Push-Pull\current\concl
 usion.tex"
 Underfull \vbox (badness 7273) has occurred while \output is active []
 
- [15])
+ [14])
 ("C:\Users\Jayson\Dropbox (MIT)\Research\pushPullBlocks\Push-Pull\current\PushP
 ullPaper.bbl"
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
+ [15]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 30.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
@@ -766,13 +762,13 @@ Underfull \hbox (badness 1874) in paragraph at lines 28--31
  : / / www . youtube . com / user / bennyscube /$
  []
 
-[17]
+[16]
 Underfull \hbox (badness 1424) in paragraph at lines 160--163
 []\T1/cmr/m/n/10.95 Nathaniel John-ston.  The com-plex-ity of the puz-zles of F
 i-nal Fan-tasy XIII-2.
  []
 
-[18]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 181--185
 $\T1/cmtt/m/n/10.95 ~babaoglu / courses / cas00-[]01 / papers / Cellular _ Auto
 mata / Turing-[]Machine-[]Life .$
@@ -780,7 +776,7 @@ mata / Turing-[]Machine-[]Life .$
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
- [19]
+ [18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
 
 ("C:\Users\Jayson\Dropbox (MIT)\Research\pushPullBlocks\Push-Pull\current\PushP
@@ -796,9 +792,9 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
  ) 
 Here is how much of TeX's memory you used:
- 8593 strings out of 493921
- 130447 string characters out of 3144873
- 227955 words of memory out of 3000000
+ 8592 strings out of 493921
+ 130440 string characters out of 3144873
+ 224947 words of memory out of 3000000
  11543 multiletter control sequences out of 15000+200000
  23389 words of font info for 73 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -809,9 +805,9 @@ st, replaced by a fixed one
  <C:\Users\Jayson\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 ctt1095.pk> <C:\Users\Jayson\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecrm1000.pk> <C:\Users\Jayson\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Jayson\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Jayson\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Jayson\AppDat
+r\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Jayson\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\Jayson\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Jayson\AppDat
 a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Ja
 yson\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <
 C:\Users\Jayson\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
@@ -832,9 +828,9 @@ cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 sy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msb
 m10.pfb>
-Output written on PushPullPaper.pdf (19 pages, 599597 bytes).
+Output written on PushPullPaper.pdf (18 pages, 592873 bytes).
 PDF statistics:
- 1045 PDF objects out of 1200 (max. 8388607)
- 98 named destinations out of 1000 (max. 500000)
+ 1017 PDF objects out of 1200 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
  295 words of extra memory for PDF output out of 10000 (max. 10000000)
 
