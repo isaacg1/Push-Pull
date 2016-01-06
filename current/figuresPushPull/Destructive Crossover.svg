@@ -25,13 +25,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.8683167"
-     inkscape:cx="549.64464"
+     inkscape:cx="369.98669"
      inkscape:cy="352.44975"
      inkscape:current-layer="layer1"
      id="namedview3106"
      showgrid="false"
      inkscape:window-width="1536"
-     inkscape:window-height="803"
+     inkscape:window-height="801"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -258,7 +258,7 @@
     <flowRoot
        xml:space="preserve"
        id="flowRoot3608"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
        transform="matrix(0.98968271,0,0,0.98968271,214.42526,-429.63962)"><flowRegion
          id="flowRegion3610"><rect
            id="rect3612"
@@ -266,11 +266,11 @@
            height="64.285713"
            x="-208.57143"
            y="693.79077"
-           style="fill:#ff0000" /></flowRegion><flowPara
+           style="fill:#0000ff" /></flowRegion><flowPara
          id="flowPara3616">a</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3608-1"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
        transform="matrix(0.98968271,0,0,0.98968271,213.99613,-235.56233)"><flowRegion
          id="flowRegion3610-7"><rect
            id="rect3612-4"
@@ -278,11 +278,11 @@
            height="64.285713"
            x="-208.57143"
            y="693.79077"
-           style="fill:#ff0000" /></flowRegion><flowPara
+           style="fill:#0000ff" /></flowRegion><flowPara
          id="flowPara3616-0">b'</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3608-9"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
        transform="matrix(0.98968271,0,0,0.98968271,1222.8603,-428.61221)"><flowRegion
          id="flowRegion3610-4"><rect
            id="rect3612-8"
@@ -290,11 +290,11 @@
            height="64.285713"
            x="-208.57143"
            y="693.79077"
-           style="fill:#ff0000" /></flowRegion><flowPara
+           style="fill:#0000ff" /></flowRegion><flowPara
          id="flowPara3616-8">b</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3608-2"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
        transform="matrix(0.98968271,0,0,0.98968271,1224.2741,-237.46206)"><flowRegion
          id="flowRegion3610-45"><rect
            id="rect3612-5"
@@ -302,6 +302,6 @@
            height="64.285713"
            x="-208.57143"
            y="693.79077"
-           style="fill:#ff0000" /></flowRegion><flowPara
+           style="fill:#0000ff" /></flowRegion><flowPara
          id="flowPara3616-1">a'</flowPara></flowRoot>  </g>
 </svg>
