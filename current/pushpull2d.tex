@@ -1,12 +1,13 @@
 
 \section{Push-Pull Block Puzzles}
-In this section we prove several results about push-pull block puzzles. We show Push-$1$ Pull-$1$ in 3D with thin walls is PSPACE-complete\ref{3DPSPACE}; Push-$i$ Pull-$j$ in 3D is PSPACE-complete for all positive integers $i,j \geq 2$\ref{3DPSPACE}; Push-$k$ Pull-$l$ in 3D is NP-hard for all positive integers $k, l$\ref{3DNPhard}; and Push-$q$ Pull-$r$ in 2D with thin walls is NP-hard for all positive integers $q, r$\ref{2DNPhard}. A summary of these results can be seen in Table~\ref{BlocksTable}.
+In this section we prove several results about push-pull block puzzles. We show Push-$1$ Pull-$1$ in 3D with thin walls is PSPACE-complete in Section~\ref{3DPSPACE}; Push-$i$ Pull-$j$ in 3D is PSPACE-complete for all positive integers $i,j \geq 2$ in Section~\ref{3DPSPACE}; Push-$k$ Pull-$l$ in 3D is NP-hard for all positive integers $k, l$ in Section~\ref{3DNPhard}; and Push-$q$ Pull-$r$ in 2D with thin walls is NP-hard for all positive integers $q, r in Section~$\ref{2DNPhard}. A summary of these results can be seen in Table~\ref{BlocksTable}.
 
 
 \subsection{2D Push-Pull with Thin Walls}
 \label{2DNPhard}
-In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles, which prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. These were needed because many of the gadgets depended greatly on having very tight corridors to ensure limited behavior. 
-We will prove hardness by a reduction from Planar 3SAT. 
+In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. These were needed because many of the gadgets depended greatly on having very tight corridors to ensure limited behavior. 
+We will prove hardness by a reduction from Planar 3SAT. To do so we will introduce an abstract gadget called the Set-Verify gadget.
+
 \begin{theorem}
 \label{thm:2DNPhard}
 Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
@@ -177,7 +178,7 @@ It is constructed out of an In-order Directed Crossover gadget and a Destructive
 blocking the destructive crossover but leaving the in-order crossover open for the $b$ to $b'$ traversal. If the $a$ to $a'$ traversal does not occur, the $b$ to $b'$ traversal is possible via the destructive crossover.
 
 \paragraph{One Use Crossover} 
-Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't suitable for a PSPACE-completeness reduction. 
+Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't sufficient for PSPACE-completeness. 
 
 \subsection{3D Push-Pull is NP-hard}
 \label{3DNPhard}
