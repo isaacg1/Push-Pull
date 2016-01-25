@@ -5,8 +5,7 @@ In this section we prove several results about push-pull block puzzles. We show 
 
 \subsection{2D Push-Pull with Thin Walls}
 \label{2DNPhard}
-In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. These were needed because many of the gadgets depended greatly on having very tight corridors to ensure limited behavior. 
-We will prove hardness by a reduction from Planar 3SAT. To do so we will introduce an abstract gadget called the Set-Verify gadget.
+In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. We will prove hardness by a reduction from 3SAT. To do so we will introduce an abstract gadget called the Set-Verify gadget.
 
 \begin{theorem}
 \label{thm:2DNPhard}
@@ -36,7 +35,7 @@ Our literals will be represented by Set-Verify gadgets, described in Section~\re
 
 The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set, shown in Figure~\ref{fig:NPVariableGadget}. Once variables split into two hallways, we have to show that when you enter or exit a side of a hallway, all the literals are set to true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
 
-The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. Although we reduce from Planar 3SAT, it is not known whether the problem remains hard if we further connect all of the variable nodes and then the edge nodes in a single path, as is required in our construction, while still ensuring that the graph is planar.  
+The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. Although we reduce from 3SAT, it is not known whether the problem remains hard if we further connect all of the variable nodes and then the edge nodes in a single path, as is required in our construction, while still ensuring that the graph is planar.  
 
 Therefore, in order to traverse all of the clauses and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to 2D Push-Pull block puzzles.
 
