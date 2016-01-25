@@ -26,3 +26,14 @@
 *.sql
 *.sqlite
 
+#  LaTeX #
+##########
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.gz
+
+# Project Spesific #
+PushPullPaper.pdf
