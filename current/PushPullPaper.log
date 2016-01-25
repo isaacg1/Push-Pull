@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.25)  11 JAN 2016 12:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.25)  25 JAN 2016 14:14
 entering extended mode
 **C:/Users/Jayson/Dropbox*(MIT)/Research/pushPullBlocks/Push-Pull/current/PushP
 ullPaper.tex
@@ -476,7 +476,7 @@ File: ./figuresPushPull/NPVariableGadget.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/NPVariableGadget.pdf>
 Package pdftex.def Info: ./figuresPushPull/NPVariableGadget.pdf used on input l
-ine 21.
+ine 20.
 (pdftex.def)             Requested size: 211.38832pt x 118.35373pt.
 
 <./figuresPushPull/NPClauseGadget.pdf, id=171, 2276.22049pt x 1707.1653pt>
@@ -484,10 +484,10 @@ File: ./figuresPushPull/NPClauseGadget.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/NPClauseGadget.pdf>
 Package pdftex.def Info: ./figuresPushPull/NPClauseGadget.pdf used on input lin
-e 26.
+e 25.
 (pdftex.def)             Requested size: 211.38832pt x 158.53549pt.
 Package hyperref Info: bookmark level for unknown subfigure defaults to 0 on in
-put line 30.
+put line 29.
  [3 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
 guresPushPull/NPVariableGadget.pdf> <C:/Users/Jayson/Dropbox (MIT)/Research/pus
 hPullBlocks/Push-Pull/current/figuresPushPull/NPClauseGadget.pdf
@@ -501,14 +501,14 @@ t>
 File: ./figuresPushPull/AbstractSetVerifyUnset.pdf Graphic file (type pdf)
  <use ./figuresPushPull/AbstractSetVerifyUnset.pdf>
 Package pdftex.def Info: ./figuresPushPull/AbstractSetVerifyUnset.pdf used on i
-nput line 86.
+nput line 85.
 (pdftex.def)             Requested size: 140.92793pt x 112.84306pt.
 
 <./figuresPushPull/AbstractSetVerifySet.pdf, id=201, 284.52296pt x 227.82114pt>
 File: ./figuresPushPull/AbstractSetVerifySet.pdf Graphic file (type pdf)
 <use ./figuresPushPull/AbstractSetVerifySet.pdf>
 Package pdftex.def Info: ./figuresPushPull/AbstractSetVerifySet.pdf used on inp
-ut line 91.
+ut line 90.
 (pdftex.def)             Requested size: 140.92793pt x 112.84306pt.
 
 <./figuresPushPull/AbstractSetVerifyVerified.pdf, id=202, 284.52296pt x 227.821
@@ -516,7 +516,7 @@ ut line 91.
 File: ./figuresPushPull/AbstractSetVerifyVerified.pdf Graphic file (type pdf)
  <use ./figuresPushPull/AbstractSetVerifyVerified.pdf>
 Package pdftex.def Info: ./figuresPushPull/AbstractSetVerifyVerified.pdf used o
-n input line 96.
+n input line 95.
 (pdftex.def)             Requested size: 140.92793pt x 112.84306pt.
 
 <./figuresPushPull/SetVerifyUnset.pdf, id=203, 142.26149pt x 166.05035pt>
@@ -524,7 +524,7 @@ File: ./figuresPushPull/SetVerifyUnset.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerifyUnset.pdf>
 Package pdftex.def Info: ./figuresPushPull/SetVerifyUnset.pdf used on input lin
-e 101.
+e 100.
 (pdftex.def)             Requested size: 140.92793pt x 164.50435pt.
 
 <./figuresPushPull/SetVerifySet.pdf, id=204, 142.26149pt x 166.05035pt>
@@ -532,7 +532,7 @@ File: ./figuresPushPull/SetVerifySet.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerifySet.pdf>
 Package pdftex.def Info: ./figuresPushPull/SetVerifySet.pdf used on input line 
-107.
+106.
 (pdftex.def)             Requested size: 140.92793pt x 164.50435pt.
 
 <./figuresPushPull/SetVerifyVerified.pdf, id=205, 142.26149pt x 166.05035pt>
@@ -540,7 +540,7 @@ File: ./figuresPushPull/SetVerifyVerified.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerifyVerified.pdf>
 Package pdftex.def Info: ./figuresPushPull/SetVerifyVerified.pdf used on input 
-line 113.
+line 112.
 (pdftex.def)             Requested size: 140.92793pt x 164.50435pt.
  [4]
 <./figuresPushPull/OneWayDestructiveCrossover.pdf, id=214, 324.67699pt x 100.80
@@ -548,10 +548,10 @@ line 113.
 File: ./figuresPushPull/OneWayDestructiveCrossover.pdf Graphic file (type pdf)
  <use ./figuresPushPull/OneWayDestructiveCrossover.pdf>
 Package pdftex.def Info: ./figuresPushPull/OneWayDestructiveCrossover.pdf used 
-on input line 133.
+on input line 132.
 (pdftex.def)             Requested size: 211.38832pt x 65.63403pt.
 
-Underfull \hbox (badness 2376) in paragraph at lines 134--134
+Underfull \hbox (badness 2376) in paragraph at lines 133--133
 []\T1/cmr/m/n/10 (a) |The one-way de-struc-tive crossover con-
  []
 
@@ -560,7 +560,7 @@ File: ./figuresPushPull/InOrderCrossover.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/InOrderCrossover.pdf>
 Package pdftex.def Info: ./figuresPushPull/InOrderCrossover.pdf used on input l
-ine 139.
+ine 138.
 (pdftex.def)             Requested size: 211.38832pt x 65.63403pt.
 
 <./figuresPushPull/np_crossover.pdf, id=216, 845.04686pt x 597.50786pt>
@@ -568,7 +568,7 @@ File: ./figuresPushPull/np_crossover.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/np_crossover.pdf>
 Package pdftex.def Info: ./figuresPushPull/np_crossover.pdf used on input line 
-149.
+148.
 (pdftex.def)             Requested size: 211.38832pt x 149.46776pt.
 
 <./figuresPushPull/full_one_use_crossover.pdf, id=217, 853.58266pt x 853.58266p
@@ -576,7 +576,7 @@ t>
 File: ./figuresPushPull/full_one_use_crossover.pdf Graphic file (type pdf)
  <use ./figuresPushPull/full_one_use_crossover.pdf>
 Package pdftex.def Info: ./figuresPushPull/full_one_use_crossover.pdf used on i
-nput line 154.
+nput line 153.
 (pdftex.def)             Requested size: 211.38832pt x 211.37633pt.
  [5 <C:/Users/Jayson/Dropbox (MIT)/Research/pushPullBlocks/Push-Pull/current/fi
 guresPushPull/AbstractSetVerifyUnset.pdf> <C:/Users/Jayson/Dropbox (MIT)/Resear
@@ -606,7 +606,7 @@ File: ./figuresPushPull/SetVerify3D.pdf Graphic file (type pdf)
 
 <use ./figuresPushPull/SetVerify3D.pdf>
 Package pdftex.def Info: ./figuresPushPull/SetVerify3D.pdf used on input line 1
-95.
+94.
 (pdftex.def)             Requested size: 211.38832pt x 281.37387pt.
 )
 ("C:\Users\Jayson\Dropbox (MIT)\Research\pushPullBlocks\Push-Pull\current\pushp
@@ -804,9 +804,9 @@ amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
-Output written on PushPullPaper.pdf (16 pages, 577172 bytes).
+Output written on PushPullPaper.pdf (16 pages, 577391 bytes).
 PDF statistics:
- 956 PDF objects out of 1000 (max. 8388607)
+ 957 PDF objects out of 1000 (max. 8388607)
  71 named destinations out of 1000 (max. 500000)
  279 words of extra memory for PDF output out of 10000 (max. 10000000)
 
