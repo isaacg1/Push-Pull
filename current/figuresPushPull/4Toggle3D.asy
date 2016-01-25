@@ -85,8 +85,6 @@ void drawBlocks(){
 }
 
 
-//Don't Hug Me I'm Scared - Youtube
-
 drawAxes((-2, -4, -1));
 drawCubes(0,0,0,5,5,5);
 drawBlocks();
