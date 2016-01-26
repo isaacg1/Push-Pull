@@ -1,4 +1,4 @@
-settings.outformat="pdf";
+settings.outformat="png";
 settings.render=16;
 import three;
 import math;
@@ -6,6 +6,8 @@ import solids;
 import settings;
 size(1.55cm, 0);
 currentprojection = perspective(-5,9,6);
+settings.interactiveView=false;
+settings.batchView=false;
 
 real shrink = .01;
 
@@ -278,13 +280,13 @@ drawBlock(3.5,3.5,red);
 // shipout("4Toggle");
 // erase();
 
-// draw4ToggleNoConnections(pathPen, blockPen);
-// shipout("4ToggleNoConnections");
-// erase();
+draw4ToggleNoConnections(pathPen, blockPen);
+shipout("4ToggleNoConnections");
+erase();
 
-// draw4ToggleInside(pathPen, blockPen);
-// shipout("4ToggleBasic");
-// erase();
+draw4ToggleInside(pathPen, blockPen);
+shipout("4ToggleBasic");
+erase();
 
 // drawRotateSquareRange(0,0,0,5,5,red);
 // drawRotateSquareRange(0,0,90,5,5,black);
