@@ -22,27 +22,27 @@ We add several new results showing that certain block pushing puzzles, which inc
 \hline
 \emph{Name} & \emph{Push} & \emph{Pull} & \emph{Blocks} & \emph{Fixed?} & \emph{Path?} & \emph{Sliding} & \emph{Complexity} \\ \hline
 \hline
-Push-$k$ & $k$ & 0 & Unit & No & Path & min & NP-hard\cite{Push100} \\ \hline
-Push-$*$ & $*$ & 0 & Unit & No & Path  & min & NP-hard\cite{Push*00} \\ \hline
+Push-$k$ & $k$ & 0 & Unit & No & Path & Min & NP-hard\cite{Push100} \\ \hline
+Push-$*$ & $*$ & 0 & Unit & No & Path  & Min & NP-hard\cite{Push*00} \\ \hline
 PushPush-$k$ & $k$ & 0 & Unit & No & Path  & Max & PSPACE-c.\cite{PushPushk04} \\ \hline
 PushPush-$*$ & $*$ & 0 & Unit & No & Path  & Max & NP-hard\cite{Push*00} \\ \hline
-Push-$k$X & $k$ & $0$ & Unit & No & No-Cross  & min & NP-c.\cite{non-crossing01} \\ \hline
-Push-$*$X & $*$ & $0$ & Unit & No & No-Cross  & min & NP-c.\cite{non-crossing01} \\ \hline
-Push-$1$F & $1$ & $0$ & Unit & Yes & Path  & min &  NP-hard \cite{DO92} \\ \hline
-Push-$k$F & $k\geq 2$ & $0$ & Unit & Yes & Path  & min & PSPACE-c.\cite{Push2F02} \\ \hline
-Push-$*$F & $*$ & $0$ & Unit & Yes & Path  & min & PSPACE-c.\cite{Push2F02} \\ \hline
-Sokoban & $1$ & $0$ & Unit & Yes & Storage  & min & PSPACE-c.\cite{Sokoban98} \\ \hline
-Sokoban$^+$ & $k\geq 2$ & $1$ & 2x1 & Yes & Storage  & min & PSPACE-c.\cite{DZ96} \\ \hline
-Sokoban$(k,1)$ & $k\geq 5$ & $1$ & Unit & Yes & Storage  & min & NP-hard\cite{DZ96} \\ \hline
-Motion Planning & $k$ & $1$  & L & Yes & Storage  & min & NP-hard\cite{PushPull91}\\ \hline
-Pull-$1$ & $0$ & $1$ & Unit & No & Storage  & min & NP-hard\cite{Pull10} \\ \hline
-Pull-$k$F & $0$ & $k$ & Unit & Yes & Storage  & min &  NP-hard\cite{Pull10} \\ \hline
+Push-$k$X & $k$ & $0$ & Unit & No & No-Cross  & Min & NP-c.\cite{non-crossing01} \\ \hline
+Push-$*$X & $*$ & $0$ & Unit & No & No-Cross  & Min & NP-c.\cite{non-crossing01} \\ \hline
+Push-$1$F & $1$ & $0$ & Unit & Yes & Path  & Min &  NP-hard \cite{DO92} \\ \hline
+Push-$k$F & $k\geq 2$ & $0$ & Unit & Yes & Path  & Min & PSPACE-c.\cite{Push2F02} \\ \hline
+Push-$*$F & $*$ & $0$ & Unit & Yes & Path  & Min & PSPACE-c.\cite{Push2F02} \\ \hline
+Sokoban & $1$ & $0$ & Unit & Yes & Storage  & Min & PSPACE-c.\cite{Sokoban98} \\ \hline
+Sokoban$^+$ & $k\geq 2$ & $1$ & 2x1 & Yes & Storage  & Min & PSPACE-c.\cite{DZ96} \\ \hline
+Sokoban$(k,1)$ & $k\geq 5$ & $1$ & Unit & Yes & Storage  & Min & NP-hard\cite{DZ96} \\ \hline
+Motion Planning & $k$ & $1$  & L & Yes & Storage  & Min & NP-hard\cite{PushPull91}\\ \hline
+Pull-$1$ & $0$ & $1$ & Unit & No & Storage  & Min & NP-hard\cite{Pull10} \\ \hline
+Pull-$k$F & $0$ & $k$ & Unit & Yes & Storage  & Min &  NP-hard\cite{Pull10} \\ \hline
 PullPull-$k$F & $0$ & $k$ & Unit & Yes & Storage  & Max  & NP-hard\cite{Pull10} \\ \hline
-Push-$1$G & $1$ & $0$ & Unit & Yes &  Path  & min  & NP-hard\cite{Gravity} \\ \hline
-\textbf{Push-$k$ Pull-$l$W} & $k$ & $l$ & Unit & Wall & Path  & min & \textbf{NP-hard}\ (\S  \ref{2DNPhard}) \\ \hline
-\textbf{3D Push-$k$ Pull-$l$F} & $k$ & $l$ & Unit & Yes & Path & min &  \textbf{NP-hard}\ (\S  \ref{3DNPhard}) \\ \hline
-\textbf{3D Push-$1$ Pull-$1$W} & $1$ & $1$ & Unit & Wall & Path & min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
-\textbf{3D Push-$k$ Pull-$k$F} & $k > 1$ & $k >1$ & Unit & Yes & Path & min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
+Push-$1$G & $1$ & $0$ & Unit & Yes &  Path  & Min  & NP-hard\cite{Gravity} \\ \hline
+\textbf{Push-$k$ Pull-$l$W} & $k$ & $l$ & Unit & Wall & Path  & Min & \textbf{NP-hard}\ (\S  \ref{2DNPhard}) \\ \hline
+\textbf{3D Push-$k$ Pull-$l$F} & $k$ & $l$ & Unit & Yes & Path & Min &  \textbf{NP-hard}\ (\S  \ref{3DNPhard}) \\ \hline
+\textbf{3D Push-$1$ Pull-$1$W} & $1$ & $1$ & Unit & Wall & Path & Min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
+\textbf{3D Push-$k$ Pull-$k$F} & $k > 1$ & $k >1$ & Unit & Yes & Path & Min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
 \end{tabular}
 }
 \caption{Summary of Past and New Block Pushing Puzzle Results. $k$ and $l$ are positive integers; $*$ refers to an unlimited number of blocks. F means fixed blocks are included. W means thin walls are included. X means the robot cannot step on the same square more than once. G means the blocks are subject to gravity.}
