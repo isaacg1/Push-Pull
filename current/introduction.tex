@@ -1,6 +1,6 @@
 
 \section{Introduction} 
-Block pushing puzzles are a common puzzle type with perhaps the best known example being Sokoban. They have found their way into several popular video games including The Legend of Zelda, Pokemon, and Tomb Raider. Block pushing puzzles are a recreational embodiment of motion planning problems with movable obstacles. Since motion planning is such an important and computationally difficult problem, it can be useful to look at simplified models to try to get a better understanding of the larger problem. The push-pull model itself also doesn't seem entirely abstract, as one could imagine the constraints of a forklift in a warehouse bearing similarity.
+Block-pushing puzzles are a common puzzle type with perhaps the best known example being Sokoban. They have found their way into several popular video games including The Legend of Zelda, Pok\'emon, and Tomb Raider. Block-pushing puzzles are also a recreational embodiment of motion planning problems with movable obstacles. Because motion planning is such an important and computationally difficult problem, it can be useful to look at simplified models to try to get a better understanding of the larger problem.
 
 %We also give a new result showing that block pushing puzzles, like Sokaban, which also include the ability to pull blocks are NP-hard. This result also proves a number of other games, which have embedded push-pull block puzzles, are NP-hard. Games have been and continue to be a source of interesting problems for mathematics and computer science, and game playing continues to be a benchmark in the field of AI. The study of economic games has become a large field with applications in online auctions\cite{auctions}, network analysis\cite{Internet}, and voting\cite{colman2013game}. Combinatorial games have led to algebraic insights such as Conway's Surreal Numbers\cite{Surreal01} and the Sprague-Grundy Theorem\cite{Sprague35, Grundy39}. More recently, games have been studied from an algorithmic perspective and can be seen as models of computation in examples like Constraint Logic \cite{GPCBook09} and Conway's Game of Life\cite{LifeTuring01}. For a survey of algorithmic combinatorial game theory, see Demaine and Hearn's paper\cite{AlgGameTheory_GONC3}.
 %
@@ -12,8 +12,11 @@ A significant amount of research has gone into characterizing the complexity of 
 
 %In this paper, we prove results about push-pull block puzzles. Push-pull block puzzles can be seen as a simplified model of robotic forklifts operating in a warehouse. Complexity results in these very simplified models help us understand what aspects of problems makes them hard and allows us to start differentiating between the complexity that arises from the combinatorics vs the geometry of path planning problems. Similarly, path planning in dynamic graphs is a complicated problem which occurs every day from traffic to packet routing.
 
-We add several new results showing that certain block pushing puzzles, which include the ability to push and pull blocks, are NP-hard or PSPACE-complete. We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problems in 2D with thin walls or in 3D, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-hard. Our results are shown in the last four lines of Table~\ref{BlocksTable}. To prove these results we introduce two new abstract gadgets, the set-verify and the 4-toggle, and prove hardness results for questions about the legal state transitions of these gadgets. %As with many of these problems, closing the gap between NP and PSPACE remains open.
+We add several new results showing that certain block pushing puzzles, which include the ability to push and pull blocks, are NP-hard or PSPACE-complete.
+We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problems in 2D with thin walls or in 3D, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-hard. Our results are shown in the last four lines of Table~\ref{BlocksTable}. To prove these results, we introduce two new abstract gadgets, the set-verify and the 4-toggle, and prove hardness results for questions about the legal state transitions of these gadgets. %As with many of these problems, closing the gap between NP and PSPACE remains open.
 
+In addition to representing a natural abstraction of real video games \xxx{which?},
+the push-pull model is a natural abstract form of many real-world motion planning problems, as one could imagine the constraints of a forklift in a warehouse bearing similarity.
 
 \begin{table}
 \centering
@@ -45,7 +48,7 @@ Push-$1$G & $1$ & $0$ & Unit & Yes &  Path  & Min  & NP-hard\cite{Gravity} \\ \h
 \textbf{3D Push-$k$ Pull-$k$F} & $k > 1$ & $k >1$ & Unit & Yes & Path & Min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
 \end{tabular}
 }
-\caption{Summary of Past and New Block Pushing Puzzle Results. $k$ and $l$ are positive integers; $*$ refers to an unlimited number of blocks. F means fixed blocks are included. W means thin walls are included. X means the robot cannot step on the same square more than once. G means the blocks are subject to gravity.}
+\caption{Summary of past and new results on block pushing and/or pulling. Here $k$ and $l$ are positive integers; $*$ refers to an unlimited number of blocks. F means fixed blocks are included; W means thin walls are included. X means the robot cannot step on the same square more than once. G means the blocks are subject to gravity.}
 \label{BlocksTable}
 \end{table}
 
