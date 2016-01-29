@@ -24,14 +24,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="2532.2355"
-     inkscape:cy="496.66348"
-     inkscape:current-layer="g3413-4"
+     inkscape:zoom="0.25000001"
+     inkscape:cx="2299.4635"
+     inkscape:cy="1044.4745"
+     inkscape:current-layer="g3355"
      id="namedview3106"
      showgrid="false"
      inkscape:window-width="1536"
-     inkscape:window-height="803"
+     inkscape:window-height="801"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -517,9 +517,11 @@
              id="tspan3841-8-3-2-4"
              x="220.06058"
              y="-1524.1477"
-             style="fill:#ff0000;-inkscape-font-specification:Sans;font-family:Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:160.13883897px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">X<tspan
-   style="font-size:160.13883897px;baseline-shift:sub;fill:#ff0000;-inkscape-font-specification:Sans;font-family:Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
-   id="tspan4421-8">k </tspan></tspan></text>
+             style="fill:#ff0000;-inkscape-font-specification:Sans;font-family:Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:160.13883897px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"><tspan
+               style="font-style:italic"
+               id="tspan3158">X</tspan><tspan
+               style="font-size:160.13883972px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;baseline-shift:sub;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans"
+               id="tspan4421-8">k </tspan></tspan></text>
         <text
            xml:space="preserve"
            style="font-size:160.13883897px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr"
@@ -531,9 +533,11 @@
              id="tspan3841-8-3-2-4-7"
              x="173.7438"
              y="-178.90643"
-             style="fill:#ff0000;-inkscape-font-specification:Sans;font-family:Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:160.13883897px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">X<tspan
-   style="font-size:160.13883897px;baseline-shift:sub;fill:#ff0000;-inkscape-font-specification:Sans;font-family:Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
-   id="tspan4421-8-4">k </tspan></tspan></text>
+             style="fill:#ff0000;-inkscape-font-specification:Sans;font-family:Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:160.13883897px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"><tspan
+               style="font-style:italic"
+               id="tspan3162">X</tspan><tspan
+               style="font-size:160.13883972px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;baseline-shift:sub;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans"
+               id="tspan4421-8-4">k </tspan></tspan></text>
         <path
            style="fill:#ff0000;stroke:#ff0000;stroke-width:4.72850895;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
            d="m 173.5803,-328.63921 111.49487,0"
@@ -792,9 +796,9 @@
              id="tspan3841-8-3-2-6"
              x="1732.0892"
              y="864.70972"
-             style="font-size:120.10412598px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans">X<tspan
-   style="font-size:120.10412598px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;baseline-shift:sub;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans"
-   id="tspan4421-1">k in</tspan></tspan></text>
+             style="font-size:120.10412598000001000px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans">X<tspan
+   style="font-size:120.10412598000001000px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;baseline-shift:sub;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans"
+   id="tspan4421-1">k </tspan>in</tspan></text>
         <text
            xml:space="preserve"
            style="font-size:120.10412598px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
@@ -806,9 +810,9 @@
              id="tspan3841-8-3-2-4-4"
              x="-2683.2109"
              y="866.83563"
-             style="font-size:120.10412598px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans">X<tspan
-   style="font-size:120.10412598px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;baseline-shift:sub;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans"
-   id="tspan4421-8-2">k out</tspan></tspan></text>
+             style="font-size:120.10412598000001000px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans">X<tspan
+   style="font-size:120.10412598000001000px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;baseline-shift:sub;fill:#ff0000;font-family:Sans;-inkscape-font-specification:Sans"
+   id="tspan4421-8-2">k </tspan>out</tspan></text>
       </g>
       <path
          style="fill:none;stroke:#000000;stroke-width:5.75114822;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"

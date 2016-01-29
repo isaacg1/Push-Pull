@@ -26,12 +26,12 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
      inkscape:cx="1311.7923"
-     inkscape:cy="1179.1773"
-     inkscape:current-layer="g4500-9"
+     inkscape:cy="1206.4043"
+     inkscape:current-layer="g3355"
      id="namedview3106"
      showgrid="false"
      inkscape:window-width="1536"
-     inkscape:window-height="803"
+     inkscape:window-height="801"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -457,11 +457,13 @@
          x="2250.6472"
          style="font-size:194.77223206px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-size:194.77223206px;baseline-shift:sub;fill:#ff0000"
+           style="font-style:italic;fill:#ff0000"
            y="-1814.8243"
            x="2250.6472"
            id="tspan3841-8-3-2"
-           sodipodi:role="line">Ck in</tspan></text>
+           sodipodi:role="line">C<tspan
+   style="font-size:105.50162231000000000%;baseline-shift:sub;font-style:italic;fill:#ff0000"
+   id="tspan3093">k</tspan> in</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text3839-8-2-3-1"
@@ -469,11 +471,13 @@
          x="2191.8003"
          style="font-size:194.77223206px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-size:194.77223206px;baseline-shift:sub;fill:#ff0000"
+           style="font-style:italic;fill:#ff0000"
            y="862.60754"
            x="2191.8003"
            id="tspan3841-8-3-2-5"
-           sodipodi:role="line">Ck out</tspan></text>
+           sodipodi:role="line">C<tspan
+   style="font-size:105.50162231000000000%;baseline-shift:sub;fill:#ff0000"
+   id="tspan3091">k</tspan> out</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text3839-8-2-3-1-2"
@@ -481,12 +485,12 @@
          x="1239.4148"
          style="font-style:normal;font-weight:normal;font-size:194.77222581px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
          xml:space="preserve"><tspan
-           style="fill:#ff0000;font-size:194.77222581px"
+           style="fill:#ff0000;font-size:194.77222581000001000px;font-style:italic"
            y="-431.29318"
            x="1239.4148"
            id="tspan3841-8-3-2-5-4"
            sodipodi:role="line">X<tspan
-   style="font-size:194.77222581px;baseline-shift:sub"
+   style="font-size:194.77222581000001000px;baseline-shift:sub;font-style:italic"
    id="tspan4767">a</tspan></tspan></text>
       <text
          sodipodi:linespacing="125%"
@@ -495,12 +499,12 @@
          x="2654.22"
          style="font-style:normal;font-weight:normal;font-size:194.77222581px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
          xml:space="preserve"><tspan
-           style="fill:#ff0000;font-size:194.77222581px"
+           style="fill:#ff0000;font-size:194.77222581000001000px;font-style:italic"
            y="-437.82623"
            x="2654.22"
            id="tspan3841-8-3-2-5-4-4"
            sodipodi:role="line">X<tspan
-   style="font-size:194.77222581px;baseline-shift:sub"
+   style="font-size:194.77222581000001000px;baseline-shift:sub;font-style:italic"
    id="tspan4802">b</tspan></tspan></text>
       <text
          sodipodi:linespacing="125%"
@@ -509,12 +513,12 @@
          x="4059.0125"
          style="font-style:normal;font-weight:normal;font-size:194.77222581px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
          xml:space="preserve"><tspan
-           style="fill:#ff0000;font-size:194.77222581px"
+           style="fill:#ff0000;font-size:194.77222581000001000px;font-style:italic"
            y="-419.46295"
            x="4059.0125"
            id="tspan3841-8-3-2-5-4-8"
            sodipodi:role="line">X<tspan
-   style="font-size:194.77222581px;baseline-shift:sub"
+   style="font-size:194.77222581000001000px;baseline-shift:sub;font-style:italic"
    id="tspan4800">c</tspan></tspan></text>
     </g>
   </g>
