@@ -15,9 +15,15 @@ A significant amount of research has gone into characterizing the complexity of 
 We add several new results showing that certain block pushing puzzles, which include the ability to push and pull blocks, are NP-hard or PSPACE-complete.
 We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problems in 2D with thin walls or in 3D, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-hard. Our results are shown in the last four lines of Table~\ref{BlocksTable}. To prove these results, we introduce two new abstract gadgets, the set-verify and the 4-toggle, and prove hardness results for questions about the legal state transitions of these gadgets. %As with many of these problems, closing the gap between NP and PSPACE remains open.
 
-In addition to representing a natural abstraction of real video games \xxx{which?},
+Elements related to push-pull block puzzles show up in a number of video games. Pukoban directly implements this type of puzzle. Other games also include block puzzles with the ability to pull blocks. The Zelda series introduces push-pull block puzzles in A Link to the Past, and this mechanic recurs in most subsequent games. Other games which include the ability to push and pull blocks are Starfox Adventures, Catherine, and the original Tomb Raider. Even more general manipulation shows up in Half-Life 1 and 2, and Portal.  In addition to representing a natural abstraction of real video games,
 the push-pull model is a natural abstract form of many real-world motion planning problems, as one could imagine the constraints of a forklift in a warehouse bearing similarity.
 
+
+%% Starfox Adventures (push-pull-sideways), Catherine (push-pull-climbing, central mechanic)
+%%Ocarina of Time: https://www.youtube.com/watch?v=nRM8p2re_cY 
+%%Link to the Past: http://www.thonky.com/zelda-link-to-the-past/palace-of-darkness 
+%%Minish Cap: http://www.gamespot.com/articles/the-legend-of-zelda-the-minish-cap-walkthrough/1100-6116391/
+%%Original Tomb Raider: http://superadventuresingaming.blogspot.com/2014/11/tomb-raider-ms-dos-part-2.html
 \begin{table}
 \centering
 \centerline{

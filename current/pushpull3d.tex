@@ -22,7 +22,7 @@ We define an $n$-toggle to be a gadget which has $n$ internal pathways and can b
     \caption{4-Toggle in state $B$. The direction of the paths through the toggle are flipped.}
     \label{fig:Abstract4ToggleB}
 \end{subfigure}
-\caption{}
+\caption{Diagrams of the two possible states of a 4-Toggle.}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -58,14 +58,14 @@ Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, an
 
 \begin{figure}[!ht]
   \centering
-  \begin{subfigure}[t]{0.45\textwidth}
+  \begin{subfigure}[t]{\textwidth}
     \includegraphics[width=\textwidth]{4ToggleNoConnections.jpg}
     \caption{Diagram of a 4-toggle showing impassible surfaces.}
     \label{fig:4Toggle3D}
 %    \includemedia[width=0.3\linewidth,]{}{4Toggle.pdf}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[t]{0.45\textwidth}
+  \begin{subfigure}[t]{\textwidth}
     \includegraphics[width=\textwidth]{4ToggleBasic.jpg}
     \caption{Diagram of the internals of a 4-toggle.}
     \label{fig:4Toggle3DBasic}
@@ -77,21 +77,21 @@ To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate t
 
 \subsection{Locks}
 
-\begin{figure}[!ht]
+\begin{wrapfigure}{r}{0.45\textwidth}
   \centering
-  \begin{subfigure}[t]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{Abstract4ToggleA}
-    \caption{Representation of a 4-toggle in state $A$. }
-    \label{fig:4Toggle3D}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[t]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{LockA}
+%  \begin{subfigure}[t]{0.45\textwidth}
+%    \includegraphics[width=\textwidth]{Abstract4ToggleA}
+%    \caption{Representation of a 4-toggle in state $A$. }
+%    \label{fig:4Toggle3D}
+%  \end{subfigure}
+%  \hfill
+%  \begin{subfigure}[t]{0.45\textwidth}
+    \includegraphics[width=.4\textwidth]{LockA}
     \caption{Diagram of a lock. The $1a$ to $2a$ traversal is only possible in state $A$ and returns the toggle to state $A$.}
     \label{fig:LockA}
-  \end{subfigure}
-  \caption{}
-\end{figure}
+%  \end{subfigure}
+%  \caption{}
+\end{wrapfigure}
 
 A lock is a gadget consisting of a 2-toggle and a separate pathway. Traversing the separate pathway can only be done in a single direction, which is dependent on whether the 2-toggle is in state A or B, and the traversal does not change the internal state of the 2-toggle. The 2-toggle functions exactly
 as described above. This gadget can be implemented using a 4-toggle by
