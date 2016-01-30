@@ -97,4 +97,8 @@ Gordon Wilfong.
 \newblock {\em Annals of Mathematics and Artificial Intelligence},
   3(1):131--150, 1991.
 
+\bibitem[ZR]{zubaranagent}
+Tadeu Zubaran and Marcus Ritt.
+\newblock Agent motion planning with pull and push moves.
+
 \end{thebibliography}
