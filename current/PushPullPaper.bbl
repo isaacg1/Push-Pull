@@ -10,7 +10,7 @@ Greg Aloupis, Erik~D. Demaine, Alan Guo, and Giovanni Viglietta.
 J.~C. Culberson.
 \newblock Sokoban is {PSPACE}-complete.
 \newblock In {\em Proceedings International Conference on Fun with Algorithms
-  (FUN98)}, pages 65--76, Waterloo, Ontario, Canada, June 1998. Carleton
+  (FUN 1998)}, pages 65--76, Waterloo, Ontario, Canada, June 1998. Carleton
   Scientific.
 
 \bibitem[DDO00]{Push100}
@@ -49,7 +49,7 @@ A.~Dhagat and J.~O'Rourke.
 \bibitem[DZ96]{DZ96}
 D.~Dor and U.~Zwick.
 \newblock Sokoban and other motion planning problems.
-\newblock {\em Computational Geometry}, 13(4), 1996.
+\newblock {\em Computational Geometry: Theory and Applications}, 13(4), 1996.
 
 \bibitem[FB02]{RushHour02}
 Gary~William Flake and Eric~B. Baum.
@@ -89,7 +89,7 @@ Marcus Ritt.
 Daniel Ratner and Manfred~K Warmuth.
 \newblock Finding a shortest solution for the n$\times$ n extension of the
   15-{PUZZLE} is intractable.
-\newblock In {\em AAAI}, pages 168--172, 1986.
+\newblock In {\em Proceedings of AAAI 1986}, pages 168--172, 1986.
 
 \bibitem[Wil91]{PushPull91}
 Gordon Wilfong.
@@ -97,8 +97,10 @@ Gordon Wilfong.
 \newblock {\em Annals of Mathematics and Artificial Intelligence},
   3(1):131--150, 1991.
 
-\bibitem[ZR]{zubaranagent}
+\bibitem[ZR11]{zubaranagent}
 Tadeu Zubaran and Marcus Ritt.
 \newblock Agent motion planning with pull and push moves.
+\newblock In {\em Anais do VIII Encontro Nacional de Inteligência Artificial
+  (ENIA)}, Natal, July 2011.
 
 \end{thebibliography}
