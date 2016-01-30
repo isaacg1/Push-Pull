@@ -14,19 +14,20 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 
 \subsection{3SAT Construction}
 \label{sec:2DPushPull3SAT}
+
 \begin{figure}[!ht]
+\begin{minipage}{.57\textwidth}
   \centering
-  \begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{NPVariableGadget}
+    \includegraphics[width=.8\textwidth]{NPVariableGadget}
     \caption{A variable gadget representing $X_k$ occurring in six clauses.}
     \label{fig:NPVariableGadget}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.45\textwidth}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{.36\textwidth}
     \includegraphics[width=\textwidth]{NPClauseGadget}
     \caption{Clause gadget, $C_k$, with variables $x_a$, $x_b$, $x_c$.}
     \label{fig:NPClauseGadget}
-  \end{subfigure}
-  \caption{}
+\end{minipage}
 \end{figure}
 
 Will be making use of the Set-Verify gadget to produce the literals in our 3SAT formula. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3SAT instance. The directional properties of the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
