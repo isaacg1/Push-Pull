@@ -15,6 +15,15 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 \subsection{3SAT Construction}
 \label{sec:2DPushPull3SAT}
 
+Will be making use of the Set-Verify gadget to produce the literals in our 3SAT formula. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3SAT instance. The directional properties of the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
+
+Our literals will be represented by Set-Verify gadgets, described in Section~\ref{sec:SetVerifyGadgets}. They are considered true when the $V_i$ to $V_o$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S_i$ to $S_o$ passage of the gadget. This allows a simple clause gadget, shown in Figure~\ref{fig:NPClauseGadget}, consisting of splitting the path into three hallways, each with the corresponding verify side of our literal. We can then pass through if any of the literals are set to true, and cannot pass otherwise.
+
+The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set, shown in Figure~\ref{fig:NPVariableGadget}. Once variables split into two hallways, we have to show that when it enters or exits a side of a hallway, all the literals are set to true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
+
+The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. To deal with this we construct crossover gadgets from the Set-Verify gadgets. In order to traverse all of the clauses and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to 2D Push-Pull block puzzles.
+
+
 \begin{figure}[!ht]
 \begin{minipage}{.57\textwidth}
   \centering
@@ -29,14 +38,6 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
     \label{fig:NPClauseGadget}
 \end{minipage}
 \end{figure}
-
-Will be making use of the Set-Verify gadget to produce the literals in our 3SAT formula. One significant difficulty with this model is the complete reversibility of all actions. Thus we need to take care to ensure that going backward at any point does not allow the robot to cheat in solving our 3SAT instance. The directional properties of the Set-Verify allow us to create sections where we know if the robot exits, it must have either reset everything to the initial configuration or put everything in another known state.
-
-Our literals will be represented by Set-Verify gadgets, described in Section~\ref{sec:SetVerifyGadgets}. They are considered true when the $V_i$ to $V_o$ traversal is possible, and false otherwise. Thus we can set literals to true by allowing the robot to run through the $S_i$ to $S_o$ passage of the gadget. This allows a simple clause gadget, shown in Figure~\ref{fig:NPClauseGadget}, consisting of splitting the path into three hallways, each with the corresponding verify side of our literal. We can then pass through if any of the literals are set to true, and cannot pass otherwise.
-
-The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set, shown in Figure~\ref{fig:NPVariableGadget}. Once variables split into two hallways, we have to show that when it enters or exits a side of a hallway, all the literals are set to true at one end and false at the other. Also, we cannot go back through the other hallway, so if we go backward, everything gets reset. Thus we cannot exploit the reversibility to set anything extra true.
-
-The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. To deal with this we construct crossover gadgets from the Set-Verify gadgets. In order to traverse all of the clauses and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to 2D Push-Pull block puzzles.
 
 %\xxx{consider reviving one-way gadget (actually a 1-toggle)}
 %\section{Reversible One-Way Gadget}
@@ -83,19 +84,22 @@ Since the Set-Verify gadget has no hallways with length greater than 3, any capa
     \begin{subfigure}[b]{0.3\textwidth}
     \includegraphics[width=\textwidth]{AbstractSetVerifyUnset}
     \caption{Abstract Unset Set-Verify}
+    \vspace{15pt}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
     \includegraphics[width=\textwidth]{AbstractSetVerifySet}
     \caption{Abstract Set Set-Verify}
+    \vspace{15pt}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
     \includegraphics[width=\textwidth]{AbstractSetVerifyVerified}
     \caption{Abstract Verified Set-Verify}
+    \vspace{15pt}
   \end{subfigure}  
    \vspace{10pt}
-    \begin{subfigure}[b]{0.3\textwidth}
+  \begin{subfigure}[b]{0.3\textwidth}
     \includegraphics[width=\textwidth]{SetVerifyUnset}
     \caption{Set-Verify, unset state}
     \label{SetVerifyUnset}
@@ -127,13 +131,13 @@ Assume without loss of generality that the gadget is entered at $a$. This change
 
 \begin{figure}[!ht]
   \centering
-  \begin{subfigure}[b]{0.45\textwidth}
+  \begin{subfigure}[b]{0.47\textwidth}
     \includegraphics[width=\textwidth]{OneWayDestructiveCrossover}
     \caption{The one-way destructive crossover constructed from two connected Set-Verify gadgets initialized in the set position.}
     \label{DestructiveCrossover}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[b]{0.45\textwidth}
+  \begin{subfigure}[b]{0.47\textwidth}
     \includegraphics[width=\textwidth]{InOrderCrossover}
     \caption{The in-order one-way crossover constructed from two connected Set-Verify gadgets initialized in the verified and unset positions.}
     \label{InOrderCrossover}
@@ -143,12 +147,13 @@ Assume without loss of generality that the gadget is entered at $a$. This change
 
 \begin{figure}[!ht]
   \centering
-  \begin{subfigure}[b]{0.45\textwidth}
+  \begin{subfigure}[b]{0.48\textwidth}
     \includegraphics[width=\textwidth]{np_crossover}
     \caption{The one use one-way crossover is constructed from a one-way destructive crossover and two in-order one-way crossovers.}
     \label{OneUseCrossover}
   \end{subfigure}
-  \begin{subfigure}[b]{0.45\textwidth}
+  \hfill
+  \begin{subfigure}[b]{0.43\textwidth}
     \includegraphics[width=\textwidth]{full_one_use_crossover}
     \caption{A full one use crossover constructed from four directed one use crossovers.}
     \label{full_one_use_crossover}
@@ -182,18 +187,21 @@ Four Directed Crossovers can be combined, as shown below, to create a crossover 
 \label{3DNPhard}
 In this section we prove that 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard, for all positive $k$ and $l$. All of the hard work was done in the previous section. Here we will simply show how we can use the additional dimension to tweak the previous gadgets to build them without thin walls. We reduce from 3SAT, constructing our variables from chains of 3D Set-Verify gadgets, and our clauses from the verify side of the corresponding 3D Set-Verify gadget.
 
+
+\begin{wrapfigure}{r}{0.45\textwidth}
+  \centering
+%  \begin{figure}[t]
+%    \centering
+    \includegraphics[width=.4\textwidth]{SetVerify3D}
+    \caption{A Set-Verify gadget where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
+    \label{3DSetVerify}
+\end{wrapfigure}
+
 \begin{theorem}
 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard, for all positive $k$ and $l$.
 \end{theorem}
 \begin{proof}
 We follow the proof of Theorem~\ref{thm:2DNPhard} using a modified Set-Verify gadget, shown in Figure~\ref{3DSetVerify}. As before, in the unset state the only possible traversal is $S_i$ to $S_0$. This traversal allows the top right bock to be pulled down, moving the gadget into the set state. From here the $V$ to $V_0$ traversal is possible, as well as going back through the $S_0$ to $S$ pathway. However, the $S$ to $S_0$ traversal is not possible. For more detail refer to Section~\ref{sec:SetVerifyGadgets}. We do note that the cyclic ordering of the entrances in the 3D Set-Verify is different from that of the 2D Set-Verify, however this is not important as we no longer need to construct crossovers.
-
-  \begin{figure}[t]
-    \centering
-    \includegraphics[width=.45\textwidth]{SetVerify3D}
-    \caption{A Set-Verify gadget where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
-    \label{3DSetVerify}
-  \end{figure}
 
 Variables are composed of hallways of 3D Set-Verify gadgets connected $S_0$ to $S$, one for each clause in which the variable appears, as in Figure~\ref{fig:NPVariableGadget}. Clauses are composed of three 3D Set-Verify gadgets connected in parallel as in Figure~\ref{fig:NPClauseGadget}. The details of these constructions follow those in Section~\ref{sec:2DPushPull3SAT} This completes the reduction from 3SAT. In addition, we note that all blocks are in hallways of length at most 3, thus the gadgets still function as described for any positive push and pull values.
 \end{proof}

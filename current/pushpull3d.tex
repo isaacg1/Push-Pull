@@ -76,6 +76,15 @@ To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate t
 
 \subsection{Locks}
 
+
+A lock is a gadget consisting of a 2-toggle and a separate pathway. Traversing the separate pathway can only be done in a single direction, which is dependent on whether the 2-toggle is in state A or B, and the traversal does not change the internal state of the 2-toggle. The 2-toggle functions exactly
+as described above. This gadget can be implemented using a 4-toggle by
+connecting the $3B$ and $4B$ entrances of the 4-toggle with an additional corridor, as shown in \ref{fig:LockA}.
+Traversing the resultant full pathway, from $3A$ to $3B$ to $4B$ to $4A$, is possible only if the initial
+state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addition, a partial traversal,
+such as from $3A$ to $3B$ and back to $3A$, does not change the internal state. The two unaffected
+pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
+
 \begin{wrapfigure}{r}{0.45\textwidth}
   \centering
 %  \begin{subfigure}[t]{0.45\textwidth}
@@ -92,14 +101,6 @@ To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate t
 %  \caption{}
 \end{wrapfigure}
 
-A lock is a gadget consisting of a 2-toggle and a separate pathway. Traversing the separate pathway can only be done in a single direction, which is dependent on whether the 2-toggle is in state A or B, and the traversal does not change the internal state of the 2-toggle. The 2-toggle functions exactly
-as described above. This gadget can be implemented using a 4-toggle by
-connecting the $3B$ and $4B$ entrances of the 4-toggle with an additional corridor, as shown in \ref{fig:LockA}.
-Traversing the resultant full pathway, from $3A$ to $3B$ to $4B$ to $4A$, is possible only if the initial
-state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addition, a partial traversal,
-such as from $3A$ to $3B$ and back to $3A$, does not change the internal state. The two unaffected
-pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
-
 A synchronized lock block is a gadget consisting of a 2-toggle and any number of separate pathways. As in the
 lock, the 2-toggle functions as described above. Each pathway may be set up to be passable in either direction
 if the toggle is in state $A$ and impassable in either direction if the toggle is in state $B$ (type A), or
@@ -114,7 +115,7 @@ state.
 A type $B$ lock is placed in the opposite direction, with its $B$ entrance in the synchronized lock block's $A$ direction and
 A entrance in the B direction. Its state is also opposite the synchronized lock block's state.
 
-\begin{figure}[h!]
+\begin{figure}[hb]
 \centering
     \includegraphics[width=0.9\textwidth]{LockBlock}
     \caption{A synchronized lock block chain.}
