@@ -25,17 +25,17 @@ The variables and clauses must be joined together to allow the robot to move bet
 
 
 \begin{figure}[!ht]
+\begin{minipage}{.36\textwidth}
+    \includegraphics[width=\textwidth]{NPClauseGadget}
+    \caption{Clause gadget, $C_k$, with variables $x_a$, $x_b$, $x_c$.}
+    \label{fig:NPClauseGadget}
+\end{minipage}
+\hspace{5mm}
 \begin{minipage}{.57\textwidth}
   \centering
     \includegraphics[width=.8\textwidth]{NPVariableGadget}
     \caption{A variable gadget representing $X_k$ occurring in six clauses.}
     \label{fig:NPVariableGadget}
-\end{minipage}
-\hspace{5mm}
-\begin{minipage}{.36\textwidth}
-    \includegraphics[width=\textwidth]{NPClauseGadget}
-    \caption{Clause gadget, $C_k$, with variables $x_a$, $x_b$, $x_c$.}
-    \label{fig:NPClauseGadget}
 \end{minipage}
 \end{figure}
 
@@ -125,9 +125,7 @@ In this section we build up the needed one use crossover gadget from a series of
 
 \paragraph{Directed Destructive Crossover} This gadget, depicted in Figure~\ref{DestructiveCrossover}, allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 
-First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions possible through a Set-Verify in the Set state can be entered through $V_i$ and $S_o$, not $S_i$.
-
-Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify to Unset. At this point, only the right $V_i$ and left $S_i$ transitions are passable. Taking the $S_i$ transition reverts all changes to the original state. Taking the $V_i$ transition changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
+First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions possible through a Set-Verify in the Set state can be entered through $V_i$ and $S_o$, not $S_i$. Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify to Unset. At this point, only the right $V_i$ and left $S_i$ transitions are passable. Taking the $S_i$ transition reverts all changes to the original state. Taking the $V_i$ transition changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
 
 \begin{figure}[!ht]
   \centering
@@ -195,6 +193,7 @@ In this section we prove that 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard,
     \includegraphics[width=.4\textwidth]{SetVerify3D}
     \caption{A Set-Verify gadget where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
     \label{3DSetVerify}
+    \vspace{-2mm}
 \end{wrapfigure}
 
 \begin{theorem}
