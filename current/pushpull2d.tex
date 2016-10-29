@@ -27,14 +27,14 @@ The variables and clauses must be joined together to allow the robot to move bet
 \begin{figure}[!ht]
 \begin{minipage}{.36\textwidth}
     \includegraphics[width=\textwidth]{NPClauseGadget}
-    \caption{Clause gadget, $C_k$, with variables $x_a$, $x_b$, $x_c$.}
+    \caption{Clause gadget, $C_k$, with variables $x_a=1$, $x_b=0$, $x_c=0$.}
     \label{fig:NPClauseGadget}
 \end{minipage}
 \hspace{5mm}
 \begin{minipage}{.57\textwidth}
   \centering
     \includegraphics[width=.8\textwidth]{NPVariableGadget}
-    \caption{A variable gadget representing $X_k$ occurring in six clauses.}
+    \caption{A variable gadget representing $X_k$ occurring in six clauses, three of those times negated. The value of the variable has not yet been set.}
     \label{fig:NPVariableGadget}
 \end{minipage}
 \end{figure}
@@ -146,7 +146,7 @@ First, observe that transitions are initially only possible via the $a$ and $b$ 
 \begin{figure}[!ht]
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
-    \includegraphics[width=\textwidth]{np_crossover}
+    \includegraphics[width=\textwidth]{one_use_crossover}
     \caption{The one use directed crossover is constructed from a one-way destructive crossover and two in-order directed crossovers.}
     \label{OneUseCrossover}
   \end{subfigure}
