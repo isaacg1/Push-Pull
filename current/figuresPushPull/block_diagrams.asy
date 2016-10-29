@@ -97,15 +97,15 @@ draw((4.7,1.7)--(4.9,1.9),EndArrow);
 draw((4.7,3.7)--(4.9,3.9),EndArrow);
 }
 void draw2ToggleLabels(){
-label("1d",(0.5,1.5), blue+fontsize(7pt));
-label("1a",(0.5,3.5), blue+fontsize(7pt));
-label("1c",(1.5,0.5), blue+fontsize(7pt));
-label("1b",(1.5,4.5), blue+fontsize(7pt));
+label("$1d$",(0.5,1.5), blue+fontsize(7pt));
+label("$1a$",(0.5,3.5), blue+fontsize(7pt));
+label("$1c$",(1.5,0.5), blue+fontsize(7pt));
+label("$1b$",(1.5,4.5), blue+fontsize(7pt));
 
-label("2d",(4.5,1.5), blue+fontsize(7pt));
-label("2a",(4.5,3.5), blue+fontsize(7pt));
-label("2c",(3.5,0.5), blue+fontsize(7pt));
-label("2b",(3.5,4.5), blue+fontsize(7pt));
+label("$2d$",(4.5,1.5), blue+fontsize(7pt));
+label("$2a$",(4.5,3.5), blue+fontsize(7pt));
+label("$2c$",(3.5,0.5), blue+fontsize(7pt));
+label("$2b$",(3.5,4.5), blue+fontsize(7pt));
 }
 
 void draw2TogglePathA(){
@@ -211,19 +211,19 @@ void draw2ToggleBlocksK(){
 
 
 void draw2ToggleLabelsK(){
-label("1a",(0.5,5.5), blue+fontsize(7pt));
+label("$1a$",(0.5,5.5), blue+fontsize(7pt));
 draw((0.3,5.7)--(0.1,5.9),EndArrow);
-label("1b",(1.5,6.5), blue+fontsize(7pt));
-label("1d",(0.5,1.5), blue+fontsize(7pt));
+label("$1b$",(1.5,6.5), blue+fontsize(7pt));
+label("$1d$",(0.5,1.5), blue+fontsize(7pt));
 draw((0.3,1.7)--(0.1,1.9),EndArrow);
-label("1c",(1.5,0.5), blue+fontsize(7pt));
+label("$1c$",(1.5,0.5), blue+fontsize(7pt));
 
-label("2a",(6.5,5.5), blue+fontsize(7pt));
+label("$2a$",(6.5,5.5), blue+fontsize(7pt));
 draw((6.7,5.7)--(6.9,5.9),EndArrow);
-label("2b",(5.5,6.5), blue+fontsize(7pt));
-label("2d",(6.5,1.5), blue+fontsize(7pt));
+label("$2b$",(5.5,6.5), blue+fontsize(7pt));
+label("$2d$",(6.5,1.5), blue+fontsize(7pt));
 draw((6.7,1.7)--(6.9,1.9),EndArrow);
-label("2c",(5.5,0.5), blue+fontsize(7pt));
+label("$2c$",(5.5,0.5), blue+fontsize(7pt));
 }
 
 void draw2TogglePathAK(){
@@ -1139,17 +1139,17 @@ draw2Toggle();
 shipout("2ToggleA");
 erase();
 
-// draw2ToggleB();
-// shipout("2ToggleB");
-// erase();
+draw2ToggleB();
+shipout("2ToggleB");
+erase();
 
-// drawBroken2Toggle();
-// shipout("broken2Toggle");
-// erase();	
+drawBroken2Toggle();
+shipout("broken2Toggle");
+erase();	
 
-// draw2ToggleK();
-// shipout("2ToggleK");
-// erase();
+draw2ToggleK();
+shipout("2ToggleK");
+erase();
 
 // drawSetVerifyUnset();
 // shipout("SetVerifyUnset");
