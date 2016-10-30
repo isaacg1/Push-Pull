@@ -5,7 +5,7 @@ In this section we prove several results about push-pull block puzzles. We show 
 
 \subsection{2D Push-Pull with Thin Walls}
 \label{2DNPhard}
-In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. We will prove hardness by a reduction from 3SAT. The 3SAT problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n\}$ and a boolean formula in conjunctive normal form with exactly three variables per clause, there exists an assignment of values to those variables that satisfies the formula.\cite{NPBook} To do so we will introduce an abstract gadget called the Set-Verify gadget.
+In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. We will prove hardness by a reduction from 3SAT. The 3SAT problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n\}$ and a boolean formula in conjunctive normal form with exactly three variables per clause, there exists an assignment of values to those variables that satisfies the formula\cite{NPBook}. To do so we will introduce an abstract gadget called the Set-Verify gadget.
 
 \begin{theorem}
 \label{thm:2DNPhard}
@@ -27,14 +27,14 @@ The variables and clauses must be joined together to allow the robot to move bet
 \begin{figure}[!ht]
 \begin{minipage}{.36\textwidth}
     \includegraphics[width=\textwidth]{NPClauseGadget}
-    \caption{Clause gadget, $C_k$, with variables $x_a$, $x_b$, $x_c$.}
+    \caption{Clause gadget, $C_k$, with variables $x_a=1$, $x_b=0$, $x_c=0$.}
     \label{fig:NPClauseGadget}
 \end{minipage}
 \hspace{5mm}
 \begin{minipage}{.57\textwidth}
   \centering
     \includegraphics[width=.8\textwidth]{NPVariableGadget}
-    \caption{A variable gadget representing $X_k$ occurring in six clauses.}
+    \caption{A variable gadget representing $X_k$ occurring in six clauses, three of those times negated. The value of the variable has not yet been set.}
     \label{fig:NPVariableGadget}
 \end{minipage}
 \end{figure}
@@ -131,13 +131,13 @@ First, observe that transitions are initially only possible via the $a$ and $b$ 
   \centering
   \begin{subfigure}[b]{0.47\textwidth}
     \includegraphics[width=\textwidth]{OneWayDestructiveCrossover}
-    \caption{The one-way destructive crossover constructed from two connected Set-Verify gadgets initialized in the set position.}
+    \caption{The directed destructive crossover constructed from two connected Set-Verify gadgets initialized in the set position.}
     \label{DestructiveCrossover}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.47\textwidth}
     \includegraphics[width=\textwidth]{InOrderCrossover}
-    \caption{The in-order one-way crossover constructed from two connected Set-Verify gadgets initialized in the verified and unset positions.}
+    \caption{The in-order directed crossover constructed from two connected Set-Verify gadgets initialized in the verified and unset positions.}
     \label{InOrderCrossover}
   \end{subfigure}
   \caption{Two types of crossover gadgets}
@@ -146,8 +146,8 @@ First, observe that transitions are initially only possible via the $a$ and $b$ 
 \begin{figure}[!ht]
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
-    \includegraphics[width=\textwidth]{np_crossover}
-    \caption{The one use one-way crossover is constructed from a one-way destructive crossover and two in-order one-way crossovers.}
+    \includegraphics[width=\textwidth]{one_use_crossover}
+    \caption{The one use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
     \label{OneUseCrossover}
   \end{subfigure}
   \hfill
