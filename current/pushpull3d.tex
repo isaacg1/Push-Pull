@@ -134,13 +134,13 @@ We will construct a series of gadgets that will allow us to simulate quantifiers
 We now define an existential gadget. An existential gadget is like a 2-toggle and many locks, except that instead of a
 2-toggle, it has a single pathway which is always passable in both directions, and upon traversing the pathway
 the robot may or may not change the internal state of the 2-toggle and many locks, as it chooses. The variable is 
-considered true if the 4-toggles in the lock block are in state $A$ and false if they are in state $B$. This gadget
+considered true if the 2-toggles and many locks is in state $A$ and false if it is in state $B$. This gadget
 is shown in Figure~\ref{fig:Existential}.
 
 \begin{figure}[h!]
 \centering
     \includegraphics[width=0.9\textwidth]{existentialGadget}
-    \caption{An existential gadget is simply a lock block with a number of copies equal to the number of times the corresponding variable occurs in the formula.}
+    \caption{An existential gadget is simply a 2-toggle and many locks with a lock for each literal corresponding to the appropriate variable that appears in the formula.}
     \label{fig:Existential}
 \end{figure}
 
