@@ -80,7 +80,6 @@ To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate t
 For Push1-Pull1, this construction requires thin walls, as shown in Figure~\ref{fig:4Toggle3D}, since the exit pathways from $1b$, $2b$, $3b$ and $4b$ must pass immediately next to each other. For Push$k$-Pull$k$, with $k > 1$, thin walls are not necessary, since the exit pathways are separated from each other.
 \subsection{Locks}
 
-
 A 2-toggle and lock is a gadget consisting of a 2-toggle and a separate pathway. Traversing the separate pathway is only possible if the 2-toggle is in a specific state, and the traversal does not change the internal state of the 2-toggle. The 2-toggle functions exactly
 as described above.
 
@@ -91,7 +90,12 @@ state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addit
 such as from $3a$ to $3b$ and back to $3a$, does not change the internal state. The two unaffected
 pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
 
-\begin{wrapfigure}{r}{0.45\textwidth}
+A 2-toggle and lock can be extended to a 2-toggle with many locks. The 2-toggle with many locks is a gadget consisting of a 2-toggle
+and any number of separate pathways. The 2-toggle still functions as described above.
+Each pathway may be set up to be passable if and only if the toggle is in state $A$, or passable if and only if the toggle is in state $B$. 
+
+\begin{wrapfigure}{tr}{0.45\textwidth}
+\vspace{-8mm}
   \centering
 %  \begin{subfigure}[t]{0.45\textwidth}
 %    \includegraphics[width=\textwidth]{Abstract4ToggleA}
@@ -105,19 +109,14 @@ pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
     \label{fig:LockA}
 %  \end{subfigure}
 %  \caption{}
+\vspace{-5mm}
 \end{wrapfigure}
 
-A 2-toggle and lock can be extended to a 2-toggle with many locks. The 2-toggle with many locks is a gadget consisting of a 2-toggle
-and any number of separate pathways. The 2-toggle still functions as described above.
-Each pathway may be set up to be passable if and only if the toggle is in state $A$, or passable if and only if the toggle is in state $B$. 
-
-This is
-implemented using one 2-toggle and lock per separate pathway needed. As shown in Figure~\ref{fig:LockBlock}, there are 2
-pathways which run through the entire 2-toggle and many locks gadget: the 1 pathway, and the 2 pathway. 
+This is implemented using one 2-toggle and lock per separate pathway needed. As shown in Figure~\ref{fig:LockBlock}, there are 2 pathways which run through the entire 2-toggle and many locks gadget: the 1 pathway, and the 2 pathway. 
 By choosing 2-toggles and lock gadgets that are initially passable or initially unpassable, and orienting them all so that 
 their 2-toggles are all passable at once, we can create a 2-toggle and many locks with an arbitrary arrangement of locks with 
 either correspondence to the state of the 2-toggle.
-\begin{figure}[hb]
+\begin{figure}[b]
 \centering
     \includegraphics[width=0.9\textwidth]{LockBlock}
     \caption{A 2-toggle and many locks.}
