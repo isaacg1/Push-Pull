@@ -1,14 +1,14 @@
 \section{PSPACE}
 \label{3DPSPACE}
-In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from TQBF. The TQBF problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean forumla $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjuctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
+In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from TQBF. The TQBF problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean formula $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjuctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
 
 We introduce a gadget called the 4-toggle and use it to simulate Quantified Boolean Formulas\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
 
-We will refuce from TQBF by using the 4-toggle to construct a 2-toggle with many locks, which will be used to construct an alternating quantifier chain, as well as a clause gadget.
+We will reduce from TQBF by using the 4-toggle to construct a 2-toggle with many locks, which will be used to construct an alternating quantifier chain, as well as a clause gadget.
 %\xxx{we can actually get something like all values where pull < 2push using the hypercube construction, but it's hard to describe and doesn't cover everything.}
 
 \subsection{Toggles}
-We define an $n$-toggle to be a gadget which has $n$ internal pathways and can be in one of two internal states, $A$ or $B$. Each pathway has a side labeled $A$ and another labeled $B$. When the toggle is in the $A$ state, the pathways can only be traversed from $A$ to $B$ and similarly in the $B$ state they can only be traversed from $B$ to $A$. Whenever a pathway is traversed, the state of the toggle flips.
+We define an $n$-toggle to be a gadget which has $n$ internal pathways and can be in one of two internal states, $A$ or $B$. Each pathway has a side labeled $A$ and another labeled $B$. When the toggle is in the $A$ state, the pathways can only be traversed from $A$ to $B$ and similarly in the $B$ state it can only be traversed from $B$ to $A$. Whenever a pathway is traversed, the state of the toggle flips.
 
 \begin{figure}[!ht]
 \centering
@@ -116,7 +116,7 @@ implemented using one 2-toggle and lock per separate pathway needed. As shown in
 pathways which run through the entire 2-toggle and many locks gadget: the 1 pathway, and the 2 pathway. 
 By choosing 2-toggles and lock gadgets that are initially passable or initially unpassable, and orienting them all so that 
 their 2-toggles are all passable at once, we can create a 2-toggle and many locks with an arbitrary arrangement of locks with 
-either corespondence to the state of the 2-toggle.
+either correspondence to the state of the 2-toggle.
 \begin{figure}[hb]
 \centering
     \includegraphics[width=0.9\textwidth]{LockBlock}
@@ -128,7 +128,21 @@ When the 2-toggle and many locks is traversed, all of the internal locks' states
 
 \subsection{Quantifiers}
 
-We will construct a series of gadgets that will allow us to simulate quantintifiers in a boolean formula.
+We will construct a series of gadgets that will allow us to simulate quantifiers in a boolean formula.
+
+\subsubsection{Existential Quantifier}
+We now define an existential gadget. An existential gadget is like a 2-toggle and many locks, except that instead of a
+2-toggle, it has a single pathway which is always passable in both directions, and upon traversing the pathway
+the robot may or may not change the internal state of the 2-toggle and many locks, as it chooses. The variable is 
+considered true if the 4-toggles in the lock block are in state $A$ and false if they are in state $B$. This gadget
+is shown in Figure~\ref{fig:Existential}.
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.9\textwidth]{existentialGadget}
+    \caption{An existential gadget is simply a lock block with a number of copies equal to the number of times the corresponding variable occurs in the formula.}
+    \label{fig:Existential}
+\end{figure}
 
 \subsubsection{Binary Counter}
 
@@ -167,21 +181,6 @@ This has the effect of increasing the value of the binary counter by one.
 We will not examine the reverse transitions or rigorously complete the binary counter here, 
 as we do not use it directly in the final construction. 
 
-\subsubsection{Existential Quantifier}
-We now define an existential gadget. An existential gadget is like a 2-toggle and many locks, except that instead of a
-2-toggle, it has a single pathway which is always passable in both directions, and upon traversing the pathway
-the robot may or may not change the internal state of the 2-toggle and many locks, as it chooses. The variable is 
-considered true if the 4-toggles in the lock block are in state $A$ and false if they are in state $B$. This gadget
-is shown in Figure~\ref{fig:Existential}.
-
-\begin{figure}[h!]
-\centering
-    \includegraphics[width=0.9\textwidth]{existentialGadget}
-    \caption{An existential gadget is simply a lock block with a number of copies equal to the number of times the corresponding variable occurs in the formula.}
-    \label{fig:Existential}
-\end{figure}
-
-
 \subsubsection{Alternating Quantifier Chain}
 \begin{figure}[h!]
 \centering
@@ -197,7 +196,7 @@ if and only if their corresponding variables are set to a prespecified value.
 Traversing the quantifier chain
 repeatedly in the primary direction will cycle the universal variables through all $2^n$ possible settings.
 Upon each traversal, an initial sequence of the universal variables will have their values flipped.
-During the traversal, the robot will have the option to set a series of corresponding existential variables to whatever value they wish. These comprise the existentials nested within the universal variables whose values were flipped.
+During the traversal, the robot will have the option to set a series of corresponding existential variables to whatever value it wishes. These comprise the existentials nested within the universal variables whose values were flipped.
 
 Traversing  the quantifier chain in the reverse direction is only possible if the robot enters
 via the lowest order universal toggle whose setting is $1$. The traversal will go back one setting in the
@@ -230,7 +229,7 @@ lock corresponding to the lowest-significance $1$ will be closed. The robot cann
 due to the arrangement of the toggle pathways. Thus, the unique re-enterable pathway is the lowest-significance toggle in state $1$, as desired.
 
 \subsection{Clause Gadget}
-We construct a clause gadget by putting lock pathways of three 2-toggle with many locks in parallel, as we did with Set-Verify gadgets in Figure~\ref{fig:NPClauseGadget}. Each of these paths can be traversed only if the corresponding variable has been seti to true, or to false, depending on the orientation of that particular lock. Since they are in parallel, only one needs to be passable for the robot to be able to continue on to the next clause.
+We construct a clause gadget by putting lock pathways of three 2-toggle with many locks in parallel, as we did with Set-Verify gadgets in Figure~\ref{fig:NPClauseGadget}. Each of these paths can be traversed only if the corresponding variable has been set to true, or to false, depending on the orientation of that particular lock. Since they are in parallel, only one needs to be passable for the robot to be able to continue on to the next clause.
 
 \subsection{Beginning and End Conditions}
 The overall progression of the robot through the puzzle starts with the quantifier chain.
