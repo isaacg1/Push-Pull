@@ -1,7 +1,10 @@
 \section{PSPACE}
 \label{3DPSPACE}
-In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We introduce a gadget called the 4-toggle and use it to simulate Quantified Boolean Formulas\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
+In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from TQBF. The TQBF problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean forumla $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjuctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
 
+We introduce a gadget called the 4-toggle and use it to simulate Quantified Boolean Formulas\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
+
+We will refuce from TQBF by using the 4-toggle to construct a 2-toggle with many locks, which will be used to construct an alternating quantifier chain, as well as a clause gadget.
 %\xxx{we can actually get something like all values where pull < 2push using the hypercube construction, but it's hard to describe and doesn't cover everything.}
 
 \subsection{Toggles}
@@ -127,7 +130,7 @@ When the 2-toggle and many locks is traversed, all of the internal locks' states
 
 We will construct a series of gadgets that will allow us to simulate quantintifiers in a boolean formula.
 
-\subsection{Binary Counter}
+\subsubsection{Binary Counter}
 
 Universal quantifiers must iterate through all possible combinations of values that they can take. In this section we construct a gadget that runs though all the states of its subcomponents as the robot progresses through the gadget. This construction will serve as the base for our universal quantifiers.
 
@@ -158,8 +161,8 @@ the state of every toggle it passes through. When it enters a toggle that is ini
 bit is $1$, it will flip the state/bit and proceed to the next toggle, via the $2B - 2A$ pathway. When it
 encounters a toggle that is initially in state $A$ / bit $0$, it will flip the state/bit and exit via the $1A - 1B$
 pathway. Thus, the overall effect on the bits of the binary counter is to change a sequence of bits ending at the
-least significant bit from $01..11$ to $10..00$. This has the effect of increasing the value of the binary counter
-by one.
+least significant bit from $01..11$ to $10..00$, where the entrance is at the left.
+This has the effect of increasing the value of the binary counter by one.
 
 We will not examine the reverse transitions or rigorously complete the binary counter here, 
 as we do not use it directly in the final construction. 
@@ -217,7 +220,7 @@ both because the robot should not be able to take any action other than reversin
 decrementing the binary counter/universal quantifiers. Problems would also arrise if the robot got access to any existential quantifiers 
 it did not just traverse.
 
-After a traversal, the universal quantifiers have the settings $0 0 \ldots 0 1 ? ? \ldots$, where the lowest significance $1$ is 
+After a traversal, the universal quantifiers have the settings $\ldots??10\ldots00$, where the lowest significance $1$ is 
 on the pathway just exited.
 To prevent the robot from re-entering via any pathway other than the one just exited, we add a series of locks to each exit that are only passable
 if all lower-significance universal toggles are in state $0$, as shown in Figure~\ref{fig:QuantifierChain}.
@@ -226,12 +229,14 @@ lower-significance universal toggles are indeed $0$. These locks do prevent re-e
 lock corresponding to the lowest-significance $1$ will be closed. The robot cannot re-enter via any toggle that is in state $0$,
 due to the arrangement of the toggle pathways. Thus, the unique re-enterable pathway is the lowest-significance toggle in state $1$, as desired.
 
-\subsubsection{Clause Gadget}
-We construct a clause gadget by putting the lock pathways of the three 4-toggles in the lock chains representing the corresponding variables in parallel, as we did with Set-Verify gadgets in Figure~\ref{fig:NPClauseGadget}. Each of these paths can be traversed only if the corresponding variable has been set. Since they are in parallel, only one needs to be passable for the robot to be able to continue on to the next clause.
+\subsection{Clause Gadget}
+We construct a clause gadget by putting lock pathways of three 2-toggle with many locks in parallel, as we did with Set-Verify gadgets in Figure~\ref{fig:NPClauseGadget}. Each of these paths can be traversed only if the corresponding variable has been seti to true, or to false, depending on the orientation of that particular lock. Since they are in parallel, only one needs to be passable for the robot to be able to continue on to the next clause.
 
-\subsubsection{Beginning and End Conditions}
+\subsection{Beginning and End Conditions}
 The overall progression of the robot through the puzzle starts with the quantifier chain.
-The robot increments the universal variables and sets the appropriate existential variables arbitrarily, then traverses the formula gadget to verify that the formula is true under that setting. The process then repeats.
+The robot increments the universal variables and sets the appropriate existential variables arbitrarily, 
+then traverses a series of claise gadgets to verify that the TQBF formula represented by those clauses 
+is true under that setting of the variables. Then, the robot cycles around to the quantifier chain, and repeats.
 
 At the beginning of this procedure, the robot must be allowed to set all of the existential variables arbitrarily.
 To ensure this, we will set up the quantifier gadget in the state $01 .. 11$, with all variables set to $1$
@@ -246,6 +251,12 @@ After this set up, the robot will progress through the loop consisting of the qu
 formula gadget, demonstrating the appropriate existential settings for each assignment of the universal
 quantifiers.
 
+At each point in this process, the robot has the option to proceed through this cycle backwards, as is
+guaranteed by the reversibility of the game. However, at no point does proceeding in the reverse direction
+give the robot the ability to access locations or set toggles to states that it could not have performed
+when it initially encountered the toggles or locations. Thus, any progression through the states of the
+alternating quantifier chain must demonstrate a TQBF solution to the formula given.
+
 After progressing through every possible state of the universal quantifiers, the universals will be in the
 state $11 .. 11$. At this point, the robot may progress through the quantifier gadget and exit via its special
 pathway,
@@ -254,3 +265,6 @@ Thus, only by traversing the quantifier - formula loop repeatedly, and demonstra
 problem,
 will the robot be able to reach the goal. The robot may reach the goal if and only if the corresponding quantified
 boolean formula is true.
+
+Thus, TQBF can be reduced to the problem of solving a Push$k$-Pull$k$ game in three dimensions. This implies that Push$k$-Pull$k$ is PSPACE-hard.
+Since Push$k$-Pull$k$ has a polynomial-size state, the problem is in NPSPACE, and therefore in PSPACE. So it is PSPACE-complete.
