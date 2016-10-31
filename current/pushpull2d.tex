@@ -104,7 +104,7 @@ In this section we build up the needed one use crossover gadget from a series of
 
 \paragraph{Directed Destructive Crossover} This gadget, depicted in Figure~\ref{DestructiveCrossover}, allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 
-First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions possible through a Set-Verify in the Set state can be entered through $V_i$ and $S_o$, not $S_i$. Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify to Unset. At this point, only the right $V_i$ and left $S_i$ transitions are passable. Taking the $S_i$ transition reverts all changes to the original state. Taking the $V_i$ transition changes the right Set-Verify to Verified, and completes the crossover. At this point, the only possible transition is to undo the transition just made, from $a'$ back to $a$, restoring the original state. Thus, the only transition possibilities are as stated above.
+First, observe that transitions are initially only possible via the $a$ and $b$ entrances, since the transitions possible through a Set-Verify in the Set state can be entered through $V_i$ and $S_o$, not $S_i$. Assume without loss of generality that the gadget is entered at $a$. This changes the state of the left Set-Verify to Verified. At this point, only the right $S_o$ and left $V_o$ transitions are passable. Taking the $V_o$ transition either reverts all changes to the original state, or leaves the left crossover in the Verified state, which allows strictly less future transition than the original state. Therefore, we will disregard that option. Taking the $S_o$ transition changes the right Set-Verify to Unset, and completes the crossover. At this point, the only possible transition is to undo the transition just made, from $a'$ back to $a$, restoring the original state. The gadget could be entered via $a$, but the robot would only be able to leave via $a$, possibly changing the state to Set. Both options result in the robot exiting out its original entrance, and allow the same or less future transtions, so we may disregard those options. Thus, the only transition possibilities are as stated above.
 
 \begin{figure}[!ht]
   \centering
@@ -138,7 +138,7 @@ First, observe that transitions are initially only possible via the $a$ and $b$ 
   \caption{Composite crossover gadgets}
 \end{figure}
 
-\paragraph{In-order Directed Destructive Crossover} This gadget, depicted in Figure~\ref{InOrderCrossover} allows a traversal from $a$ to $a'$, followed by a traversal from $b$ to $b'$.
+\paragraph{In-order Directed Crossover} This gadget, depicted in Figure~\ref{InOrderCrossover} allows a traversal from $a$ to $a'$, followed by a traversal from $b$ to $b'$. These traversals may also be reversed.
 
 Initially, no entrance is passable except for $a$, since $V_o$ is passable only in the Verified state, and $S_o$ is
 passable only in the Set state. Once the left $V_o \rightarrow V_i$ transition is made, the robot has 2 options.
@@ -150,14 +150,16 @@ This completes the first crossing.
 Now, there are at most 2 transitions possible: from $a'$ back to $a$, undoing the whole process, or entering at $b$. Note that entering at $b$ is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_o \rightarrow S_i$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to $b$, or through the right Set-Verify's
 $V_i \rightarrow V_o$ transition, completing the second crossover.
 
+If the left Set-Verify was left in the Verify state, strictly less future transitions are possible compared to the case where it was changed into the set state, so we may disregard that possibility.
+
 
 \paragraph{Two Use Directed Crossover} 
-The One Use Directed Crossover, depicted in Figure~\ref{OneUseCrossover}, is the gadget needed for our proof. It allows a traversal from $a$ to $a'$ followed by a traversal from $b$ to $b'$, or from $b$ to $b'$ and then $a$ to $a'$.
+The Two Use Directed Crossover, depicted in Figure~\ref{OneUseCrossover}, is the gadget needed for our proof. It allows a traversal from $a$ to $a'$ followed by a traversal from $b$ to $b'$, or from $b$ to $b'$ and then $a$ to $a'$. These transitions may also be reversed.
 
 It is constructed out of an In-order Directed Crossover gadget and a Destructive Directed Crossover, as shown in Figure~\ref{OneUseCrossover}. The $a$ to $a'$ traversal is initially passable, and goes through both gadgets,
 blocking the destructive crossover but leaving the in-order crossover open for the $b$ to $b'$ traversal. If the $a$ to $a'$ traversal does not occur, the $b$ to $b'$ traversal is possible via the destructive crossover.
 
-In our construction with Set-Verify gadgets, the crossover actually permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus the slight variation on a true Two Use Directed Crossover still works for NP-hardness.
+In our construction with Set-Verify gadgets, the crossover also permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus the gadget still works for NP-hardness.
 
 \paragraph{Two Use Crossover} 
 Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction \cite{Push100}. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't sufficient for PSPACE-completeness. 
