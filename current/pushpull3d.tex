@@ -56,7 +56,7 @@ We define an $n$-toggle to be a gadget which has $n$ internal pathways and can b
     \caption{2-Toggles constructed in a push-pull block puzzle.}
 \end{figure}
 
-Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, and $2d$, are all entrances and exits to the 2-toggle, while $1b$ connects directly to $1c$, and $2b$ connects directly to $2c$. Notice that there is a single block missing from the ring of eight blocks. When the missing block is on top, as diagrammed, it will represent state $A$, and when it is on the opposite side, we call it state $B$. Notice that in state $A$, it is impossible to enter through entries $1d$ or $2d$. When we enter in the $1a$ or $2a$ sides, we can follow the moves in the series of diagrams to exit the corresponding $1d$ or $2d$ side, leaving the gadget in the $B$ state. One can easily check that the gadget can only be left in either state $A$, $B$, or a broken state as seen in Figure~\ref{fig:broken2toggle}. Notice that in the broken state, every pathway except the one just exited is blocked. If we enter through that path, it is in exactly the same state as if it had been in an allowed state and entered through the corresponding pathway normally. For example, in the diagram one can only enter through $1d$ and after doing so it is the same as entering in path $1d$ on a 2-toggle in state $B$. Thus the broken state is never more useful for solving the puzzle and can be safely ignored.
+Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, and $2d$, are all entrances and exits to the 2-toggle, while $1b$ connects directly to $1c$, and $2b$ connects directly to $2c$. Notice that there is a single block missing from the ring of eight blocks. When the missing block is on top, as diagrammed, it will represent state $A$, and when it is on the opposite side, we call it state $B$. Notice that in state $A$, it is impossible to enter through entries $1d$ or $2d$. When we enter in the $1a$ or $2a$ sides, we can follow the moves in the series of diagrams to exit the corresponding $1d$ or $2d$ side, leaving the gadget in the $B$ state. One can easily check that the gadget can only be left in either state $A$, $B$, or a broken state as seen in Figure~\ref{fig:broken2toggle}. Notice that in the broken state, every pathway except the one just exited is blocked. If we enter through that path, it is in exactly the same state as if it had been in an allowed state and entered through the corresponding pathway normally. For example, in the diagram one can only enter through $1a$ and after doing so the blocks are in the same position as they would be after entering in path $1a$ on a 2-toggle in state $A$. Thus the broken state is never more useful for solving the puzzle and can be safely ignored.
 
 \begin{figure}[!ht]
   \centering
@@ -85,10 +85,10 @@ A 2-toggle and lock is a gadget consisting of a 2-toggle and a separate pathway.
 as described above.
 
 This gadget can be implemented using a 4-toggle by
-connecting the $3B$ and $4B$ entrances of the 4-toggle with an additional corridor, as shown in Figure~\ref{fig:LockA}.
-Traversing the resultant full pathway, from $3A$ to $3B$ to $4B$ to $4A$, is possible only if the initial
+connecting the $3b$ and $4b$ entrances of the 4-toggle with an additional corridor, as shown in Figure~\ref{fig:LockA}.
+Traversing the resultant full pathway, from $3a$ to $3b$ to $4b$ to $4a$, is possible only if the initial
 state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addition, a partial traversal,
-such as from $3A$ to $3B$ and back to $3A$, does not change the internal state. The two unaffected
+such as from $3a$ to $3b$ and back to $3a$, does not change the internal state. The two unaffected
 pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
 
 \begin{wrapfigure}{r}{0.45\textwidth}
