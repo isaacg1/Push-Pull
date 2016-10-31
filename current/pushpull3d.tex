@@ -266,5 +266,18 @@ problem,
 will the robot be able to reach the goal. The robot may reach the goal if and only if the corresponding quantified
 boolean formula is true.
 
-Thus, TQBF can be reduced to the problem of solving a Push$k$-Pull$k$ game in three dimensions. This implies that Push$k$-Pull$k$ is PSPACE-hard.
+\begin{theorem}
+    \label{thm:3dPSPACE-complete}
+    Push-$k$ Pull-$k$, $k>1$ in 3D with fixed blocks is PSPACE-complete.
+\end{theorem}
+\begin{proof}
+By the above construction, TQBF can be reduced to Push-$k$ Pull-$k$ in three dimensions with fixed walls, through the intermediate step of construction a 4-toggle. This implies that Push$k$-Pull$k$ is PSPACE-hard.
 Since Push$k$-Pull$k$ has a polynomial-size state, the problem is in NPSPACE, and therefore in PSPACE. So it is PSPACE-complete.
+\end{proof}
+
+\begin{theorem}
+    Push-1 Pull-1 in 3D with thin walls is PSPACE-complete.
+\end{theorem}
+\begin{proof}
+    Push-1 Pull-1 n 3D with thin walls can construct a 4-toggle, and so by the same construction as in \ref{thm:3dPSPACE-complete}, it is PSPACE-complete.
+\end{proof}
