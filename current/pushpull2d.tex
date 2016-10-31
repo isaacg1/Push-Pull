@@ -170,20 +170,19 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 The gadgets constructed in the previous section provide a reduction from 3SAT to Push-$k$ Pull-$l$ in 2D with thin walls.
 \end{proof}
 
-\subsection{3D Push-Pull is NP-hard}
-\label{3DNPhard}
-In this section we prove that 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard, for all positive $k$ and $l$. All of the hard work was done in the previous section. Here we will simply show how we can use the additional dimension to tweak the previous gadgets to build them without thin walls. We reduce from 3SAT, constructing our variables from chains of 3D Set-Verify gadgets, and our clauses from the verify side of the corresponding 3D Set-Verify gadget.
-
-
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{hr}{0.45\textwidth}
   \centering
 %  \begin{figure}[t]
 %    \centering
     \includegraphics[width=.4\textwidth]{SetVerify3D}
     \caption{A Set-Verify gadget where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
     \label{3DSetVerify}
-    \vspace{-2mm}
+    \vspace{-5mm}
 \end{wrapfigure}
+
+\subsection{3D Push-Pull is NP-hard}
+\label{3DNPhard}
+In this section we prove that 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard, for all positive $k$ and $l$. All of the hard work was done in the previous section. Here we will simply show how we can use the additional dimension to tweak the previous gadgets to build them without thin walls. We reduce from 3SAT, constructing our variables from chains of 3D Set-Verify gadgets, and our clauses from the verify side of the corresponding 3D Set-Verify gadget.
 
 \begin{theorem}
 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard, for all positive $k$ and $l$.
