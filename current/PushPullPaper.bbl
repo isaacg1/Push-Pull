@@ -91,6 +91,12 @@ Daniel Ratner and Manfred~K Warmuth.
   15-{PUZZLE} is intractable.
 \newblock In {\em Proceedings of AAAI 1986}, pages 168--172, 1986.
 
+\bibitem[Sav70]{SAVITCH1970177}
+Walter~J. Savitch.
+\newblock Relationships between nondeterministic and deterministic tape
+  complexities.
+\newblock {\em Journal of Computer and System Sciences}, 4(2):177 -- 192, 1970.
+
 \bibitem[Wil91]{PushPull91}
 Gordon Wilfong.
 \newblock Motion planning in the presence of movable obstacles.
