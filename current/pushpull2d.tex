@@ -1,6 +1,6 @@
 
 \section{Push-Pull Block Puzzles are NP-hard}
-In this section we show NP-hardness for Push-$q$ Pull-$r$ in 2D with thin walls for all positive integers $q$, $r$ in Section~\ref{2DNPhard} and Push-$k$ Pull-$l$ in 3D for all positive integers $k, l$ in Section~\ref{3DNPhard}. 
+In this section we show NP-hardness for Push-$k$ Pull-$l$ in 2D with thin walls for all positive integers $k$, $l$ in Section~\ref{2DNPhard} and Push-$q$ Pull-$r$ in 3D for all positive integers $q, r$ in Section~\ref{3DNPhard}. 
 
  
 %%We show Push-$1$ Pull-$1$ in 3D with thin walls is PSPACE-complete in Section~\ref{3DPSPACE}; Push-$i$ Pull-$j$ in 3D is PSPACE-complete for all positive integers $i,j \geq 2$ in Section~\ref{3DPSPACE}; Push-$k$ Pull-$l$ in 3D is NP-hard for all positive integers $k, l$ in Section~\ref{3DNPhard}; and Push-$q$ Pull-$r$ in 2D with thin walls is NP-hard for all positive integers $q$, $r$ in Section~\ref{2DNPhard}. A summary of these results can be seen in Table~\ref{BlocksTable}.
@@ -8,7 +8,7 @@ In this section we show NP-hardness for Push-$q$ Pull-$r$ in 2D with thin walls 
 
 \subsection{2D Push-Pull with Thin Walls}
 \label{2DNPhard}
-In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. We will prove hardness by a reduction from 3SAT. The 3SAT problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n\}$ and a boolean formula in conjunctive normal form with exactly three variables per clause, there exists an assignment of values to those variables that satisfies the formula\cite{NPBook}. To do so we will introduce an abstract gadget called the Set-Verify gadget. This gadget will then be used to construct crossovers, and variable and clause gadgets used in the reduction.
+In this section we prove that Push-$k$ Pull-$l$ in 2D with fixed blocks is NP-hard, for all positive $k$ and $l$, if we include \emph{thin walls}. Thin walls are a new, but natural, notion for block pushing puzzles. They prevent blocks or the robot from passing between two adjacent, empty squares, as though there were a thin wall blocking the path. We will prove hardness by a reduction from 3SAT. The 3SAT problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n\}$ and a boolean formula in conjunctive normal form with exactly three variables per clause, there exists an assignment of values to those variables that satisfies the formula\cite{NPBook}. To do so we will introduce an abstract gadget called the Set-Verify gadget. This gadget will then be used to construct crossover gadgets, and variable and clause gadgets used in the reduction.
 
 \subsubsection{Set-Verify Gadgets}
 \label{sec:SetVerifyGadgets}
