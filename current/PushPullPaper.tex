@@ -81,6 +81,13 @@
    \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}{#1}}}
  \gdef\subsection@star*#1{\paragraph{#1.}}}
 
+% Compact subsection titles, using \paragraph's while keeping numbering.
+{\makeatletter
+ \gdef\subsubsection{\@ifnextchar*\subsubsection@star\subsubsection@normal}
+ \gdef\subsubsection@normal#1{\refstepcounter{subsubsection}%
+   \paragraph{\thesubsubsection\hbox{~~}#1.}%
+   \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}{#1}}}
+ \gdef\subsubsection@star*#1{\paragraph{#1.}}}
 % Redefine paragraph to have no leading space, but rather indent.
 %{\makeatletter
 % \gdef\paragraph{\@startsection{paragraph}{4}{\parindent}{-0pt}{-1em}
