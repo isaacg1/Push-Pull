@@ -1,10 +1,10 @@
 \section{PSPACE}
 \label{3DPSPACE}
-In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from TQBF. The TQBF problem asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean formula $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjuctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
+In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from True Quantified Boolean Formula (also known as TQBF and 3QSAT), which asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean formula $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjuctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
 
-We introduce a gadget called the 4-toggle and use it to simulate Quantified Boolean Formulas\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
+We introduce a gadget called the 4-toggle and use it to simulate 3QSAT\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
 
-We will reduce from TQBF by using the 4-toggle to construct a 2-toggle with many locks, which will be used to construct an alternating quantifier chain, as well as a clause gadget.
+%We will reduce from TQBF by using the 4-toggle to construct a 2-toggle with many locks, which will be used to construct an alternating quantifier chain, as well as a clause gadget.
 %\xxx{we can actually get something like all values where pull < 2push using the hypercube construction, but it's hard to describe and doesn't cover everything.}
 
 \subsection{Toggles}
@@ -15,13 +15,13 @@ We define an $n$-toggle to be a gadget which has $n$ internal pathways and can b
 \begin{subfigure}[t]{0.45\textwidth}
   \centering
     \includegraphics[width=0.8\textwidth]{Abstract4ToggleA}
-    \caption{4-Toggle in state $A$. Here we can only follow the paths from left to right.}
+    \caption{4-Toggle in state $A$. }%Here we can only follow the paths from left to right.
     \label{fig:Abstract4ToggleA}
 \end{subfigure}
 \begin{subfigure}[t]{0.45\textwidth}
   \centering
     \includegraphics[width=0.8\textwidth]{Abstract4ToggleB}
-    \caption{4-Toggle in state $B$. The direction of the paths through the toggle are flipped.}
+    \caption{4-Toggle in state $B$. } %The direction of the paths through the toggle are flipped.
     \label{fig:Abstract4ToggleB}
 \end{subfigure}
 \caption{Diagrams of the two possible states of a 4-Toggle.}
@@ -75,13 +75,14 @@ Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, an
   \caption{3D diagrams of 4-toggles. Red spheres are blocks and blue surfaces are impassable.}
 \end{figure}
 
-To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. Now we have four different paths which function the same as the ones described above. Similar arguments show the broken states of the 4-toggle also don't matter.
+To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. Now we have four different paths which function like the ones described above. Similar arguments show the broken states of the 4-toggle don't matter.
 
-For Push1-Pull1, this construction requires thin walls, as shown in Figure~\ref{fig:4Toggle3D}, since the exit pathways from $1b$, $2b$, $3b$ and $4b$ must pass immediately next to each other. For Push$k$-Pull$k$, with $k > 1$, thin walls are not necessary, since the exit pathways are separated from each other.
+For Push1-Pull1, this construction requires thin walls, since the exit pathways from $1b$, $2b$, $3b$ and $4b$ must pass immediately next to each other. For Push$k$-Pull$k$, with $k > 1$, thin walls are not necessary, since the exit pathways are separated from each other.
 \subsection{Locks}
 
 A 2-toggle and lock is a gadget consisting of a 2-toggle and a separate pathway. Traversing the separate pathway is only possible if the 2-toggle is in a specific state, and the traversal does not change the internal state of the 2-toggle. The 2-toggle functions exactly
 as described above.
+
 
 This gadget can be implemented using a 4-toggle by
 connecting the $3b$ and $4b$ entrances of the 4-toggle with an additional corridor, as shown in Figure~\ref{fig:LockA}.
@@ -90,12 +91,8 @@ state of the 4-toggle is $A$, and will leave the 4-toggle in state $A$. In addit
 such as from $3a$ to $3b$ and back to $3a$, does not change the internal state. The two unaffected
 pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
 
-A 2-toggle and lock can be extended to a 2-toggle with many locks. The 2-toggle with many locks is a gadget consisting of a 2-toggle
-and any number of separate pathways. The 2-toggle still functions as described above.
-Each pathway may be set up to be passable if and only if the toggle is in state $A$, or passable if and only if the toggle is in state $B$. 
-
 \begin{wrapfigure}{tr}{0.45\textwidth}
-\vspace{-8mm}
+\vspace{-5mm}
   \centering
 %  \begin{subfigure}[t]{0.45\textwidth}
 %    \includegraphics[width=\textwidth]{Abstract4ToggleA}
@@ -109,19 +106,32 @@ Each pathway may be set up to be passable if and only if the toggle is in state 
     \label{fig:LockA}
 %  \end{subfigure}
 %  \caption{}
-\vspace{-5mm}
+\vspace{-7mm}
 \end{wrapfigure}
 
-This is implemented using one 2-toggle and lock per separate pathway needed. As shown in Figure~\ref{fig:LockBlock}, there are 2 pathways which run through the entire 2-toggle and many locks gadget: the 1 pathway, and the 2 pathway. 
-By choosing 2-toggles and lock gadgets that are initially passable or initially unpassable, and orienting them all so that 
-their 2-toggles are all passable at once, we can create a 2-toggle and many locks with an arbitrary arrangement of locks with 
-either correspondence to the state of the 2-toggle.
-\begin{figure}[b]
-\centering
-    \includegraphics[width=0.9\textwidth]{LockBlock}
-    \caption{A 2-toggle and many locks.}
-    \label{fig:LockBlock}
-\end{figure}
+A 2-toggle and lock can be extended to a 2-toggle with many locks. The 2-toggle with many locks is a gadget consisting of a 2-toggle
+and any number of separate pathways which can only be traversed when the gadget is in state $B$. This can be constructed using one 2-toggle and lock per separate pathway needed and attaching the toggles in series.
+We ensure the 2-toggles are all initially passable or initially unpassable, and oriented so that 
+their 2-toggles are all passable at once.
+
+%The 2-toggle still functions as described above.
+%Each pathway may be set up to be passable if and only if the toggle is in state $A$, or passable if and only if the toggle is in state $B$. 
+%This is implemented using one 2-toggle and lock per separate pathway needed and attaching the toggles in series.
+%By choosing 2-toggles and lock gadgets that are initially passable or initially unpassable, and orienting them all so that 
+%their 2-toggles are all passable at once, we can create a 2-toggle and many locks with an arbitrary arrangement of locks which correspond to the state of the 2-toggle.
+
+
+
+%This is implemented using one 2-toggle and lock per separate pathway needed. As shown in Figure~\ref{fig:LockBlock}, there are 2 pathways which run through the entire 2-toggle and many locks gadget: the 1 pathway, and the 2 pathway. 
+%By choosing 2-toggles and lock gadgets that are initially passable or initially unpassable, and orienting them all so that 
+%their 2-toggles are all passable at once, we can create a 2-toggle and many locks with an arbitrary arrangement of locks with 
+%either correspondence to the state of the 2-toggle.
+%\begin{figure}[b]
+%\centering
+%    \includegraphics[width=0.9\textwidth]{LockBlock}
+%    \caption{A 2-toggle and many locks.}
+%    \label{fig:LockBlock}
+%\end{figure}
 
 When the 2-toggle and many locks is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passibility and impassibility of all of the external pathways.
 
@@ -130,15 +140,15 @@ When the 2-toggle and many locks is traversed, all of the internal locks' states
 We will construct a series of gadgets that will allow us to simulate quantifiers in a boolean formula.
 
 \subsubsection{Existential Quantifier}
-We now define an existential gadget. An existential gadget is like a 2-toggle and many locks, except that instead of a
-2-toggle, it has a single pathway which is always passable in both directions, and upon traversing the pathway
+An existential gadget is like a 2-toggle and many locks, except that instead of a
+2-toggle, it has a single pathway which is always passable in both directions. Upon traversing the pathway
 the robot may or may not change the internal state of the 2-toggle and many locks, as it chooses. The variable is 
 considered true if the 2-toggles and many locks is in state $A$ and false if it is in state $B$. This gadget
 is shown in Figure~\ref{fig:Existential}.
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=0.9\textwidth]{existentialGadget}
+    \includegraphics[width=0.8\textwidth]{existentialGadget}
     \caption{An existential gadget is simply a 2-toggle and many locks with a lock for each literal corresponding to the appropriate variable that appears in the formula.}
     \label{fig:Existential}
 \end{figure}
@@ -154,19 +164,20 @@ Universal quantifiers must iterate through all possible combinations of values t
     \label{fig:BinaryCounter}
 \end{figure}
   
-We now define a binary counter. The binary counter has a fixed number of internal bits.
+A binary counter has a fixed number of internal bits.
 Whenever the binary counter is traversed in the forwards direction, the binary number
 formed by the internal bits increases by one and the robot leaves via one of the exits.
 If the binary counter is traversed in the reverse direction, the internal value is reduced by
 one. If the binary counter is partially traversed, but then the robot leaves via its initial entrance,
 the internal value does not change.
 
-The binary counter is implemented as a series of 2-toggles, as shown in Figure~\ref{fig:BinaryCounter}.
-The entrance pathway is connected to the 2-toggle's $1A$ and $2B$ entrances. The $1B$ exit from the 2-toggle
-will exit from the entire binary counter. The $2A$ exit will continue on to the next 2-toggle,
-attaching to that toggle's $1A$ and $2B$ entrances. This will continue for every toggle down the line, except
-that the last toggle's $2A$ exit signals an overflow and exits from the counter.
+%The binary counter is implemented as a series of 2-toggles, as shown in Figure~\ref{fig:BinaryCounter}.
+%The entrance pathway is connected to the 2-toggle's $1A$ and $2B$ entrances. The $1B$ exit from the 2-toggle
+%will exit from the entire binary counter. The $2A$ exit will continue on to the next 2-toggle,
+%attaching to that toggle's $1A$ and $2B$ entrances. This will continue for every toggle down the line, except
+%that the last toggle's $2A$ exit signals an overflow and exits from the counter.
 
+The binary counter is implemented as a series of 2-toggles, as shown in Figure~\ref{fig:BinaryCounter}.
 To see that this produces the desired effect, identify a toggle in state $A$ as a $0$ bit, and a toggle in state
 $B$ as a $1$ bit. Let the entrance toggle's bit be the least significant bit, and the final toggle be the
 most significant. When the robot enters the binary counter in the forwards direction, it will flip
@@ -174,9 +185,8 @@ the state of every toggle it passes through. When it enters a toggle that is ini
 bit is $1$, it will flip the state/bit and proceed to the next toggle, via the $2B - 2A$ pathway. When it
 encounters a toggle that is initially in state $A$ / bit $0$, it will flip the state/bit and exit via the $1A - 1B$
 pathway. Thus, the overall effect on the bits of the binary counter is to change a sequence of bits ending at the
-least significant bit from $01..11$ to $10..00$, where the entrance is at the left.
+least significant bit from $01\ldots11$ to $10\ldots00$, where the entrance is at the left.
 This has the effect of increasing the value of the binary counter by one.
-
 We will not examine the reverse transitions or rigorously complete the binary counter here, 
 as we do not use it directly in the final construction. 
 
@@ -188,7 +198,8 @@ as we do not use it directly in the final construction.
     \label{fig:QuantifierChain}
 \end{figure}
 
-We now define an alternating quantifier chain, as shown in Figure~\ref{fig:QuantifierChain}. An alternating quantifier chain implements a series of
+%We now define an alternating quantifier chain, as shown in Figure~\ref{fig:QuantifierChain}. 
+An alternating quantifier chain, shown in Figure~\ref{fig:QuantifierChain}, implements a series of
 alternating existential and universal variables, as well as external literal pathways, which may be traversed
 if and only if their corresponding variables are set to a prespecified value.
 
@@ -237,14 +248,13 @@ then traverses a series of claise gadgets to verify that the TQBF formula repres
 is true under that setting of the variables. Then, the robot cycles around to the quantifier chain, and repeats.
 
 At the beginning of this procedure, the robot must be allowed to set all of the existential variables arbitrarily.
-To ensure this, we will set up the quantifier gadget in the state $01 .. 11$, with all variables set to $1$
+To ensure this, we will set up the quantifier gadget in the state $01 \ldots 11$, with all variables set to $1$
 except the highest order one.  The highest order variable will be special, and will not be used in the $3CNF$
 formula. The initial position of the robot will be at the entrance to the quantifier gadget. This will allow
-the robot to flip every universal in the quantifier gadget, from $01 .. 11$ to $10 .. 00$, and accordingly
+the robot to flip every universal in the quantifier gadget, from $01 \ldots 11$ to $10 \ldots 00$, and accordingly
 set every existential variable arbitrarily. To force the robot to go forward through the quantifier gadget
 instead of going backwards through the clause chain, we will add a literal onto the end of the formula gadget
 which is passable if and only if the highest order variable is set to $1$.
-
 After this set up, the robot will progress through the loop consisting of the quantifier gadget and the
 formula gadget, demonstrating the appropriate existential settings for each assignment of the universal
 quantifiers.
@@ -256,7 +266,7 @@ when it initially encountered the toggles or locations. Thus, any progression th
 alternating quantifier chain must demonstrate a TQBF solution to the formula given.
 
 After progressing through every possible state of the universal quantifiers, the universals will be in the
-state $11 .. 11$. At this point, the robot may progress through the quantifier gadget and exit via its special
+state $11 \ldots 11$. At this point, the robot may progress through the quantifier gadget and exit via its special
 pathway,
 the carry pathway of the highest order bit. This special pathway will lead to the goal location of the puzzle.
 Thus, only by traversing the quantifier - formula loop repeatedly, and demonstrating the solution to the TQBF
@@ -277,5 +287,5 @@ Since Push$k$-Pull$k$ has a polynomial-size state, the problem is in NPSPACE, an
     Push-1 Pull-1 in 3D with thin walls is PSPACE-complete.
 \end{theorem}
 \begin{proof}
-    Push-1 Pull-1 n 3D with thin walls can construct a 4-toggle, and so by the same construction as in Theorem~\ref{thm:3dPSPACE-complete}, it is PSPACE-complete.
+    Push-1 Pull-1 n 3D with thin walls can construct a 4-toggle, and so by the same argument as in Theorem~\ref{thm:3dPSPACE-complete}, it is PSPACE-complete.
 \end{proof}

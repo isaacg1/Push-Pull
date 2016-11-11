@@ -64,68 +64,68 @@
 
 \usepackage{times}
 
-%% Compact mainlevel section titles, using \paragraph's while keeping numbering,
-%% but without \appendix support.
+% Compact mainlevel section titles, using \paragraph's while keeping numbering,
+% but without \appendix support.
+{\makeatletter
+ \gdef\section{\@ifnextchar*\section@star\section@normal}
+ \gdef\section@normal#1{\refstepcounter{section}%
+   \paragraph{\arabic{section}\hbox{~~}#1.}%
+   \addcontentsline{toc}{section}{\protect\numberline{\arabic{section}}{#1}}}
+ \gdef\section@star*#1{\paragraph{#1.}}}
+
+% Compact subsection titles, using \paragraph's while keeping numbering.
+{\makeatletter
+ \gdef\subsection{\@ifnextchar*\subsection@star\subsection@normal}
+ \gdef\subsection@normal#1{\refstepcounter{subsection}%
+   \paragraph{\thesubsection\hbox{~~}#1.}%
+   \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}{#1}}}
+ \gdef\subsection@star*#1{\paragraph{#1.}}}
+
+% Redefine paragraph to have no leading space, but rather indent.
 %{\makeatletter
-% \gdef\section{\@ifnextchar*\section@star\section@normal}
-% \gdef\section@normal#1{\refstepcounter{section}%
-%   \paragraph{\arabic{section}\hbox{~~}#1.}%
-%   \addcontentsline{toc}{section}{\protect\numberline{\arabic{section}}{#1}}}
-% \gdef\section@star*#1{\paragraph{#1.}}}
-%
-%% Compact subsection titles, using \paragraph's while keeping numbering.
-%{\makeatletter
-% \gdef\subsection{\@ifnextchar*\subsection@star\subsection@normal}
-% \gdef\subsection@normal#1{\refstepcounter{subsection}%
-%   \paragraph{\thesubsection\hbox{~~}#1.}%
-%   \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}{#1}}}
-% \gdef\subsection@star*#1{\paragraph{#1.}}}
-%
-%% Redefine paragraph to have no leading space, but rather indent.
-%%{\makeatletter
-%% \gdef\paragraph{\@startsection{paragraph}{4}{\parindent}{-0pt}{-1em}
-%%   {\normalfont\normalsize\bfseries}}}
-%
-%% Tighter version of just \paragraph.
-%\newlength\aboveparagraphskip
-%\aboveparagraphskip=3.25ex plus 1ex minus .2ex
-%\newlength\belowparagraphskip
-%\belowparagraphskip=-1em
-%\makeatletter
-%\def\paragraph{\@startsection{paragraph}{4}{\z@}{-\aboveparagraphskip}%
-%                 {\belowparagraphskip}{\normalfont\normalsize\bfseries}}
-%\makeatother
-%\aboveparagraphskip=.5ex plus .5ex minus .25ex
-%
-%% Compact list environments.  Note that itemize* and enumerate* use the
-%% same counters and symbols as the usual itemize and enumerate environments.
-%\def\compactify{\itemsep=0pt \topsep=0pt \partopsep=0pt \parsep=0pt}
-%\let\latexusecounter=\usecounter
-%\newenvironment{itemize*}
-%  {\begin{itemize}\compactify}
-%  {\end{itemize}}
-%\newenvironment{enumerate*}
-%  {\def\usecounter{\compactify\latexusecounter}
-%   \begin{enumerate}}
-%  {\end{enumerate}\let\usecounter=\latexusecounter}
-%\newenvironment{description*}
-%  {\begin{description}\compactify}
-%  {\end{description}}
-%
-%% Fonts
-%\def\id#1{\textit{#1}}
-%\def\proc#1{\textsc{#1}}
-%\let\epsilon=\varepsilon
-%\let\keyw=\textbf
-%
-%% Put figures and text together
-%\def\textfraction{0.01}
-%\def\topfraction{0.99}
-%\def\dbltopfraction{0.99}
-%\def\bottomfraction{0.99}
-%\def\floatpagefraction{0.99}
-%\def\dblfloatpagefraction{0.99}
-%\def\dbltopnumber{100}
+% \gdef\paragraph{\@startsection{paragraph}{4}{\parindent}{-0pt}{-1em}
+%   {\normalfont\normalsize\bfseries}}}
+
+% Tighter version of just \paragraph.
+\newlength\aboveparagraphskip
+\aboveparagraphskip=3.25ex plus 1ex minus .2ex
+\newlength\belowparagraphskip
+\belowparagraphskip=-1em
+\makeatletter
+\def\paragraph{\@startsection{paragraph}{4}{\z@}{-\aboveparagraphskip}%
+                 {\belowparagraphskip}{\normalfont\normalsize\bfseries}}
+\makeatother
+\aboveparagraphskip=.5ex plus .5ex minus .25ex
+
+% Compact list environments.  Note that itemize* and enumerate* use the
+% same counters and symbols as the usual itemize and enumerate environments.
+\def\compactify{\itemsep=0pt \topsep=0pt \partopsep=0pt \parsep=0pt}
+\let\latexusecounter=\usecounter
+\newenvironment{itemize*}
+  {\begin{itemize}\compactify}
+  {\end{itemize}}
+\newenvironment{enumerate*}
+  {\def\usecounter{\compactify\latexusecounter}
+   \begin{enumerate}}
+  {\end{enumerate}\let\usecounter=\latexusecounter}
+\newenvironment{description*}
+  {\begin{description}\compactify}
+  {\end{description}}
+
+% Fonts
+\def\id#1{\textit{#1}}
+\def\proc#1{\textsc{#1}}
+\let\epsilon=\varepsilon
+\let\keyw=\textbf
+
+% Put figures and text together
+\def\textfraction{0.01}
+\def\topfraction{0.99}
+\def\dbltopfraction{0.99}
+\def\bottomfraction{0.99}
+\def\floatpagefraction{0.99}
+\def\dblfloatpagefraction{0.99}
+\def\dbltopnumber{100}
 
 
 

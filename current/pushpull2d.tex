@@ -122,21 +122,23 @@ First, observe that transitions are initially only possible via the $a$ and $b$ 
   \caption{Two types of crossover gadgets}
 \end{figure}
 
-\begin{figure}[!ht]
-  \centering
-  \begin{subfigure}[b]{0.48\textwidth}
-    \includegraphics[width=\textwidth]{one_use_crossover}
-    \caption{The one use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
-    \label{OneUseCrossover}
-  \end{subfigure}
-  \hfill
-  \begin{subfigure}[b]{0.43\textwidth}
-    \includegraphics[width=\textwidth]{full_one_use_crossover}
-    \caption{A full one use crossover constructed from four directed one use crossovers.}
-    \label{full_one_use_crossover}
-  \end{subfigure}
-  \caption{Composite crossover gadgets}
-\end{figure}
+%\begin{figure}[!ht]
+%  \centering
+%  \begin{subfigure}[b]{0.48\textwidth}
+%    \includegraphics[width=\textwidth]{one_use_crossover}
+%    \caption{The one use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
+%    \label{OneUseCrossover}
+%  \end{subfigure}
+%  \hfill
+%  \begin{subfigure}[b]{0.43\textwidth}
+%    \includegraphics[width=\textwidth]{full_one_use_crossover}
+%    \caption{A full one use crossover constructed from four directed one use crossovers.}
+%    \label{full_one_use_crossover}
+%  \end{subfigure}
+%  \caption{Composite crossover gadgets}
+%\end{figure}
+
+
 
 \paragraph{In-order Directed Crossover} This gadget, depicted in Figure~\ref{InOrderCrossover} allows a traversal from $a$ to $a'$, followed by a traversal from $b$ to $b'$. These traversals may also be reversed.
 
@@ -150,6 +152,15 @@ This completes the first crossing.
 Now, there are at most 2 transitions possible: from $a'$ back to $a$, undoing the whole process, or entering at $b$. Note that entering at $b$ is only possible if the left Set-Verify is in the Set state, so let us assume that state change occurred. In that case, the left $S_o \rightarrow S_i$ transition may be performed, changing the left Set-Verify's state to Unset. At that point, the only possible transitions are back to $b$, or through the right Set-Verify's
 $V_i \rightarrow V_o$ transition, completing the second crossover.
 
+\begin{wrapfigure}{hr}{0.45\textwidth}
+\vspace{-5mm}
+  \centering
+    \includegraphics[width=.5\textwidth]{one_use_crossover}
+    \caption{The one use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
+    \label{OneUseCrossover}
+    \vspace{-7mm}
+\end{wrapfigure}
+
 If the left Set-Verify was left in the Verify state, strictly less future transitions are possible compared to the case where it was changed into the set state, so we may disregard that possibility.
 
 
@@ -159,10 +170,23 @@ The Two Use Directed Crossover, depicted in Figure~\ref{OneUseCrossover}, is the
 It is constructed out of an In-order Directed Crossover gadget and a Destructive Directed Crossover, as shown in Figure~\ref{OneUseCrossover}. The $a$ to $a'$ traversal is initially passable, and goes through both gadgets,
 blocking the destructive crossover but leaving the in-order crossover open for the $b$ to $b'$ traversal. If the $a$ to $a'$ traversal does not occur, the $b$ to $b'$ traversal is possible via the destructive crossover.
 
-In our construction with Set-Verify gadgets, the crossover also permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus the gadget still works for NP-hardness.
 
-\paragraph{Two Use Crossover} 
-Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction \cite{Push100}. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't sufficient for PSPACE-completeness. 
+\begin{wrapfigure}{hr}{0.45\textwidth}
+  \centering
+%  \begin{figure}[t]
+%    \centering
+    \includegraphics[width=.4\textwidth]{SetVerify3D}
+    \caption{A Set-Verify gadget where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
+    \label{3DSetVerify}
+    \vspace{-7mm}
+\end{wrapfigure}
+
+
+In our construction with Set-Verify gadgets, the crossover also permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus the gadget still works for NP-hardness.
+%
+%\paragraph{Two Use Crossover} 
+%Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction \cite{Push100}. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't sufficient for PSPACE-completeness. 
+
 
 \begin{theorem}
 \label{thm:2DNPhard}
@@ -172,15 +196,6 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 The gadgets constructed in the previous section provide a reduction from 3SAT to Push-$k$ Pull-$l$ in 2D with thin walls.
 \end{proof}
 
-\begin{wrapfigure}{hr}{0.45\textwidth}
-  \centering
-%  \begin{figure}[t]
-%    \centering
-    \includegraphics[width=.4\textwidth]{SetVerify3D}
-    \caption{A Set-Verify gadget where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
-    \label{3DSetVerify}
-    \vspace{-5mm}
-\end{wrapfigure}
 
 \subsection{3D Push-Pull is NP-hard}
 \label{3DNPhard}
@@ -190,9 +205,11 @@ In this section we prove that 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard,
 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard, for all positive $k$ and $l$.
 \end{theorem}
 \begin{proof}
-We follow the proof of Theorem~\ref{thm:2DNPhard} using a modified Set-Verify gadget, shown in Figure~\ref{3DSetVerify}. As before, in the unset state the only possible traversal is $S_i$ to $S_0$. This traversal allows the top right bock to be pulled down, moving the gadget into the set state. From here the $V$ to $V_0$ traversal is possible, as well as going back through the $S_0$ to $S$ pathway. However, the $S$ to $S_0$ traversal is not possible. For more detail refer to Section~\ref{sec:SetVerifyGadgets}. We do note that the cyclic ordering of the entrances in the 3D Set-Verify is different from that of the 2D Set-Verify, however this is not important as we no longer need to construct crossovers.
+We follow the proof of Theorem~\ref{thm:2DNPhard} using a modified Set-Verify gadget, shown in Figure~\ref{3DSetVerify}.  It can be easily checked that this has the same properties as the Set-Verify given in Section~\ref{sec:SetVerifyGadgets}. We do note that the cyclic ordering of the entrances in the 3D Set-Verify is different from that of the 2D Set-Verify, however this is not important as we no longer need to construct crossovers. With a funcitonal Set-Verify gadget, the remaining constructions of variables and clauses proceeded as in Section \ref{sec:2DPushPull3SAT}. No crossover gadgets are needed since we are working in 3D. Finally, we note that all blocks are in hallways of length at most 3, thus the gadgets still function as described for any positive push and pull values.
 
-Variables are composed of hallways of 3D Set-Verify gadgets connected $S_0$ to $S$, one for each clause in which the variable appears, as in Figure~\ref{fig:NPVariableGadget}. Clauses are composed of three 3D Set-Verify gadgets connected in parallel as in Figure~\ref{fig:NPClauseGadget}. The details of these constructions follow those in Section~\ref{sec:2DPushPull3SAT} This completes the reduction from 3SAT. In addition, we note that all blocks are in hallways of length at most 3, thus the gadgets still function as described for any positive push and pull values.
+%As before, in the unset state the only possible traversal is $S_i$ to $S_0$. This traversal allows the top right bock to be pulled down, moving the gadget into the set state. From here the $V$ to $V_0$ traversal is possible, as well as going back through the $S_0$ to $S$ pathway. However, the $S$ to $S_0$ traversal is not possible.
+
+%Variables are composed of hallways of 3D Set-Verify gadgets connected $S_0$ to $S$, one for each clause in which the variable appears, as in Figure~\ref{fig:NPVariableGadget}. Clauses are composed of three 3D Set-Verify gadgets connected in parallel as in Figure~\ref{fig:NPClauseGadget}. The details of these constructions follow those in Section~\ref{sec:2DPushPull3SAT} This completes the reduction from 3SAT. In addition, we note that all blocks are in hallways of length at most 3, thus the gadgets still function as described for any positive push and pull values.
 \end{proof}
 
 
