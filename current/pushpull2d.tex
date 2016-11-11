@@ -69,7 +69,7 @@ Our literals will be represented by Set-Verify gadgets, described in Section~\re
 
 The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set, shown in Figure~\ref{fig:NPVariableGadget}. Once the robot has gone through at least one gadget in one hallway, there are only two possibilities remaining: either the robot can continue down the hall setting more literals to true, or the robot can go back through the gadget it has just exited, returning it to its unset state. Thus, before entering or after exiting a hallway all of the literals in that hallway will be in the same state. Additionally, unset gadgets do not allow a transition from $S_o$ to $S_i$, which means at any point while setting variables, if the robot decides to go back it can only return through a hallway which has been switched to the set state. Going back through these returns them to the unset state, putting that variable gadget back in its initial configuration before the robot interacted with it.
 
-The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. To deal with this we construct crossover gadgets from the Set-Verify gadgets described in Section~\ref{sec:NPCrossover}. Since each variable's hallway is traversed at most once, and each clause is traversed once, only one-time crossovers are necessary. In order to traverse all of the clauses and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to 2D Push-Pull block puzzles.
+The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. To deal with this we construct crossover gadgets from the Set-Verify gadgets described in Section~\ref{sec:NPCrossover}. Since each variable's hallway is traversed at most once, and each clause is traversed once, only two-time crossovers are necessary. In order to traverse all of the clauses and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to 2D Push-Pull block puzzles.
 
 
 \begin{figure}[!ht]
@@ -100,7 +100,7 @@ The variables and clauses must be joined together to allow the robot to move bet
 
 \subsubsection{Crossover Gadgets}
 \label{sec:NPCrossover}
-In this section we build up the needed one use crossover gadget from a series of weaker types of crossover gadgets.
+In this section we build up the needed two use crossover gadget from a series of weaker types of crossover gadgets.
 
 \paragraph{Directed Destructive Crossover} This gadget, depicted in Figure~\ref{DestructiveCrossover}, allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 
@@ -156,7 +156,7 @@ $V_i \rightarrow V_o$ transition, completing the second crossover.
 \vspace{-5mm}
   \centering
     \includegraphics[width=.5\textwidth]{one_use_crossover}
-    \caption{The one use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
+    \caption{The two use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
     \label{OneUseCrossover}
     \vspace{-7mm}
 \end{wrapfigure}
@@ -182,7 +182,7 @@ blocking the destructive crossover but leaving the in-order crossover open for t
 \end{wrapfigure}
 
 
-In our construction with Set-Verify gadgets, the crossover also permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus the gadget still works for NP-hardness.
+In our construction with Set-Verify gadgets, the crossover also permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus no additional progress can be made via reversals, and so the gadget still works for NP-hardness.
 %
 %\paragraph{Two Use Crossover} 
 %Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction \cite{Push100}. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't sufficient for PSPACE-completeness. 

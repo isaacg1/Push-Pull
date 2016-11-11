@@ -75,7 +75,7 @@ Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, an
   \caption{3D diagrams of 4-toggles. Red spheres are blocks and blue surfaces are impassable.}
 \end{figure}
 
-To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. Now we have four different paths which function like the ones described above. Similar arguments show the broken states of the 4-toggle don't matter.
+To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis, where the block is missing. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. Now we have four different paths which function like the ones described above. Similar arguments show the broken states of the 4-toggle don't matter.
 
 For Push1-Pull1, this construction requires thin walls, since the exit pathways from $1b$, $2b$, $3b$ and $4b$ must pass immediately next to each other. For Push$k$-Pull$k$, with $k > 1$, thin walls are not necessary, since the exit pathways are separated from each other.
 \subsection{Locks}
@@ -111,8 +111,8 @@ pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
 
 A 2-toggle and lock can be extended to a 2-toggle with many locks. The 2-toggle with many locks is a gadget consisting of a 2-toggle
 and any number of separate pathways which can only be traversed when the gadget is in state $B$. This can be constructed using one 2-toggle and lock per separate pathway needed and attaching the toggles in series.
-We ensure the 2-toggles are all initially passable or initially unpassable, and oriented so that 
-their 2-toggles are all passable at once.
+We orient the 2-toggles so that 
+their 2-toggles are all passable at once in one direction.
 
 %The 2-toggle still functions as described above.
 %Each pathway may be set up to be passable if and only if the toggle is in state $A$, or passable if and only if the toggle is in state $B$. 
@@ -133,7 +133,7 @@ their 2-toggles are all passable at once.
 %    \label{fig:LockBlock}
 %\end{figure}
 
-When the 2-toggle and many locks is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passibility and impassibility of all of the external pathways.
+When the 2-toggle is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passibility and impassibility of all of the external pathways.
 
 \subsection{Quantifiers}
 
@@ -185,7 +185,7 @@ the state of every toggle it passes through. When it enters a toggle that is ini
 bit is $1$, it will flip the state/bit and proceed to the next toggle, via the $2B - 2A$ pathway. When it
 encounters a toggle that is initially in state $A$ / bit $0$, it will flip the state/bit and exit via the $1A - 1B$
 pathway. Thus, the overall effect on the bits of the binary counter is to change a sequence of bits ending at the
-least significant bit from $01\ldots11$ to $10\ldots00$, where the entrance is at the left.
+least significant bit from $01\ldots11$ to $10\ldots00$, where the entrance is at the right.
 This has the effect of increasing the value of the binary counter by one.
 We will not examine the reverse transitions or rigorously complete the binary counter here, 
 as we do not use it directly in the final construction. 
@@ -214,7 +214,7 @@ sequence of possible settings of the universal variables, and allow the robot to
 corresponding to altered universal variables arbitrarily. No other existential variables can be changed.
 
 There is also a special exit, the overflow exit, which can only be
-reached after all of the universal variable settings have been traversed. This is the target location for the robot.
+reached after all of the universal variable settings have been traversed. This is the goal location for the robot.
 
 A quantifier chain is implemented much like a binary counter, with some additions. Every universal variable will be represented by a 2-toggle and many locks, where individual locks will serve as a literal. The 2-toggles are hooked up in the same manner as the 2-toggles in a binary counter gadget. This forces the 2-toggle and many locks gadgets to be set to the corresponding values in the simulated binary counter.
 
