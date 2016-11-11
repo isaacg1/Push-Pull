@@ -1,6 +1,6 @@
 \section{PSPACE}
 \label{3DPSPACE}
-In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from True Quantified Boolean Formula (also known as TQBF and 3QSAT), which asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean formula $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjuctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
+In this section we show the PSPACE-completeness of 3D push-pull puzzles with equal push and pull strength. We will prove hardness by a reduction from True Quantified Boolean Formula (also known as TQBF and 3QSAT), which asks whether, given a set of variables $\{x_1, x_2, \ldots x_n, y_1, y_2, \ldots y_n\}$ and a boolean formula $\theta(x_1, \ldots x_n, y_1 \ldots y_n)$ in conjunctive normal form with exactly three variables per clause, the quantified boolean formula $\forall y_1 \exists x_1 \forall y_2 \exists x_2 \ldots \theta(x_1, \ldots x_n, y_1, \ldots y_n)$ is true.
 
 We introduce a gadget called the 4-toggle and use it to simulate 3QSAT\cite{NPBook}. We construct the 4-toggle gadget in 3D push-pull block puzzles, completing the reduction. In particular we prove 3D Push1-Pull1 with thin walls is PSPACE-complete and 3D Push$i$-Pull$j$, for all positive $i=j$, is PSPACE-complete. A gap between NP and PSPACE still remains for 3D puzzles with different pull and push values, as well as 2D puzzles. 
 
@@ -133,7 +133,7 @@ their 2-toggles are all passable at once in one direction.
 %    \label{fig:LockBlock}
 %\end{figure}
 
-When the 2-toggle is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passibility and impassibility of all of the external pathways.
+When the 2-toggle is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passability and impassibility of all of the external pathways.
 
 \subsection{Quantifiers}
 
@@ -220,13 +220,13 @@ A quantifier chain is implemented much like a binary counter, with some addition
 
 The next addition is the existential variables, which consist of existential gadgets placed just after the $2A$
 exits of each universal variable,
-and just before the $1A$ and $2B$ entrances of the the next universal variable, as shown
+and just before the $1A$ and $2B$ entrances of the next universal variable, as shown
 in Figure~\ref{fig:QuantifierChain}.
 
 One portion of the apparatus which has not been analyzed thus far is the potential for the robot to re-enter the chain of existentials
 via a different exit pathway than the one just exited. This would be problematic if the robot re-entered via a universal gadget it had not just exited,
 both because the robot should not be able to take any action other than reversing its prior progress, 
-decrementing the binary counter/universal quantifiers. Problems would also arrise if the robot got access to any existential quantifiers 
+decrementing the binary counter/universal quantifiers. Problems would also arise if the robot got access to any existential quantifiers 
 it did not just traverse.
 
 After a traversal, the universal quantifiers have the settings $\ldots??10\ldots00$, where the lowest significance $1$ is 
@@ -244,7 +244,7 @@ We construct a clause gadget by putting lock pathways of three 2-toggle with man
 \subsection{Beginning and End Conditions}
 The overall progression of the robot through the puzzle starts with the quantifier chain.
 The robot increments the universal variables and sets the appropriate existential variables arbitrarily, 
-then traverses a series of claise gadgets to verify that the TQBF formula represented by those clauses 
+then traverses a series of clause gadgets to verify that the TQBF formula represented by those clauses 
 is true under that setting of the variables. Then, the robot cycles around to the quantifier chain, and repeats.
 
 At the beginning of this procedure, the robot must be allowed to set all of the existential variables arbitrarily.
@@ -287,5 +287,5 @@ Since Push$k$-Pull$k$ has a polynomial-size state, the problem is in NPSPACE, an
     Push-1 Pull-1 in 3D with thin walls is PSPACE-complete.
 \end{theorem}
 \begin{proof}
-    Push-1 Pull-1 n 3D with thin walls can construct a 4-toggle, and so by the same argument as in Theorem~\ref{thm:3dPSPACE-complete}, it is PSPACE-complete.
+    Push-1 Pull-1 in 3D with thin walls can construct a 4-toggle, and so by the same argument as in Theorem~\ref{thm:3dPSPACE-complete}, it is PSPACE-complete.
 \end{proof}
