@@ -294,23 +294,35 @@ drawSquare(5,6,black);
 
 void drawSetVerifyBlocksUnset(){
 drawBlock(2.5,2.5,red);
+label("$4$",(2.5,2.5), black);
 drawBlock(2.5,3.5,red);
+label("$3$",(2.5,3.5), black);
 drawBlock(2.5,5.5,red);
+label("$1$",(2.5,5.5), black);
 drawBlock(3.5,5.5,red);
+label("$2$",(3.5,5.5), black);
 }
 
 void drawSetVerifyBlocksSet(){
 drawBlock(3.5,3.5,red);
+label("$3$",(3.5,3.5), black);
 drawBlock(2.5,3.5,red);
+label("$4$",(2.5,3.5), black);
 drawBlock(2.5,5.5,red);
+label("$1$",(2.5,5.5), black);
 drawBlock(3.5,4.5,red);
+label("$2$",(3.5,4.5), black);
 }
 
 void drawSetVerifyBlocksVerified(){
 drawBlock(3.5,3.5,red);
+label("$3$",(3.5,3.5), black);
 drawBlock(2.5,3.5,red);
+label("$4$",(2.5,3.5), black);
 drawBlock(3.5,5.5,red);
+label("$1$",(3.5,5.5), black);
 drawBlock(3.5,4.5,red);
+label("$2$",(3.5,4.5), black);
 }
 
 void drawSetVerifyWalls(){
@@ -1130,38 +1142,38 @@ void drawSamplePuzzleAnimated(){
 	erase();
 }
 
-draw2Toggle();
-draw2TogglePathA();
-shipout("2Toggle");
-erase();
-
-draw2Toggle();
-shipout("2ToggleA");
-erase();
-
-draw2ToggleB();
-shipout("2ToggleB");
-erase();
-
-drawBroken2Toggle();
-shipout("broken2Toggle");
-erase();	
-
-draw2ToggleK();
-shipout("2ToggleK");
-erase();
-
-// drawSetVerifyUnset();
-// shipout("SetVerifyUnset");
+// draw2Toggle();
+// draw2TogglePathA();
+// shipout("2Toggle");
 // erase();
 
-// drawSetVerifySet();
-// shipout("SetVerifySet");
+// draw2Toggle();
+// shipout("2ToggleA");
 // erase();
 
-// drawSetVerifyVerified();
-// shipout("SetVerifyVerified");
+// draw2ToggleB();
+// shipout("2ToggleB");
 // erase();
+
+// drawBroken2Toggle();
+// shipout("broken2Toggle");
+// erase();	
+
+// draw2ToggleK();
+// shipout("2ToggleK");
+// erase();
+
+drawSetVerifyUnset();
+shipout("SetVerifyUnset");
+erase();
+
+drawSetVerifySet();
+shipout("SetVerifySet");
+erase();
+
+drawSetVerifyVerified();
+shipout("SetVerifyVerified");
+erase();
 
 // drawSetVerify3D();
 // shipout("SetVerify3D");

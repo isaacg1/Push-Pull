@@ -306,9 +306,13 @@ drawSquare(5,6,black);
 
 void drawSetVerifyBlocksUnset(){
 drawBlock(2.5,2.5,blockPen);
+label("$1$",(2.5,2.5), labelPen);
 drawBlock(2.5,3.5,blockPen);
+label("$2$",(2.5,3.5), labelPen);
 drawBlock(2.5,5.5,blockPen);
+label("$3$",(2.5,5.5), labelPen);
 drawBlock(3.5,5.5,blockPen);
+label("$4$",(3.5,5.5), labelPen);
 }
 
 void drawSetVerifyBlocksSet(){
@@ -559,14 +563,14 @@ drawCrossoverInorderWalls();
 drawCrossoverInorderLabels();
 }
 
-draw2Toggle();
-draw2TogglePathA();
-shipout("2Toggle");
-erase();
+//draw2Toggle();
+//draw2TogglePathA();
+//shipout("2Toggle");
+//erase();
 
-draw2ToggleB();
-shipout("2ToggleB");
-erase();
+//draw2ToggleB();
+//shipout("2ToggleB");
+//erase();
 
 //drawBroken2Toggle();
 //shipout("broken2Toggle");
@@ -576,17 +580,17 @@ erase();
 //shipout("2ToggleK");
 //erase();
 
-//drawSetVerifyUnset();
-//shipout("SetVerifyUnset");
-//erase();
+drawSetVerifyUnset();
+shipout("SetVerifyUnset");
+erase();
 
-//drawSetVerifySet();
-//shipout("SetVerifySet");
-//erase();
+drawSetVerifySet();
+shipout("SetVerifySet");
+erase();
 
-//drawSetVerifyVerified();
-//shipout("SetVerifyVerified");
-//erase();
+drawSetVerifyVerified();
+shipout("SetVerifyVerified");
+erase();
 
 //drawSetVerify3D();
 //shipout("SetVerify3D");
