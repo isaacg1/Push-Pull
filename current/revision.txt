@@ -7,8 +7,8 @@ Review 1:
    all the proofs are in a reversible setting - we ignore any non-reversible options).
 Review 2:
 1. Table: What is storage? What is sliding? Remove blocks column, since it's always the same.
-2. Small "automata-style" summaries of possible state transitions of the major gadgets.
-3. Summarize the reduction targets - put all the gadgets together, explain in detail why it works.
+Jayson 2. Small "automata-style" summaries of possible state transitions of the major gadgets.
+Isaac 3. Summarize the reduction targets - put all the gadgets together, explain in detail why it works.
 4. Add in more formal language, especially in 2D proof, stuff like "leaking into the other line".
 5. Figure 1: Mention red blocks are movable, label them for later reference.
 6. Figure 3: Show the situation after setting the variable, to make it clear what the point
