@@ -6,6 +6,8 @@
 \usepackage{url}
 \usepackage{float}
 \usepackage{wrapfig}
+\usepackage{array}
+\usepackage{txfonts}
 \urlstyle{same}
 \usepackage{hyperref}
 %%\usepackage{media9}
@@ -64,34 +66,34 @@
 
 \usepackage{times}
 
-% Compact mainlevel section titles, using \paragraph's while keeping numbering,
-% but without \appendix support.
-{\makeatletter
- \gdef\section{\@ifnextchar*\section@star\section@normal}
- \gdef\section@normal#1{\refstepcounter{section}%
-   \paragraph{\arabic{section}\hbox{~~}#1.}%
-   \addcontentsline{toc}{section}{\protect\numberline{\arabic{section}}{#1}}}
- \gdef\section@star*#1{\paragraph{#1.}}}
-
-% Compact subsection titles, using \paragraph's while keeping numbering.
-{\makeatletter
- \gdef\subsection{\@ifnextchar*\subsection@star\subsection@normal}
- \gdef\subsection@normal#1{\refstepcounter{subsection}%
-   \paragraph{\thesubsection\hbox{~~}#1.}%
-   \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}{#1}}}
- \gdef\subsection@star*#1{\paragraph{#1.}}}
-
-% Compact subsection titles, using \paragraph's while keeping numbering.
-{\makeatletter
- \gdef\subsubsection{\@ifnextchar*\subsubsection@star\subsubsection@normal}
- \gdef\subsubsection@normal#1{\refstepcounter{subsubsection}%
-   \paragraph{\thesubsubsection\hbox{~~}#1.}%
-   \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}{#1}}}
- \gdef\subsubsection@star*#1{\paragraph{#1.}}}
-% Redefine paragraph to have no leading space, but rather indent.
+%% Compact mainlevel section titles, using \paragraph's while keeping numbering,
+%% but without \appendix support.
 %{\makeatletter
-% \gdef\paragraph{\@startsection{paragraph}{4}{\parindent}{-0pt}{-1em}
-%   {\normalfont\normalsize\bfseries}}}
+% \gdef\section{\@ifnextchar*\section@star\section@normal}
+% \gdef\section@normal#1{\refstepcounter{section}%
+%   \paragraph{\arabic{section}\hbox{~~}#1.}%
+%   \addcontentsline{toc}{section}{\protect\numberline{\arabic{section}}{#1}}}
+% \gdef\section@star*#1{\paragraph{#1.}}}
+%
+%% Compact subsection titles, using \paragraph's while keeping numbering.
+%{\makeatletter
+% \gdef\subsection{\@ifnextchar*\subsection@star\subsection@normal}
+% \gdef\subsection@normal#1{\refstepcounter{subsection}%
+%   \paragraph{\thesubsection\hbox{~~}#1.}%
+%   \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}{#1}}}
+% \gdef\subsection@star*#1{\paragraph{#1.}}}
+%
+%% Compact subsection titles, using \paragraph's while keeping numbering.
+%{\makeatletter
+% \gdef\subsubsection{\@ifnextchar*\subsubsection@star\subsubsection@normal}
+% \gdef\subsubsection@normal#1{\refstepcounter{subsubsection}%
+%   \paragraph{\thesubsubsection\hbox{~~}#1.}%
+%   \addcontentsline{toc}{subsubsection}{\protect\numberline{\thesubsubsection}{#1}}}
+% \gdef\subsubsection@star*#1{\paragraph{#1.}}}
+%% Redefine paragraph to have no leading space, but rather indent.
+%%{\makeatletter
+%% \gdef\paragraph{\@startsection{paragraph}{4}{\parindent}{-0pt}{-1em}
+%%   {\normalfont\normalsize\bfseries}}}
 
 % Tighter version of just \paragraph.
 \newlength\aboveparagraphskip
