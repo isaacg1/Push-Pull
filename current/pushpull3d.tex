@@ -10,6 +10,7 @@ We introduce a gadget called the 4-toggle and use it to simulate 3QSAT\cite{NPBo
 \subsection{Toggles}
 We define an $n$-toggle to be a gadget which has $n$ internal pathways and can be in one of two internal states, $A$ or $B$. Each pathway has a side labeled $A$ and another labeled $B$. When the toggle is in the $A$ state, the pathways can only be traversed from $A$ to $B$ and similarly in the $B$ state it can only be traversed from $B$ to $A$. Whenever a pathway is traversed, the state of the toggle flips.
 
+
 \begin{figure}[!ht]
 \centering
 \begin{subfigure}[t]{0.45\textwidth}
@@ -25,6 +26,7 @@ We define an $n$-toggle to be a gadget which has $n$ internal pathways and can b
     \label{fig:Abstract4ToggleB}
 \end{subfigure}
 \caption{Diagrams of the two possible states of a 4-Toggle.}
+\label{fig:4-toggle}
 \end{figure}
 
 \begin{figure}[!ht]
@@ -55,6 +57,34 @@ We define an $n$-toggle to be a gadget which has $n$ internal pathways and can b
 %    \end{subfigure}
     \caption{2-Toggles constructed in a push-pull block puzzle.}
 \end{figure}
+
+
+\begin{table}
+\begin{minipage}{.45\textwidth}
+\centering
+{\setlength\tabcolsep{4pt}
+\begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
+   A: & & & \\
+   &(A, 1a)& \rightarrow& (B, 1b) \\
+   &(A, 2a)& \rightarrow & (B, 2b) \\
+   &(A, 3a)& \rightarrow& (B, 3b) \\
+   &(A, 4a)& \rightarrow & (B, 4b)  \\ \\
+\end{tabular}}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+\centering
+{\setlength\tabcolsep{4pt}
+\begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} l}
+   B: & & & \\
+   &(B, 1b)& \rightarrow& (A, 1a) \\
+   &(B, 2b)& \rightarrow & (A, 2a) \\
+   &(B, 3b)& \rightarrow& (A, 3a) \\
+   &(B, 4b)& \rightarrow & (A, 4a)  \\ \\
+\end{tabular}}
+\end{minipage}
+\caption{State transitions of a 4-toggle as seen in Figure~\ref{fig:4-toggle}}
+\label{4ToggleStateTransition}
+\end{table}
 
 \begin{figure}[!ht]
   \centering

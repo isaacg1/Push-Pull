@@ -3,17 +3,17 @@ Review 1:
 1. Why do we use direct proofs (SAT, QSAT), instead of NCL? Mention in paragraph with 2.3
 * 2. Paragraph "We add ..." in introduction was repeated.
 3. Standardize section heads, don't cram, apppendix.
-4. Why is this system interesting? Mention reversible (while we prove results for a mix of systems,
+*4. Why is this system interesting? Mention reversible (while we prove results for a mix of systems,
    all the proofs are in a reversible setting - we ignore any non-reversible options).
 Review 2:
-1. Table: What is storage? What is sliding? Remove blocks column, since it's always the same.
-Jayson 2. Small "automata-style" summaries of possible state transitions of the major gadgets.
+*1. Table: What is storage? What is sliding? Remove blocks column, since it's always the same.
+*Jayson 2. Small "automata-style" summaries of possible state transitions of the major gadgets.
 Isaac 3. Summarize the reduction targets - put all the gadgets together, explain in detail why it works.
 4. Add in more formal language, especially in 2D proof, stuff like "leaking into the other line".
-5. Figure 1: Mention red blocks are movable, label them for later reference.
-6. Figure 3: Show the situation after setting the variable, to make it clear what the point
+*5. Figure 1: Mention red blocks are movable, label them for later reference.
+*6. Figure 3: Show the situation after setting the variable, to make it clear what the point
    of the diagram is.
-7. Figure 6: Mention 3D in caption.
+*7. Figure 6: Mention 3D in caption.
 8. Mention why we need crossovers, instead of using planar 3D. The clauses don't work without crossovers.
 Review 3:
 1. More references (see review)
