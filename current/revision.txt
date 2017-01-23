@@ -14,7 +14,7 @@ Isaac 3. Summarize the reduction targets - put all the gadgets together, explain
 *6. Figure 3: Show the situation after setting the variable, to make it clear what the point
    of the diagram is.
 *7. Figure 6: Mention 3D in caption.
-8. Mention why we need crossovers, instead of using planar 3D. The clauses don't work without crossovers.
+*8. Mention why we need crossovers, instead of using planar 3SAT. The clauses don't work without crossovers.
 Review 3:
 1. More references (see review)
 General:
