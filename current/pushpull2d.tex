@@ -61,20 +61,30 @@ Since the Set-Verify gadget has no hallways with length greater than $3$, any ca
 
 
 \begin{table}
+\begin{minipage}{.3\textwidth}
 {\setlength\tabcolsep{4pt}
 \begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
    U: & & & \\
    &(U, s_i)& \rightarrow& (S, S_o) \\
-   
+\end{tabular}}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+{\setlength\tabcolsep{4pt}
+\begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
   S: & & & \\
    &(S, s_o)& \rightarrow& (U, S_i) \\
    &(S, v_i)& \rightarrow& (V, v_o) \\
-  
+\end{tabular}}
+\end{minipage}  
+\begin{minipage}{.3\textwidth}
+{\setlength\tabcolsep{4pt}
+\begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
    V: & & & \\
    &(V, v_i)& \rightarrow& (V, v_o) \\ 
    &(V, v_o)& \rightarrow& (V, v_i) \\ 
    &(V, v_o)& \rightarrow& (S, v_i) \\ 
 \end{tabular}}
+\end{minipage}
 \caption{State transitions of a Set-Verify gadget as seen in Figure~\ref{setVerifyDiagrams}}
 \label{SetVerifyStateTransition}
 \end{table}

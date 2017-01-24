@@ -1,6 +1,7 @@
 Springer guidelines
 Review 1:
-1. Why do we use direct proofs (SAT, QSAT), instead of NCL? Mention in paragraph with 2.3
+*1. Why do we use direct proofs (SAT, QSAT), instead of NCL? Mention in paragraph with 2.3
+>only addresed in section 3 w/ respect to QSAT and NCL, I think this suffices -jayson
 * 2. Paragraph "We add ..." in introduction was repeated.
 3. Standardize section heads, don't cram, apppendix.
 *4. Why is this system interesting? Mention reversible (while we prove results for a mix of systems,

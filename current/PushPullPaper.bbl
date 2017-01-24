@@ -69,6 +69,11 @@ Robert~A. Hearn and Erik~D. Demaine.
   through the nondeterministic constraint logic model of computation.
 \newblock {\em Theoretical Computer Science}, 343(1):72--96, 2005.
 
+\bibitem[HD09]{GPCBook09}
+Robert~A. Hearn and Erik~D. Demaine.
+\newblock {\em Games, {Puzzles}, and {Computation}}.
+\newblock A. K. Peters, Ltd., Natick, MA, USA, 2009.
+
 \bibitem[Hof00]{Push*00}
 M.~Hoffman.
 \newblock Push-* is {NP}-hard.
