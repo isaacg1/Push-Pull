@@ -61,20 +61,30 @@ Since the Set-Verify gadget has no hallways with length greater than $3$, any ca
 
 
 \begin{table}
+\begin{minipage}{.3\textwidth}
 {\setlength\tabcolsep{4pt}
 \begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
    U: & & & \\
    &(U, s_i)& \rightarrow& (S, S_o) \\
-   
+\end{tabular}}
+\end{minipage}
+\begin{minipage}{.3\textwidth}
+{\setlength\tabcolsep{4pt}
+\begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
   S: & & & \\
    &(S, s_o)& \rightarrow& (U, S_i) \\
    &(S, v_i)& \rightarrow& (V, v_o) \\
-  
+\end{tabular}}
+\end{minipage}  
+\begin{minipage}{.3\textwidth}
+{\setlength\tabcolsep{4pt}
+\begin{tabular}{>{$} l <{$} >{$} l <{$} >{$} l <{$} >{$} l <{$}}
    V: & & & \\
    &(V, v_i)& \rightarrow& (V, v_o) \\ 
    &(V, v_o)& \rightarrow& (V, v_i) \\ 
    &(V, v_o)& \rightarrow& (S, v_i) \\ 
 \end{tabular}}
+\end{minipage}
 \caption{State transitions of a Set-Verify gadget as seen in Figure~\ref{setVerifyDiagrams}}
 \label{SetVerifyStateTransition}
 \end{table}
@@ -120,7 +130,7 @@ The variables and clauses must be joined together to allow the robot to move bet
 
 \subsubsection{Crossover Gadgets}
 \label{sec:NPCrossover}
-In this section we build up the needed two use crossover gadget from a series of weaker types of crossover gadgets.
+In this section we build up the needed two use crossover gadget from a series of weaker types of crossover gadgets. One may wonder why we need crossover gadgets when Planar 3SAT is NP-complete. This only guarantees that connecting the verticies to their clauses by edges results in a planar graph, it does not ensure that we can navigate our robot between all of these gadgets in a planar manner or that our gadgets themselves are planar. The most obvious issue can be seen in the clause gadget (Figure~\ref{fig:NPClauseGadget}) where one of the Set Verify gadgets must lie between the other two hallways, but must also be accessible by its associated variable gadget.
 
 \paragraph{Directed Destructive Crossover} This gadget, depicted in Figure~\ref{fig:DestructiveCrossover}, allows either a traversal from $a$ to $a'$ or $b$ to $b'$. Once a traversal has occurred, that path may be traversed in reverse, but the other is impassable unless the original traversal is undone.
 

@@ -1,6 +1,7 @@
 Springer guidelines
 Review 1:
-1. Why do we use direct proofs (SAT, QSAT), instead of NCL? Mention in paragraph with 2.3
+*1. Why do we use direct proofs (SAT, QSAT), instead of NCL? Mention in paragraph with 2.3
+>only addresed in section 3 w/ respect to QSAT and NCL, I think this suffices -jayson
 * 2. Paragraph "We add ..." in introduction was repeated.
 3. Standardize section heads, don't cram, apppendix.
 *4. Why is this system interesting? Mention reversible (while we prove results for a mix of systems,
@@ -14,7 +15,7 @@ Isaac 3. Summarize the reduction targets - put all the gadgets together, explain
 *6. Figure 3: Show the situation after setting the variable, to make it clear what the point
    of the diagram is.
 *7. Figure 6: Mention 3D in caption.
-8. Mention why we need crossovers, instead of using planar 3D. The clauses don't work without crossovers.
+*8. Mention why we need crossovers, instead of using planar 3SAT. The clauses don't work without crossovers.
 Review 3:
 1. More references (see review)
 General:
