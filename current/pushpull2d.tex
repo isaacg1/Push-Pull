@@ -218,7 +218,7 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 
     First, we will set up the clause gadgets. Each clause gadget will look exactly like Figure~\ref{fig:NPClauseGadget}, with all of the Set-Verify gadgets initially in the unset state. There will be one clause gadget for each clause in the 3SAT formula. The clauses will be linked together in series, $C_k$ $out$ to $C_{k+1}$ in. At the final clause gadget's out exit, we will place the goal square.
 
-    Next, we will set up the variable gadgets. For each variable, there will be a variable gadget, consisting of a positive literal pathway, connecting to every clause where the variable is used positively, and a negative literal pathway, connecting to every clause where the variable is negated, as shown in Figure~\ref{fig:NPVariableGadget}. These variable gadgets will be linked together in series, $X_k$ $out$ to $X_{k+1}$ $in$. The final variable gadget's $out$ exit will be linked to the first clause gadget's $in$. Just in front of the first variable gadget's $in$ entrance will be the start square.
+    Next, we will set up the variable gadgets. For each variable $x_k$, there will be a variable gadget $X-k$, consisting of a positive literal pathway, connecting to every clause where the variable is used positively, and a negative literal pathway, connecting to every clause where the variable is negated, as shown in Figure~\ref{fig:NPVariableGadget}. These variable gadgets will be linked together in series, $X_k$ $out$ to $X_{k+1}$ $in$. The final variable gadget's $out$ exit will be linked to the first clause gadget's $in$. Just in front of the first variable gadget's $in$ entrance will be the start square.
 
     The connections between these gadgets will consist of empty hallways, except where such hallways would cross. The hallways inside the clause and variable gadgets will also need to cross, and we will handle them similarly. We need crossovers for this reduction, rather than reducing to a PlanarSAT variant, because we need crossovers just to make the clause gadgets work, as seen here.
     
@@ -231,6 +231,8 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
     Since the crossover gadgets never allow the robot to leave from any exit except for the one opposite the entrance, a pathway which reaches the exit must at some point traverse every variable gadget, and every clause gadget. Reverse traversal may make this more complicated. However, a reverse traversal of a variable gadget is only possible if it reverses a traversal that has already occured. The robot cannot, for example, traverse the positive side of a variable gadget in the forward direction, then the negative side in the reverse direction. Moreover, a reverse transition sets the state of the gadget to its initial state. 
     
     As a result of this property, after any series of moves ending with the robot at the exit of the series of variable gadgets, the state of the gadgets must be the same as if the robot made only forward traversals, namely that for each variable, either all of the positive literals are Set and all the negative literals are Unset, or vice versa.
+
+    Now, when the robot attempts to traverse the clause gadgets to reach the goal cell, the situation is simpler. A clause is traversable if and only if at least one of its literals has been set to Set. No interaction of the verification lines ($V_i - V_o$) will affect an Unset literal, and so the series of clause gadgets can only be traversed if every clause has a satisfied literal. Therefore, the robot can reach the goals if and only if the setting of variables demonstrated by the traversal of the variable gadgets satisfies the 3SAT formula encoded by the clauses.
 
 
 \end{proof}
@@ -250,7 +252,3 @@ We follow the proof of Theorem~\ref{thm:2DNPhard} using a modified Set-Verify ga
 
 %Variables are composed of hallways of 3D Set-Verify gadgets connected $S_0$ to $S$, one for each clause in which the variable appears, as in Figure~\ref{fig:NPVariableGadget}. Clauses are composed of three 3D Set-Verify gadgets connected in parallel as in Figure~\ref{fig:NPClauseGadget}. The details of these constructions follow those in Section~\ref{sec:2DPushPull3SAT} This completes the reduction from 3SAT. In addition, we note that all blocks are in hallways of length at most 3, thus the gadgets still function as described for any positive push and pull values.
 \end{proof}
-
-
-
-
