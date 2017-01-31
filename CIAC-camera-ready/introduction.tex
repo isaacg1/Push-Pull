@@ -1,0 +1,48 @@
+
+\section{Introduction} 
+Block-pushing puzzles are a common puzzle type with one of the best known example being \emph{Sokoban}. Puzzles with the ability to push and pull blocks have found their way into several popular video games including \emph{The Legend of Zelda} series, \emph{Starfox Adventures}, \emph{Half-Life} and \emph{Tomb Raider}. Block-pushing puzzles are also an abstraction of motion planning problems with movable obstacles. In addition to these games, one could imagine real-world scenarios, like that of a forklift in a warehouse, bearing similarity. Since motion planning is such an important and computationally difficult problem, it can be useful to look at simplified models to try to get a better understanding of the larger problem.
+
+A significant amount of research has gone into characterizing the complexity of block sliding puzzles. This includes PSPACE-completeness for well-known puzzles like sliding-block puzzles\cite{hearn2005pspace}, Sokoban \cite{Sokoban98, DZ96}, the 15-puzzle \cite{15Puzzle}, 2048\cite{abdelkader2048}, Candy Crush\cite{guala2014bejeweled} and Rush Hour \cite{RushHour02}. Block pushing puzzles are a type of block sliding puzzle in which the blocks are moved by a small robot within the puzzles. This type of block sliding puzzle has gathered a significant amount of study. Table~\ref{BlocksTable} gives a summary of results on block pushing puzzles. Variations include Sokoban\cite{Sokoban98, DZ96}, where blocks must reach specific targets (the \emph{Path?} column), versions where multiple blocks can be pushed\cite{Push100, Push*00, Push2F02, DZ96, Sokoban98, Pull10} (the \emph{Push} column), versions where blocks continue to slide after being pushed\cite{PushPushk04, Push*00} (the \emph{Sliding} column), versions where fixed blocks are allowed\cite{DO92, Push2F02} (the \emph{Fixed?} column), and versions where the robot can pull blocks\cite{Pull10} (the \emph{Pull} column). 
+
+We are particularly interested in the push-pull block model because any sequence of moves in the puzzle can be undone.  Having an undirected state-space graph seems like an interesting property both mathematically and from a puzzle stand-point. This sort of player move reversibility lead to some of our gadgets being logically reversible, a notion that is fundamentally linked to quantum computation and the thermodynamics of computation. 
+
+\begin{table}
+\centering
+\centerline{
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+\emph{Name} & \emph{Push} & \emph{Pull} & \emph{Fixed?} & \emph{Path?} & \emph{Sliding} & \emph{Complexity} \\ \hline
+\hline
+Push-$k$ & $k$ & 0 & No & Path & Min & NP-hard\cite{Push100} \\ \hline
+Push-$*$ & $*$ & 0 & No & Path  & Min & NP-hard\cite{Push*00} \\ \hline
+PushPush-$k$ & $k$ & 0 & No & Path  & Max & PSPACE-c.\cite{PushPushk04} \\ \hline
+PushPush-$*$ & $*$ & 0 & No & Path  & Max & NP-hard\cite{Push*00} \\ \hline
+%Push-$k$X & $k$ & $0$ & Unit & No & No-Cross  & Min & NP-c.\cite{non-crossing01} \\ \hline
+%Push-$*$X & $*$ & $0$ & Unit & No & No-Cross  & Min & NP-c.\cite{non-crossing01} \\ \hline
+Push-$1$F & $1$ & $0$ & Yes & Path  & Min &  NP-hard \cite{DO92} \\ \hline
+Push-$k$F & $k\geq 2$ & $0$ & Yes & Path  & Min & PSPACE-c.\cite{Push2F02} \\ \hline
+Push-$*$F & $*$ & $0$ & Yes & Path  & Min & PSPACE-c.\cite{Push2F02} \\ \hline
+Sokoban & $1$ & $0$ & Yes & Storage  & Min & PSPACE-c.\cite{Sokoban98} \\ \hline
+%Sokoban$^+$ & $k\geq 2$ & $1$ & 2x1 & Yes & Storage  & Min & PSPACE-c.\cite{DZ96} \\ \hline
+Sokoban$(k,1)$ & $k\geq 5$ & $1$ & Yes & Storage  & Min & NP-hard\cite{DZ96} \\ \hline
+%Motion Planning & $k$ & $1$  & L & Yes & Storage  & Min & NP-hard\cite{PushPull91}\\ \hline
+Pull-$1$ & $0$ & $1$ & No & Storage  & Min & NP-hard\cite{Pull10} \\ \hline
+Pull-$k$F & $0$ & $k$& Yes & Storage  & Min &  NP-hard\cite{Pull10} \\ \hline
+PullPull-$k$F & $0$ & $k$ & Yes & Storage  & Max  & NP-hard\cite{Pull10} \\ \hline
+%Push-$1$G & $1$ & $0$ & Unit & Yes &  Path  & Min  & NP-hard\cite{Gravity} \\ \hline
+\textbf{Push-$k$ Pull-$l$W} & $k$ & $l$ & Wall & Path  & Min & \textbf{NP-hard}\ (\S  \ref{2DNPhard}) \\ \hline
+\textbf{3D Push-$k$ Pull-$l$F} & $k$ & $l$ & Yes & Path & Min &  \textbf{NP-hard}\ (\S  \ref{3DNPhard}) \\ \hline
+\textbf{3D Push-$1$ Pull-$1$W} & $1$ & $1$ & Wall & Path & Min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
+\textbf{3D Push-$k$ Pull-$k$F} & $k > 1$ & $k >1$ & Yes & Path & Min &  \textbf{PSPACE-c.}\ (\S  \ref{3DPSPACE}) \\ \hline
+\end{tabular}
+}
+\caption{Summary of past and new results on block pushing and/or pulling. The \emph{Push} and \emph{Pull} columns describe how many blocks in a row can be moved by the robot. Here $k$ and $l$ are positive integers; $*$ refers to an unlimited number of blocks. The \emph{Fixed} column notes whether fixed blocks (Yes) or thin walls (Wall) are allowed. In the problem title, F means fixed blocks are included; W means thin walls are included. The \emph{Path} column describes whether the objective is to have the robot find a path to a target location, or to store the blocks in a specific configuration. The \emph{Sliding} column notes whether blocks move one square or as many squares as possible before stopping.}
+\label{BlocksTable}
+\end{table}
+
+We add several new results showing that certain block pushing puzzles, which include the ability to push and pull blocks, are NP-hard or PSPACE-complete. The push-pull block puzzle is instantiated in the game Pukoban and heuristics for solving it have been studied \cite{zubaranagent}, but its computational complexity was left as an open question.
+
+We introduce \emph{thin walls}, which prevent motion between two adjacent empty squares. We prove that all path planning problems in 2D with thin walls or in 3D, in which the robot can push $k$ blocks and pull $l$ blocks for all $k,l \in \mathbb{Z}^+$ are NP-hard. We also show that path planning problems where the robot can push and pull $k$ blocks are PSPACE-complete, with thin walls needed only for $k=1$. Our results are shown in the last four lines of Table~\ref{BlocksTable}. To prove these results, we introduce two new abstract gadgets, the set-verify and the 4-toggle, and prove hardness results for questions about their the legal state transitions. 
+
+2D Push-$k$ Pull-$j$ is defined as follows: There is a square lattice of cells. Each cell is connected to its orthogonal neighbors. Cells may either be empty, hold a movable block, or hold a fixed block. Additionally, in settings that allow thin walls, edges between cells may be omitted. There is also a robot on a cell. The robot may move from its current cell to an unoccupied adjacent cell. The robot may also \emph{push} up to $k$ movable blocks arranged in a straight line one cell forward, as long as there is an open cell with no wall in that direction. Here the robot moves into the cell occupied by the adjacent block and each subsequent block moves into the adjacent cell in the same direction. Likewise, the robot may \emph{pull} up to $j$ movable blocks in a straight line as long as there are no walls in the way and there is an open cell behind the robot. The robot moves into that cell, the block opposite that cell moves into the one the robot originally occupied, and subsequent blocks also move once cell toward the robot. The goal of the puzzle is for the robot to reach a specified goal cell. Given such a description, is there a legal path for the robot from its starting cell to the goal cell? The 3D problem is defined analogously on a cubic lattice.
+

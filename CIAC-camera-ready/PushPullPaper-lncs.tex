@@ -1,0 +1,84 @@
+%\documentclass[11pt,twoside]{article}
+\documentclass[runningheads,a4paper]{llncs}
+%\usepackage{amsmath, amssymb, amsthm, amsfonts,cite,alltt,clrscode}
+\usepackage{cite}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{url}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{array}
+\usepackage{txfonts}
+\urlstyle{same}
+\usepackage{hyperref}
+%%\usepackage{media9}
+\usepackage[list=true,listformat=simple]{subcaption}
+\renewcommand{\tt}{\texttt}
+
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+
+\graphicspath{{./figuresPushPull/}}
+
+% Fonts
+\def\id#1{\textit{#1}}
+\def\proc#1{\textsc{#1}}
+\let\epsilon=\varepsilon
+\let\keyw=\textbf
+
+% Put figures and text together
+\def\textfraction{0.01}
+\def\topfraction{0.99}
+\def\dbltopfraction{0.99}
+\def\bottomfraction{0.99}
+\def\floatpagefraction{0.99}
+\def\dblfloatpagefraction{0.99}
+\def\dbltopnumber{100}
+
+
+
+%\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\title{Push-Pull Block Puzzles are Hard}
+\author{Erik D. Demaine\thanks{MIT Computer Science and Artificial Intelligence Laboratory, 32 Vassar Street, Cambridge, MA 02139, USA, \url{{edemaine,isaacg,jaysonl}@mit.edu}} \and Isaac Grosof  \and Jayson Lynch}
+
+\institute{MIT Computer Science and Artificial Intelligence Laboratory, 32 Vassar Street,\\
+ Cambridge, MA 02139, USA\\
+ \url{{edemaine,isaacg,jaysonl}@mit.edu}
+}
+
+
+%\date{\today}
+%\date{}
+\toctitle{Lecture Notes in Computer Science}
+\maketitle
+
+
+\input{abstract}
+
+\input{introduction}
+%
+\input{pushpull2d}
+%
+\input{pushpull3d}
+
+\input{conclusion}
+
+
+\pagebreak
+
+
+%% bibliography
+\bibliographystyle{plain}
+\bibliography{PushPullBib}{}
+
+\appendix
+\input{appendix}
+
+\end{document}
