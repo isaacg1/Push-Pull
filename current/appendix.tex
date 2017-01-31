@@ -77,12 +77,10 @@ Now, there are at most 2 transitions possible: from $a'$ back to $a$, undoing th
 $V_i \rightarrow V_o$ transition, completing the second crossover.
 
 \begin{wrapfigure}{hr}{0.45\textwidth}
-\vspace{-5mm}
   \centering
     \includegraphics[width=.5\textwidth]{one_use_crossover}
     \caption{The two use directed crossover is constructed from a directed destructive crossover and two in-order directed crossovers.}
     \label{fig:OneUseCrossover}
-    \vspace{-7mm}
 \end{wrapfigure}
 
 If the left Set-Verify was left in the Verify state, strictly less future transitions are possible compared to the case where it was changed into the set state, so we may disregard that possibility.
@@ -122,15 +120,13 @@ In this section we prove that 3D Push-$k$ Pull-$l$ with fixed blocks is NP-hard,
 \begin{proof}
 We follow the proof of Theorem~\ref{thm:2DNPhard} using a modified Set-Verify gadget, shown in Figure~\ref{fig:3DSetVerify}.  It can be easily checked that this has the same properties as the Set-Verify given in Section~\ref{sec:SetVerifyGadgets}. The cyclic ordering of the entrances in the 3D Set-Verify is different from that of the 2D Set-Verify, however this is not important as we no longer need to construct crossovers. Also, this construction does not use thin-walls. While this was critical in the prior construction due to the need for closely packed turns, the additional dimension allows enough freedom to keep separate hallways from being adjacent to each other. With a functional Set-Verify gadget, the remaining constructions of variables and clauses proceeded as in Section \ref{sec:2DPushPull3SAT}. No crossover gadgets are needed since we are working in 3D. Finally, we note that all blocks are in hallways of length at most 3, thus the gadgets still function as described for any positive push and pull values.
 
-\begin{figure}{hr}
-\vspace{-5mm}
+\begin{figure}[ht]
   \centering
 %  \begin{figure}[t]
 %    \centering
     \includegraphics[width=.4\textwidth]{SetVerify3D}
     \caption{A Set-Verify gadget in 3D where the entrances and exits extend upward, notated by the diagonal arrows. This gadget is in the unset state.}
     \label{fig:3DSetVerify}
-    \vspace{-12mm}
 \end{figure}
 
 \section{Additional Details on PSPACE-completeness Proof}
@@ -154,8 +150,7 @@ This section provides some additional figures and description to help explain th
   \caption{3D diagrams of 4-toggles. Red spheres are blocks and blue surfaces are impassable.}
 \end{figure}
 
-\begin{wrapfigure}{tr}{0.45\textwidth}
-\vspace{-5mm}
+\begin{figure}[ht]
   \centering
 %  \begin{subfigure}[t]{0.45\textwidth}
 %    \includegraphics[width=\textwidth]{Abstract4ToggleA}
@@ -169,8 +164,7 @@ This section provides some additional figures and description to help explain th
     \label{fig:LockA}
 %  \end{subfigure}
 %  \caption{}
-\vspace{-7mm}
-\end{wrapfigure}
+\end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -223,7 +217,7 @@ as we do not use it directly in the final construction.
 \subsubsection{Analysis of the Quantifier Chain}
 \label{sec:AnalysisQuantifierChain}
 
-A quantifier chain is implemented much like a binary counter (Section~\ref{sec:BinaryCounter}), with some additions. Every universal variable will be represented by a 2-toggle and many locks, where individual locks will serve as a literal. The 2-toggles are hooked up in the same manner as the 2-toggles in a binary counter gadget. This forces the 2-toggle and many locks gadgets to be set to the corresponding values in the simulated binary counter.
+A quantifier chain is implemented much like a binary counter, with some additions. Every universal variable will be represented by a 2-toggle and many locks, where individual locks will serve as a literal. The 2-toggles are hooked up in the same manner as the 2-toggles in a binary counter gadget. This forces the 2-toggle and many locks gadgets to be set to the corresponding values in the simulated binary counter.
 
 Traversing  the quantifier chain in the reverse direction is only possible if the robot enters
 via the lowest order universal toggle whose setting is $1$. The traversal will go back one setting in the

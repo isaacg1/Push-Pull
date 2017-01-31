@@ -105,8 +105,7 @@ We define an $n$-toggle to be a gadget which has $n$ internal pathways and can b
 
 Figure~\ref{fig:2toggleA} acts as a 2-toggle. The locations $1a$, $1d$, $2a$, and $2d$, are all entrances and exits to the 2-toggle, while $1b$ connects directly to $1c$, and $2b$ connects directly to $2c$. Notice that there is a single block missing from the ring of eight blocks. When the missing block is on top, as diagrammed, it will represent state $A$, and when it is on the opposite side, we call it state $B$. Notice that in state $A$, it is impossible to enter through entries $1d$ or $2d$. When we enter in the $1a$ or $2a$ sides, we can follow the moves in the series of diagrams to exit the corresponding $1d$ or $2d$ side, leaving the gadget in the $B$ state. One can easily check that the gadget can only be left in either state $A$, $B$, or a broken state with the empty square left in a corner. Notice that in the broken state, every pathway except the one just exited is blocked. If we enter through that path, it is in exactly the same state as if it had been in an allowed state and entered through the corresponding pathway normally. For example, in the diagram one can only enter through $1a$ and after doing so the blocks are in the same position as they would be after entering in path $1a$ on a 2-toggle in state $A$. Thus the broken state is never more useful for solving the puzzle and can be safely ignored. To generalize to Push-$k$ Pull-$k$ we simply expand the number of blocks between entrances and exists. Instead of having $3$ blocks between each entrance and exit, we have $2k+1$ blocks. There is still one vacant square left in the center of one of the rows of blocks to dictate the state of the toggle. The robot can push the row of $k$ blocks to the center or pull $k$ blocks opening up a square in the center, giving us the same function as before.
 
-To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis, where the block is missing. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. Now we have four different paths which function like the ones described above. Similar arguments show the broken states of the 4-toggle don't matter.
-
+To construct a 4-toggle we essentially take two copies of the 2-toggle, rotate them perpendicular to each other in 3D, and let them overlap on the central axis, where the block is missing. See Figure~\ref{fig:4Toggle3D}. We still interpret the lack of blocks in the same positions as in the 2-toggle as states $A$ or $B$. %Now we have four different paths which function like the ones described above. Similar arguments show the broken states of the 4-toggle don't matter.
 For Push1-Pull1, this construction requires thin walls, since the exit pathways from $1b$, $2b$, $3b$ and $4b$ must pass immediately next to each other. For Push$k$-Pull$k$, with $k > 1$, thin walls are not necessary, since the exit pathways are separated from each other.
 \subsection{Locks}
 
@@ -138,8 +137,8 @@ pathways of the toggle, $1$ and $2$, continue to function as a 2-toggle.
 %\end{wrapfigure}
 
 A 2-toggle and lock can be extended to a 2-toggle with many locks. The 2-toggle with many locks is a gadget consisting of a 2-toggle and any number of separate pathways which can only be traversed when the gadget is in state $B$. This can be constructed using one 2-toggle and lock per separate pathway needed and attaching the toggles in series.
-We orient the 2-toggles so that 
-their 2-toggles are all passable at once in one direction.
+We orient the 2-toggles so that their 2-toggles are all passable at once in one direction.
+When the 2-toggle is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passability and impassibility of all of the external pathways.
 
 %The 2-toggle still functions as described above.
 %Each pathway may be set up to be passable if and only if the toggle is in state $A$, or passable if and only if the toggle is in state $B$. 
@@ -160,11 +159,11 @@ their 2-toggles are all passable at once in one direction.
 %    \label{fig:LockBlock}
 %\end{figure}
 
-When the 2-toggle is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passability and impassibility of all of the external pathways.
+%When the 2-toggle is traversed, all of the internal locks' states flip, rendering the gadget passable in the opposite direction, and switching the passability and impassibility of all of the external pathways.
 
 \subsection{Quantifiers}
 
-We will construct a series of gadgets that will allow us to simulate quantifiers in a boolean formula.
+%We will construct a series of gadgets that will allow us to simulate quantifiers in a boolean formula.
 
 \subsubsection{Existential Quantifier}
 An existential gadget is like a 2-toggle and many locks, except that instead of a
@@ -233,7 +232,7 @@ if and only if their corresponding variables are set to a prespecified value.
 Traversing the quantifier chain
 repeatedly in the primary direction will cycle the universal variables through all $2^n$ possible settings.
 Upon each traversal, an initial sequence of the universal variables will have their values flipped.
-During the traversal, the robot will have the option to set a series of corresponding existential variables to whatever value it wishes. These comprise the existentials nested within the universal variables whose values were flipped. An analysis of the Quantifier Chain can be found in Section~\ref{sec:AnalysisQuantifierChain}
+During the traversal, the robot will have the option to set a series of corresponding existential variables to whatever value it wishes. These comprise the existentials nested within the universal variables whose values were flipped. An analysis of the Quantifier Chain can be found in Appendix~\ref{sec:AnalysisQuantifierChain}
 %
 %Traversing  the quantifier chain in the reverse direction is only possible if the robot enters
 %via the lowest order universal toggle whose setting is $1$. The traversal will go back one setting in the
