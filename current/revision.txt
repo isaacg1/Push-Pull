@@ -17,7 +17,7 @@ Isaac 3. Summarize the reduction targets - put all the gadgets together, explain
 *7. Figure 6: Mention 3D in caption.
 *8. Mention why we need crossovers, instead of using planar 3SAT. The clauses don't work without crossovers.
 Review 3:
-1. More references (see review)
+*1. More references (see review)
 General:
-1. Introduction had many comments - detailed recheck.
+*1. Introduction had many comments - detailed recheck.
 2. 2D gadgets are old and not very formal - detailed recheck.
