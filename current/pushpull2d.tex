@@ -89,7 +89,7 @@ Since the Set-Verify gadget has no hallways with length greater than $3$, any ca
 \label{SetVerifyStateTransition}
 \end{table}
 
-\subsubsection{3SAT Construction}
+\subsubsection{Variable and Clause Gadgets}
 \label{sec:2DPushPull3SAT}
 % Separate variable + clause gadget constructions, keep those here, move stuff about 3SAT specifically to the summary near the end.
 
@@ -99,7 +99,6 @@ Our literals will be represented by Set-Verify gadgets, described in Section~\re
 
 The variables will be encoded by a series of passages which split to allow either the true or negated literals to be set, shown in Figure~\ref{fig:NPVariableGadget}. Once the robot has gone through at least one gadget in one hallway, there are only two possibilities remaining: either the robot can continue down the hall setting more literals to true, or the robot can go back through the gadget it has just exited, returning it to its unset state. Thus, before entering or after exiting a hallway all of the literals in that hallway will be in the same state. Additionally, unset gadgets do not allow a transition from $S_o$ to $S_i$, which means at any point while setting variables, if the robot decides to go back it can only return through a hallway which has been switched to the set state. Going back through these returns them to the unset state, putting that variable gadget back in its initial configuration before the robot interacted with it.
 
-The variables and clauses must be joined together to allow the robot to move between the gadgets in the correct order. We can connect these with simple, empty hallways, except in the cases where these hallways must cross. To deal with this we construct crossover gadgets from the Set-Verify gadgets described in Section~\ref{sec:NPCrossover}. Since each variable's hallway is traversed at most once, and each clause is traversed once, only two-time crossovers are necessary. In order to traverse all of the clauses and reach the goal location, the robot must traverse a set of variable hallways that encode an accepting assignment to the 3SAT problem, thus reducing 3SAT to 2D Push-Pull block puzzles.
 
 
 \begin{figure}[!ht]
@@ -213,7 +212,7 @@ blocking the destructive crossover but leaving the in-order crossover open for t
 \end{wrapfigure}
 
 
-In our construction with Set-Verify gadgets, the crossover also permits returning backwards through the crossings. However, these crossings can only be reversed in the same order they were made and never allow leaking into the other line. Thus no additional progress can be made via reversals, and so the gadget still works for NP-hardness.
+Because of the behavior of the constituent crossovers which make up this gadget, no transition from $a$ to $b$ $a$ to $b'$, etc. is possible. The crossover permits reversal of each of the transitions described, but the crossings can only be reversed in queue order (last in, first out).
 %
 %\paragraph{Two Use Crossover} 
 %Four Directed Crossovers can be combined, as shown below, to create a crossover that can be traversed in any direction \cite{Push100}. This is not necessary for our proof but is shown for general interest. Unfortunately, the inability to go through this gadget multiple times in the same direction without first going back through means it likely isn't sufficient for PSPACE-completeness. 
@@ -232,17 +231,19 @@ Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 
     The connections between these gadgets will consist of empty hallways, except where such hallways would cross. The hallways inside the clause and variable gadgets will also need to cross, and we will handle them similarly. We need crossovers for this reduction, rather than reducing to a PlanarSAT variant, because we need crossovers just to make the clause gadgets work, as seen here.
     
-    At all crossings, we will place a Two Use Directed Crossover, from Figure~\ref{fig:OneUseCrossover}. The orientation of the gadget will be chosen according to a specified ordering, where the later pathway will never be used before the earlier pathway, and no pathway will every be traversed twice in the same direction. 
+    At all crossings, we will place a Two Use Directed Crossover, from Figure~\ref{fig:OneUseCrossover}. The orientation of the gadget will be chosen according to a specified ordering, where the later pathway will never be used before the earlier pathway, and no pathway will every be traversed twice in the same direction. The ordering is each variable gadget's hallways, in increasing order of the variable gadgets, followed by each clause gadget's hallways, in increasing order of clause gadgets. Within the variable gadgets, the ordering will be from in to out along the positive and negative lines, with the positive lines arbitrarily placed before the negative lines. The clause gadget hallways won't cross each other.
 
-    The ordering is each variable gadget's hallways, in increasing order of the variable gadgets, followed by each clause gadget's hallways, in increasing order of clause gadgets. Within the variable gadgets, the ordering will be from in to out along the positive and negative lines, with the positive lines arbitrarily placed before the negative lines. The clause gadget hallways won't cross each other.
+    With this, the construction is complete. To see that it is solvable if and only if the corresponding SAT problem is satisfiable, first let us consider the case where the SAT problem is satisfiable.
 
-    With this, the construction is complete. To see that it is solvable if and only if the corresponding SAT problem is satisfiable, let us examine the options for reaching the goal.
+    If the SAT problem is satisfiable, then there is an assignment of variables such that each clause is satisfied, e.g. has at least one true literal. Therefore, the PushPull construction is solvable. It can be solved by traversing each variable gadget via the side corresponding to the satisfying assignment, then traversing each clause, which is passable because it is satisfied. The crossovers do not impede traversal, since the path taken goes through each crossover at most once of each of its pathways, and strictly in the forward direction of the ordering which determined the orientation of the crossovers. Thus, the entire PushPull problem can be solved, as desired.
 
-    Since the crossover gadgets never allow the robot to leave from any exit except for the one opposite the entrance, a pathway which reaches the exit must at some point traverse every variable gadget, and every clause gadget. Reverse traversal may make this more complicated. However, a reverse traversal of a variable gadget is only possible if it reverses a traversal that has already occured. The robot cannot, for example, traverse the positive side of a variable gadget in the forward direction, then the negative side in the reverse direction. Moreover, a reverse transition sets the state of the gadget to its initial state. 
-    
-    As a result of this property, after any series of moves ending with the robot at the exit of the series of variable gadgets, the state of the gadgets must be the same as if the robot made only forward traversals, namely that for each variable, either all of the positive literals are Set and all the negative literals are Unset, or vice versa.
+    Next, let us consider the case where the SAT problem is not satisfiable. Consider a partial traversal of the PushPull problem, from the start cell through the variable gadgets. As described in Section~\ref{sec:2DPushPull3SAT}, regardless of any reverse transitions through a variable gadget or interactions with its clause gadget, if the robot is beyond a given variable gadget, exactly one of the variable lines must be set, and the other must be unset. Likewise, the interactions with the crossover gadgets do not allow any transitions other than within the variable gadgets, regardless of reversals. Moreover, interactions with the clause gadgets only change the state of Set-Verify gadgets corresponding to literals between the Set and Verified states. If a Set-Verify is Unset, its state cannot be altered via its verify line ($V_i - V_o$).
 
-    Now, when the robot attempts to traverse the clause gadgets to reach the goal cell, the situation is simpler. A clause is traversable if and only if at least one of its literals has been set to Set. No interaction of the verification lines ($V_i - V_o$) will affect an Unset literal, and so the series of clause gadgets can only be traversed if every clause has a satisfied literal. Therefore, the robot can reach the goals if and only if the setting of variables demonstrated by the traversal of the variable gadgets satisfies the 3SAT formula encoded by the clauses.
+    Thus, regardless of the robot's prior movements, the only literals that will be Set or Verified are at most those corresponding to a single assignment for each variable. No two literals corresponding to opposite assignments of the same variable will every be in the Set or Verified states at the same time. 
+
+    Since the SAT problem is assumed to be unsatisfiable, no assignment of variables will satisfy every clause. Thus, as the robot exits the variable gadgets and enters the clause gadgets, for any prior sequence of moves, there must be some clause gadget which has all of its literals in the Unset state, corresponding to the unsatisfied clause for this setting of variables. Since all clauses must be traversed to reach the goal cell, and a clause cannot be traversed if all of its literals are Unset, the robot cannot reach the goal cell. Thus, the PushPull problem is unsolvable.
+
+    We have demonstrated that the PushPull problem is solvable if and only if the corresponding 3SAT instance is satisfiable. The reduction mentioned above is polynomial time reduction, as long as the hallways are constructed reasonably. Thus, Push-$k$ Pull-$l$ in 2D with thin walls is NP-hard.
 
 
 \end{proof}
